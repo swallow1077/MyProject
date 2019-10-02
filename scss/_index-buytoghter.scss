@@ -1,0 +1,161 @@
+.index_buytoghter {
+  margin-top: 100px;
+  > .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    @include media(lg) {
+      justify-content: space-around;
+      flex-wrap:nowrap;
+    }
+    @at-root .index_infobuytoghter {
+      // border: 1px solid #000;
+      margin-top: 28px;
+      width: 344px;
+      height: 398px;
+      background-image: url('../img/index/shop_4.png');
+      background-size: contain;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      align-content: space-around;
+      @include media(md){
+        height:402px;
+      }
+      > .buytoghter_level {
+        // border: 1px solid #000;
+        width: 95%;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        > .level_img {
+          width: 30%;
+          > img {
+            width: 120%;
+            height: 120%;
+          }
+        }
+        > .level_txt {
+          width: 60%;
+          // border: 1px solid #000;
+          border-top: 1px solid #888;
+          border-right: 1px solid #888;
+          border-bottom: 1px solid #888;
+          height: 80px;
+          display: flex;
+          padding: 10px;
+
+          > .txt_title {
+            width: 70%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+          }
+          > .txt_num {
+            width: 30%;
+            // border: 1px solid #000;
+            img {
+              height: 100%;
+            }
+          }
+        }
+      }
+      @at-root .buytoghter_cards {
+        // border: 1px solid #000;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        // display:block;
+        > .products_card {
+          margin-top: 10px;
+          margin-bottom: 10px;
+          margin-right: 10px;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
+//--------------------9/26改過的--------------//
+.index_infobuytoghter > .buytoghter_level > .level_txt > .txt_num{
+  @include media(md){
+    display:flex;
+  } 
+}
+.index_infobuytoghter{
+  #countPrice1, #countPrice2, #countPrice3 {
+    @include media(md){
+      // font-size:16px;
+      // line-height:16px;
+      align-self:center;
+    }
+  }
+}
+
+ @include media(md) {
+   .buytoghter_cards{
+    >.products_card{
+      >.products_offerLevel{
+        >img{
+          @include media(md){
+            height:380px;
+          }
+        }
+      }
+      >.products_detail{
+
+         @include media(md) {
+           >*{
+            margin-top: 0 !important;
+            display:flex;
+           }
+           >.products_P{
+            margin-bottom: 15px !important;
+            >.products_content{
+              >.products_information{
+                @include media(md){
+                  margin-left:10px;
+                }
+              }
+            }
+          }
+          >.products_statusbox{
+            @at-root .products_status{
+              >.products_statusbar{
+                >.bar{
+                  @include media(md){
+                    height:18px;
+                  }
+                }
+              }
+            }
+          }
+         }
+        >.products_actionbox{
+          >.products_action{
+            margin-top: 10px !important;
+            @include media(md){
+              margin:auto;
+              display:flex;
+              justify-content: space-between;
+            }
+            
+            >p{
+              vertical-align: bottom !important;
+              @include media(md){
+                margin-right:10px;
+                margin-top:3px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+ }

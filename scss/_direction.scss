@@ -1,0 +1,131 @@
+$delay: (
+  1: -0.4s,
+  2: -0.2s,
+  3: 0s,
+);
+
+@keyframes cardFloat {
+  0% {
+    top: 0px;
+  }
+  25% {
+    top: 5px;
+  }
+  50% {
+    top: 0px;
+  }
+  75% {
+    top: -5px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+
+.directions {
+  &_list {
+    display: flex;
+    justify-content: space-around;
+
+    @include media(md) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+  &_card {
+    position: relative;
+
+    @each $nth, $delaytime in $delay {
+      &:nth-of-type(#{$nth}) {
+        animation: cardFloat 1s #{$delaytime} infinite linear;
+      }
+    }
+  }
+  &_img {
+    position: relative;
+  }
+  &_textbox {
+    // position: absolute;
+    @include pos_cen-cen;
+    display: flex;
+    flex-wrap: wrap;
+    top: 76%;
+    left: 52%;
+    width: 100%;
+    text-align: center;
+
+    > * {
+      margin-top: 25px;
+      width: 100%;
+    }
+  }
+  &_title {
+    font-weight: bold;
+
+    > p {
+      font-size: 30px;
+    }
+  }
+  &_text {
+    position: relative;
+
+    > p {
+      display: inline-block;
+
+      &:first-child {
+        writing-mode: vertical-lr;
+      }
+    }
+    &::before {
+      content: '達成';
+      writing-mode: vertical-lr;
+      font-size: 22px;
+      font-weight: 500;
+      position: absolute;
+      left: 25%;
+      bottom: 5%;
+    }
+    &::after {
+      content: '人';
+      font-size: 18px;
+      left: 70%;
+      bottom: 10%;
+      position: absolute;
+    }
+  }
+  &_discount {
+    margin-top: 10px;
+
+    > * {
+      display: inline-block;
+    }
+    > img {
+      font-size: 0;
+      position: relative;
+      top: 10%;
+      left: -5%;
+      transform: rotate(10deg);
+    }
+    &::after {
+      content: '折';
+      font-size: 24px;
+      font-weight: bold;
+      position: absolute;
+      left: 67.5%;
+      bottom: 15%;
+    }
+  }
+}
+
+.count {
+  font-size: 0;
+
+  > img {
+    margin: 0 5px;
+    display: inline-block;
+  }
+}
+
+.buy-layout{
+  padding-top: 50px;
+}

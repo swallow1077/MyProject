@@ -1,0 +1,172 @@
+.main_show {
+  margin-top: 100px;
+  > .container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 600px;
+    overflow:hidden;
+  }
+  @include media(md){
+    height:100vh;
+    overflow: hidden;
+  }
+}
+
+.main_groupghost {
+  position: relative;
+  // display: flex;
+  width: 70%;
+  height:20vh;
+  // border: 1px solid #000;
+  // transform: scale(0.7);
+}
+
+.main_pie {
+  position: absolute;
+  bottom: 0;
+
+  animation: pieUser 3s 3s linear infinite;
+  @include media(md) {
+    transform: scale(0.8);
+    animation: none;
+    position:relative;
+    width:100%;
+    >img{
+      width:100%;
+    }
+  }
+
+  // transform: translateY(-400px) scale(0);
+}
+
+// .cursor-box {
+//   width: 30em;
+//   height: 30em;
+//   position: absolute;
+//   box-shadow: 0 0 0 10000px rgba(0, 0, 0, 1);
+//   z-index: 10;
+//   border-radius: 50%;
+//   @include media(md) {
+//     display: none;
+//   }
+//   .cursor-box-child {
+//     // width: 100vw;
+//     height: 100vh;
+//     z-index: 10;
+//     border-radius: 50%;
+//     border: 0;
+//     // box-shadow: inset 0px 0px 200px 75px rgba(0, 0, 0, 1);
+//   }
+// }
+.main_ghost_one {
+  position: absolute;
+  // border: 1px solid #000;
+  top: 10%;
+  animation: ghost2 10s 10s linear infinite;
+  transform: scale(0.75) rotate(-10deg);
+  @include media(md) {
+    display: none;
+  }
+}
+.main_ghost_two {
+  position: absolute;
+  top: 0%;
+  left: 45%;
+  transform: translateX(-50%) scale(0.7);
+  animation: ghost3 2s 2s linear infinite;
+  @include media(md) {
+    position:relative;
+    top: 40%;
+    left:-10%;
+    transform: translateY(-20%) translateX(-100%);
+    // display:none;
+    width:30%;
+  }
+}
+.main_ghost_three {
+  position: absolute;
+  // border: 1px solid #000;
+  right: -5%;
+  animation: ghost1 0.5s 1s linear infinite;
+  transform: scale(0.7) rotate(10deg) translateY(-5%);
+  @include media(md) {
+    display: none;
+    position:relative;
+    
+  }
+}
+
+@keyframes ghost1 {
+  0% {
+    top: 5%;
+  }
+  50% {
+    top: 9%;
+  }
+  100% {
+    top: 5%;
+  }
+}
+
+@keyframes ghost2 {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes ghost3 {
+  0% {
+    transform: scale(0.7) translateX(-50%);
+  }
+  50% {
+    transform: scale(0.9) translateX(-50%);
+  }
+  75% {
+    transform: scale(0.8) translateX(-50%);
+  }
+  100% {
+    transform: scale(0.7) translateX(-50%);
+  }
+}
+
+// @include media(lg) {
+//   @keyframes pieUser {
+//     0% {
+//       margin-top: -270px;
+//     }
+//     5% {
+//       margin-top: -180px;
+//     }
+//     33% {
+//       margin-top: -180px;
+//     }
+//     38% {
+//       margin-top: -90px;
+//     }
+//     66% {
+//       margin-top: -90px;
+//     }
+//     71% {
+//       margin-top: 0px;
+//     }
+//     99.99% {
+//       margin-top: 0px;
+//     }
+//     100% {
+//       margin-top: -270px;
+//     }
+//   }
+// }
+
+// 新增客製化的margin-top
+.index_cust {
+  margin-top: 150px;
+}

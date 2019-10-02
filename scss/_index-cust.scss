@@ -1,0 +1,316 @@
+// .index_cust {
+//     > .container {
+//       overflow: hidden;
+//       .wrap {
+//         display: flex;
+//         flex-wrap: wrap;
+//         justify-content: center;
+//         @include media(lg) {
+//           flex-wrap: nowrap;
+//         }
+//         > .cust_listBox {
+//           background-color: #fff;
+//           width: 95%;
+//           @include media(lg) {
+//             width: 30%;
+//           }
+//         }
+//         //右邊的區域
+//         .favor {
+//           &_type {
+//             // border: 1px solid #000;
+//             width: 95%;
+//             height: 80vh;
+//             @include media(md) {
+//               height: 69vh;
+//             }
+//           }
+//           //上面的南瓜雲跟進度條
+//           &_level {
+//             @include media(lg) {
+//               display: flex;
+//               justify-content: center;
+//               align-items: center;
+//             }
+//             &_title {
+//               text-align: center;
+//               line-height: 45px;
+//               font-size: 30px;
+//               // border: 1px solid #000;
+//               @include media(lg) {
+//                 background-image: url('../img/cust/pumpkin.png');
+//                 background-size: 55%;
+//                 background-repeat: no-repeat;
+//                 background-position: center;
+//                 flex: 1;
+//                 line-height: 250px;
+//                 height: 200px;
+//               }
+//             }
+//             //進度條
+//             &_show {
+//               @include media(lg) {
+//                 flex: 1;
+//               }
+//               .cust_bar {
+//                 width: 80%;
+//                 margin-top: 5px;
+//                 margin-bottom: 5px;
+//               }
+//             }
+//           }
+//           &_totalbox {
+//             // background-color: #ccc;
+//             height: 53vh;
+//             @include media(lg) {
+//               display: flex;
+//               justify-content: space-around;
+//             }
+//           }
+//           //吸血鬼的票卷地方
+//           &_box {
+//             // border: 1px solid #000;
+//             display: flex;
+//             flex-direction: column;
+//             align-items: center;
+//             background-image: url('../img/cust/style.png');
+//             background-repeat: no-repeat;
+//             background-position: left top;
+//             background-size: 38%;
+//             height: 53vh;
+//             cursor: pointer;
+//             position: relative;
+//             @include media(lg) {
+//               height: 60vh;
+//               background-size: 65%;
+//             }
+//             > .pie_img {
+//               position: absolute;
+//               top: 20%;
+//               transform: translateX(-30%);
+//               @include media(md) {
+//                 transform: translateX(-70%);
+//               }
+//             }
+//             > .favor_style {
+//               position: absolute;
+//               top: 50%;
+//               left: 20%;
+//               transform: translateX(-42%);
+//               writing-mode: vertical-lr;
+//               font-size: map-get($fz_size, h2);
+//               @include media(md) {
+//                 top: 52%;
+//                 left: 12%;
+//               }
+//             }
+//             > .favor_title {
+//               position: absolute;
+//               top: 8%;
+//               left: 33%;
+//               transform: translateX(-50%);
+//               @include media(md) {
+//                 top: 10%;
+//                 left: 18%;
+//               }
+//             }
+//             &_close {
+//               @include media(md) {
+//                 display: none;
+//               }
+//             }
+//             @include media(lg) {
+//               flex: 1;
+//             }
+//             > .mascot {
+//               opacity: 0;
+//               position: absolute;
+//               bottom: 0;
+//               transform: rotate(10deg) scale(0.7) translateX(25%) translateY(10%);
+//               transition: opacity 0.3s linear;
+//               @include media(md) {
+//                 display: block;
+//                 opacity: 1;
+//                 transform: rotate(0deg) scale(0.7) translateX(38%) translateY(20%);
+//               }
+//               &:hover {
+//                 > .mascot {
+//                   transform: rotate(10deg) scale(0.7) translateX(45%) translateY(10%);
+//                   opacity: 1;
+//                   @include media(md) {
+//                   }
+//                 }
+//               }
+//             }
+  
+//             // flex: 1;
+//           }
+  
+//           // 09-22 被選到的票券 換底圖 & 顯示吉祥物
+//           &_selected {
+//             background-image: url('../img/cust/style_select.png');
+//             > .mascot {
+//               opacity: 1;
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+  
+//   .out-set3 {
+//     &::before {
+//       content: '';
+//       position: absolute;
+  
+//       width: 300px;
+//       height: 14px;
+//       background-color: map-get($color, footer_bg_color);
+//       border-radius: 5px;
+//     }
+//   }
+//   .out-set8 {
+//     // border: 1px solid #000;
+//     position: relative;
+//     bottom: -70px;
+//   }
+
+ 
+// // 左邊 sticky部分...cust_listBox_sticky ----------------------
+
+//   // .custtt{
+//     .cust_RWD-list_box_inIndex{
+//       margin-top: -45%;
+//     }
+//     .cust_listBox_sticky_no{
+//       width: 22%;
+//       height: 100vh;
+//       min-height: 570px;
+//       // position: sticky;
+//       // top: 0;
+//       @include media(md){
+//           width: 95%;
+//           margin: auto;
+//           height: 10%;
+//           min-height: 0;
+//           // bottom: 5px;
+//           // z-index: 100;
+//       }
+//     }
+//     .cust_steps{
+//       margin:auto;
+//       padding-left:140px;
+//       margin-top:-600px;
+//       .cust_w100p {
+//         width: 120%;
+//       }
+//     }
+//     .cust_btn_box_inIndex {
+//       display: flex;
+//       justify-content: center;
+//       width: 100%;
+//       height:150px;
+    
+//       > .linkToCust{
+//         // color: black;
+//         display: block;
+//         width: 25%;
+
+//         > .cust_btn{
+//             width: 100%;
+//             position: relative;
+//             cursor: pointer;
+//             > img{
+//                 width: 100%;
+//             }
+//             > span{
+//                 position: absolute;
+//                 top: 33%;
+//                 display: block;
+//                 width: 100%;
+//                 text-align: center;
+//                 font-size: 30px;
+//                 color: black;
+//             }
+//         }
+//       }
+//     }
+    
+//     .all_favor_box > .favor_box{
+//       > .pie_img{
+//         @include media(md){
+//           transform: rotate(90deg);
+//           width: 75%;
+//           top: 24.5%;
+//           left: 10%;
+//         }
+        
+//       }
+//       >.favor_style{
+//         @include media (md){
+//           top:9%;
+//         }
+        
+//       }
+//     }
+     
+//   // }
+  
+  
+
+// 0928-------------------------------------
+
+// 左邊 sticky部分...cust_listBox_sticky ----------------------
+.cust_RWD-list_box_inIndex{
+  margin-top: -45%;
+}
+.cust_listBox_sticky_no{
+  width: 22%;
+  // height: 100vh;
+  // min-height: 570px;
+  // position: sticky;
+  // top: 0;
+  @include media(md){
+      width: 95%;
+      margin: auto;
+      height: 10%;
+      min-height: 0;
+      // bottom: 5px;
+      // z-index: 100;
+  }
+}
+
+.cust_btn_box_inIndex {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  > a{
+    display: block;
+    width: 25%;
+    color: black;
+    @include media(md){
+      width: 50%;
+    }
+    > .cust_btn{
+        width: 100%;
+        position: relative;
+        cursor: pointer;
+        > img{
+            width: 100%;
+        }
+        > span{
+            position: absolute;
+            top: 33%;
+            display: block;
+            width: 100%;
+            text-align: center;
+            font-size: 30px;
+        }
+    }
+  }
+}
+
+.cust_steps_inIndex{
+  padding-top: 10%;
+}

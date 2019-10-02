@@ -1,0 +1,130 @@
+////////////////////////extend區域////////////////////////////
+//                                                         //
+//                                                         //`
+/////////////////////////////////////////////////////////////
+@mixin clearfix {
+  &::after {
+    display: block;
+    content: '';
+    clear: both;
+  }
+}
+////////////////使用範例/////////////
+// .clearfix {                    //
+//   @extend %clearfix;           //
+// }                              //
+////////////////////////////////////
+//快速鍵底加  =>  scss-clear
+
+////////////////////////mixin區域/////////////////////////////
+//                                                         //
+//                                                         //`
+/////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////
+//垂直置中-----pos                                           //
+/////////////////////////////////////////////////////////////
+@mixin pos_cen-cen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/////////////////////////////////////////////////////////////
+//垂直置中-----flex                                         //
+/////////////////////////////////////////////////////////////
+@mixin flex-cen-cen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/////////////////////////////////////////////////////////////
+//垂直置中-----around                                       //
+/////////////////////////////////////////////////////////////
+@mixin flex-around {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+/////////////////////////////////////////////////////////////
+//垂直置中-----between                                      //
+/////////////////////////////////////////////////////////////
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/////////////////////////////////////////////////////////////
+//按鈕專用                                                  //
+/////////////////////////////////////////////////////////////
+
+@mixin btnCase($width: 100px, $height: 50px) {
+  display: inline-block;
+  width: $width;
+  height: $height;
+  line-height: $height;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  outline: none;
+  z-index: 1;
+  overflow: hidden;
+  &:hover {
+    cursor: pointer;
+  }
+}
+////////////////使用說明///////////////
+// 只要輸入寬高就可以使用              //
+//預設是～上～左                      //
+//預設顏色是寬度顏色在地圖裡面          //
+//如果有輸入兩個就會更改已預設大小去設定  //
+//////////////////////////////////////
+////////////////使用範例///////////////
+// .btn-ex {                        //
+//   @include btnCase(100px, 50px); //
+// }                                //
+//////////////////////////////////////
+//快速鍵底加  =>  scss-btn            //
+// .btn-ex {                        //
+//   @include btnCase(100px, 50px); //
+// }                                //
+/////////////////////////////////////////////////////////////
+//斷點專用                                                  //
+/////////////////////////////////////////////////////////////           ////////////////一般設定(md)(lg)////////////////
+$breakpoints: (
+  md: auto 767px,
+  lg: 768px auto,
+);
+
+@mixin media($name) {
+  $breakpoints: () !default;
+  // 如果有寫會用預設的
+  $defaults: (
+    xs: auto 576px,
+    sm: 576px 768px,
+    md: 768px 992px,
+    lg: 992px 1200px,
+    xl: 1200px auto,
+  );
+  // 先看看有沒有預設的斷點如果有就用他
+  // 如果沒有再去def做使用
+  // 錢字號都是自己取的變數
+  $point: map-get($breakpoints, $name) or map-get($defaults, $name);
+  @if $point {
+    $min: nth($point, 1);
+    $max: nth($point, 2);
+    @if $min==auto {
+      @media (max-width: $max) {
+        @content;
+      }
+    } @else if $max==auto {
+      @media (min-width: $min) {
+        @content;
+      }
+    } @else {
+      @media (min-width: $min) and (max-width: $max) {
+        @content;
+      }
+    }
+  }
+}

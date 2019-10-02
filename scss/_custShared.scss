@@ -1,0 +1,338 @@
+#custCanvas{
+    display: none;
+}
+// #cust_printPNG{
+//     display: none;
+// }
+
+
+.layout_cust{
+    padding-top:50px;
+}
+// ------------------------------
+.cust_buttons{
+    background-color: #fff;
+    border: #B24771 1px solid;
+    border-radius: 5px;
+    color: #B24771;
+    padding: 2px 6px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+.cust_RWD_buttons{
+    width: 20px;
+    height: 38px;
+    background-color: #fff;
+    border: #B24771 1px solid;
+    border-radius: 5px;
+    color: #B24771;
+    padding: 6px 2px;
+    text-align: center;
+    writing-mode: vertical-lr;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin-top: 15px;
+    margin-left: 2px;
+    cursor: pointer;
+}
+
+.cust_slogan{
+    @include media(md){
+        font-size: 16px;
+    }
+}
+
+// pumpkin -> step describe
+.step_desc{
+    width: 35%;
+    position: relative;
+    @include media(md){
+        width: 70%;
+        margin: auto;
+    }
+    > img{
+        width: 100%;
+    }
+    > h3{
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        text-align: center;
+        display: block;
+    }
+}
+
+// stops buttons
+.cust_btn_box {
+    display: flex;
+    justify-content: center;
+    @include media(md) {
+        display: none;
+    }
+
+    @at-root .cust_btn{
+        width: 25%;
+        position: relative;
+        cursor: pointer;
+        > img{
+            width: 100%;
+        }
+        > span{
+            position: absolute;
+            top: 33%;
+            display: block;
+            width: 100%;
+            text-align: center;
+            font-size: 30px;
+        }
+        > .out-set5{
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+.cust_submitBtn_box{
+    @include media(md){
+        display: block;
+        display: flex;  // make the btn in the middle
+        justify-content: center;
+    }
+    > .cust_btn{
+        @include media(md){
+            width: 40%;
+        }
+        > span{
+            @include media(md){
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+// 客製化步驟 section container setting
+.cust_section{
+    > .container{
+        display: flex;
+        @include media(md){
+            flex-direction: column-reverse;
+            width: 95%;
+        }
+    }
+}
+.cust_steps_in{
+    margin-bottom: 120px;
+    @include media(md){
+        margin-bottom: 60px;
+    }
+}
+
+// 右邊客製步驟...cust_steps --------------------
+.cust_steps{
+    width: 78%;
+    @include media(md){
+        width: 100%;
+    }
+}
+
+// 左邊 sticky部分...cust_listBox_sticky ----------------------
+.cust_listBox_sticky{
+    width: 22%;
+    height: 100vh;
+    min-height: 570px;
+    position: sticky;
+    top: 0;
+    @include media(md){
+        width: 95%;
+        margin: auto;
+        height: 10%;
+        min-height: 0;
+        bottom: 5px;
+        z-index: 10;
+    }
+    // 桌機版
+    @at-root .list_box {
+        display: block;
+        position: relative; // for text, position:absolute
+        top: 50%;                       // 垂直置中
+        transform: translateY(-50%);    // 垂直置中
+        @include media(md) {
+            display: none;
+        }
+
+        > .list_text_box {
+            position: absolute;
+            top: 70px;
+            left: 10%;
+        }
+        > .price_box{
+            position: absolute;
+            bottom: 25px;
+            left: 10%;
+            text-align: center;
+            > p{
+                > span{
+                    display: block;
+                    font-size: 70px;
+                }
+            }
+        }
+    }
+    // 行動版
+    @at-root .cust_RWD-list_box {
+        display: none;
+        @include media(md) {
+            display: block;
+            position: relative;
+            width: 100%;
+        }
+        > .RWD-list {
+            @include media(md){
+                width: 100%;
+            }
+        }
+
+        > .list_text_box {
+            @include media(md){
+                width: 100%;
+                height: 80%;
+                position: absolute;
+                bottom: 5%;
+                left: 0;
+                writing-mode: vertical-lr;
+            }
+        }
+
+        > .price_box{
+            @include media(md){
+                position: absolute;
+                bottom: 5%;
+                right: 2%;
+                text-align: center;
+            }
+            > p{
+                > span{
+                    @include media(md){
+                        display: block;
+                        font-size: 50px;
+                    }
+                }
+            }
+        }
+    }
+}
+// list details
+.list_details {
+    margin: 20px 0;
+    @include media(md) {
+        font-size: 16px;
+        margin: 7px;
+    }
+    > ul {
+        margin: 7px 0 0 7px;
+        > li {
+            font-size: 25px;
+            @include media(md){
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+// weird variables -------------------------------
+.cust{
+    &_Rw100p{
+        @include media(md){
+            width: 100%;
+        }
+    }
+    &_w100p{ width: 100%; }
+    &_w90p { width: 90%;  }
+    &_w80p { width: 80%;  }
+    &_w70p { width: 70%;  }
+    &_w60p { width: 60%;  }
+    &_w50p { width: 50%;  }
+    &_w40p { width: 40%;  }
+    &_w30p { width: 30%;  }
+    &_w20p { width: 20%;  }
+    &_w10p { width: 10%;  }
+
+    &_posiR { position: relative; }
+    &_posiA { position: absolute; }
+    &_top100p { top: 100%; }
+    &_top90p  { top: 90%;  }
+    &_top80p  { top: 80%;  }
+    &_top70p  { top: 70%;  }
+    &_top60p  { top: 60%;  }
+    &_top50p  { top: 50%;  }
+    &_top40p  { top: 40%;  }
+    &_top30p  { top: 30%;  }
+    &_top20p  { top: 20%;  }
+    &_top10p  { top: 10%;  }
+    &_top0p   { top: 0;    }
+    
+    &_bottom100p { bottom: 100%; }
+    &_bottom90p  { bottom: 90%;  }
+    &_bottom80p  { bottom: 80%;  }
+    &_bottom70p  { bottom: 70%;  }
+    &_bottom60p  { bottom: 60%;  }
+    &_bottom50p  { bottom: 50%;  }
+    &_bottom40p  { bottom: 40%;  }
+    &_bottom30p  { bottom: 30%;  }
+    &_bottom20p  { bottom: 20%;  }
+    &_bottom10p  { bottom: 10%;  }
+    &_bottom0p   { bottom: 0;    }
+    
+    &_left100p { left: 100%; }
+    &_left90p  { left: 90%;  }
+    &_left80p  { left: 80%;  }
+    &_left70p  { left: 70%;  }
+    &_left60p  { left: 60%;  }
+    &_left50p  { left: 50%;  }
+    &_left40p  { left: 40%;  }
+    &_left30p  { left: 30%;  }
+    &_left20p  { left: 20%;  }
+    &_left10p  { left: 10%;  }
+    &_left0p   { left: 0;    }
+
+    &_right100p { right: 100%; }
+    &_right90p  { right: 90%;  }
+    &_right80p  { right: 80%;  }
+    &_right70p  { right: 70%;  }
+    &_right60p  { right: 60%;  }
+    &_right50p  { right: 50%;  }
+    &_right40p  { right: 40%;  }
+    &_right30p  { right: 30%;  }
+    &_right20p  { right: 20%;  }
+    &_right10p  { right: 10%;  }
+    &_right0p   { right: 0;    }
+
+    &_allCenter{
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+
+    &_overflow{ overflow: hidden;}
+}
+
+
+
+
+// test---------------
+// @media screen and (max-width: 767px){
+//     .cust_section{
+//         outline: green 5px solid;
+//         > .container{
+//             outline: deeppink 1px solid;
+//         }
+//     }
+// }

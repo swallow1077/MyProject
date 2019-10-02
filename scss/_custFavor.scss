@@ -1,0 +1,89 @@
+.all_favor_box{
+    display: flex;
+    @include media(md){
+        display: block;      // for RWD in the phone do not messy.
+        // flex-direction: column;
+    }
+    > .favor_box{
+        width: 33.33%;
+        display: flex;                  // for using flex properties.
+        flex-direction: row-reverse;    // for making the tickets stay on the right.
+        cursor: pointer;
+        position: relative;
+        @include media(md){
+            display: block;     // for RWD in the phone do not messy.
+            width: 38%;
+            left: 50%;
+            transform: translateX(-50%) rotate(270deg);
+        }
+
+        > .pie_img {
+            top: 25%;
+            @include media(md) {
+                transform: rotate(90deg);
+                width: 100%;
+                top: 20%;
+                left: 0;
+            }
+        }
+        > .mascot{
+            right: -30%;
+            transform: rotate(10deg);
+            @include media(md){
+                transform: rotate(95deg);
+                width: 70%;
+                bottom: 0%;
+                left: -5%;
+            }
+        }
+        > .favor_style{
+            font-size: 30px;
+            @include media(md){
+                transform: rotate(90deg);
+                writing-mode: vertical-lr;
+                font-size: 24px;
+                left: 20%;    
+                top: 6%;
+            }
+        }
+        > .favor_title{
+            font-size: 50px;
+            writing-mode: vertical-lr;
+            @include media(md){
+                transform: rotate(90deg);
+                height: 30px;       // make text vertical to horizontal.
+                font-size: 28px;
+                bottom: 30%;
+                right: -7%;
+
+            }
+        }
+    }
+    // setting vampire mascot only.
+    > .favor_box:nth-child(2){  
+        > .mascot{
+            right: -15%;
+        }
+    }
+    > .favor_box:nth-child(3){  
+        > .mascot{
+            right: -16%;
+            // bottom: -10%;
+        }
+    }
+}
+.favor_box:nth-child(1){
+    @include media(md){
+        margin-top: -17%;
+    }
+}
+.favor_box:nth-child(2){
+    @include media(md){
+        margin-top: -53%;
+    }
+}
+.favor_box:nth-child(3){
+    @include media(md){
+        margin-top: -53%;
+    }
+}

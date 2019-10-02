@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" />
+  <title>派對</title>
+  <link rel="stylesheet" href="style/index.css" />
+
+
+</head>
+
+<body class="main_body">
+  <section class='lightBox' style='display:none;'>
+    <div class="container">
+      <div id="lightBox">
+        <div class="login_password">
+          <span class="btnLoginCancel" id="btnLoginCancel">
+            <img src="img/prod/cancel.png" alt="cancel_icon">
+          </span>
+          <h3 class='login_title'>會員登入</h3>
+          <input type="text" name="memId" id="memId" class="mem_login" placeholder="帳號">
+          <br>
+          <input type="password" name="memPsw" id="memPsw" class="mem_login" placeholder="密碼">
+          <br>
+          <a href="javascript:void(0)" id="forget_psw">忘記密碼</a>
+          <br>
+          <a href="javascript:void(0)" class="btn_focus" id="btnLogin">
+            <p>登入</p>
+          </a>
+          </a>
+          <br>
+          <div class="notmem">
+            <span>不是會員嗎?</span>
+            <a href="javascript:void(0)" id="register">立即註冊</a>
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!------------- 登入的燈箱end-------------- -->
+  <!------------- 註冊的燈箱star-------------- -->
+  <section id="sign_box" class="sign_box" style='display:none;'>
+
+    <div class="sign_lightBox">
+      <div class="sign_content">
+        <span class="btnSignCancel" id="btnSignCancel">
+          <img src="img/prod/cancel.png" alt="cancel_icon">
+        </span>
+        <h3 class="sign_title">註冊會員</h3>
+        <form action="" id="submitForm">
+          <div class="sign_input_group">
+            <div class="sign_input_item sign_id">
+              <span>帳號:</span>
+              <input type="text" class="sign_inputs" name="memId2" id="memId2" placeholder="帳號">
+              <br>
+            </div>
+            <div class="sign_input_item">
+              <span>
+                <input type="button" value="帳號是否可以使用?" id="btn_sign_check">
+              </span>
+              <p id="idMsg">檢查中</p>
+            </div>
+            <div class="sign_input_item sign_psw">
+              <span>密碼:</span>
+              <input type="password" class="sign_inputs" name="memPsw2" id="memPsw2" placeholder="密碼"> <!-- <br> -->
+            </div>
+            <div class="sign_input_item sign_psw">
+              <span>確認密碼</span>
+              <input type="password" class="sign_inputs" name="confirmPsw" id="confirmPsw" placeholder="確認密碼">
+              <!-- <br> -->
+            </div>
+            <div class="sign_input_item sign_namd">
+              <span>姓名:</span>
+              <input type="text" class="sign_inputs" name="mem_name2" id="mem_name2" placeholder="姓名"> <!-- <br> -->
+
+            </div>
+            <div class="sign_input_item sign_email">
+              <span>信箱:</span>
+              <input type="email" class="sign_inputs" name="mem_email2" id="mem_email2" placeholder="信箱">
+              <!-- <br> -->
+            </div>
+          </div>
+          <a href="javascript:void(0)" class="btn_register" id="btn_register">
+            <p>送出</p>
+          </a>
+        </form>
+      </div>
+    </div>
+  </section>
+  <!------------- 註冊的燈箱end-------------- -->
+
+  <!-- ***********9/25更新******************* -->
+  <!-- navbar_star -->
+  <header class="menu layout_header" id="layout_header">
+    <div class="rwdnavbar">
+      <button class="layout_menubtn">
+        <span class="layout_menubtn-in">menu</span>
+      </button>
+      <a href='index_fron.html' class="rwdlogo">
+        <img src="img/layout/logo_白邊.svg" alt="rwdlogo">
+      </a>
+      <div class="rwdLogin">
+        <ul class="layout_login">
+          <span id="btnlogloutRwd">&nbsp</span>
+          <li>
+            <a href="javascript:;" id="spanLoginRwd">
+              <i class="fas fa-user-circle"></i>
+            </a>
+            <span id="spanLoginTextRwd" style="display:none">登入</span>
+          </li>
+          <li id="goCartShowRwd">
+            <div class="prodCountRwd"></div>
+            <a href="cart.html">
+              <i class="fas fa-shopping-cart" id="shopCartRwd"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <nav class="layout_nav">
+
+      <ul class="layout_logo">
+        <h1 class="logo">
+          <a class="logo_link" href="index.html">派對</a>
+        </h1>
+      </ul>
+      <ul class="layout_items">
+        <li class="layout_itemlink">
+          <a class="layout_link" href="cust.php">客制派</a>
+        </li>
+        <li class="layout_itemlink">
+          <a class="layout_link" href="prod.html">派對商品</a>
+        </li>
+
+        <li class="layout_itemlink">
+          <a class="layout_link" href="buy.html">派對團購</a>
+        </li>
+        <li class="layout_itemlink">
+          <a class="layout_link" href="vot.html">派對投票</a>
+        </li>
+        <li class="layout_itemlink">
+          <a class="layout_link" href="cars.html">派對活動</a>
+        </li>
+      </ul>
+      <ul class="layout_login">
+        <span id="btnloglout">&nbsp</span>
+        <li>
+          <a href="javascript:;" id="spanLogin">
+            <i class="fas fa-user-circle"></i>
+          </a>
+          <span id="spanLoginText" style="display:none">登入</span>
+        </li>
+        <li id="goCartShow">
+          <div class="prodCount"></div>
+          <a href="cart.html">
+            <i class="fas fa-shopping-cart" id="shopCart"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <!-- navbar_end -->
+
+  <!-- 第一個畫面 -->
+  <section class="main_show">
+    <div class="container">
+      <div class="cursor-box" id="spotlight">
+        <div class="cursor-box-child" id="spotlight-child"></div>
+      </div>
+      <div class="main_groupghost">
+        <div class="main_ghost_one">
+          <img src="img/index/ghost_3.png" alt="">
+        </div>
+        <div class="main_ghost_two">
+          <img src="img/index/ghost_2.png" alt="">
+        </div>
+        <div class="main_ghost_three">
+          <img src="img/index/ghost_1.png" alt="">
+
+        </div>
+      </div>
+      <div class="main_pie">
+        <img src="img/index/pei.png" alt="">
+      </div>
+
+    </div>
+  </section>
+  <!-- 第一個畫面 -->
+
+
+  <!-- 第二個畫面 -->
+  <section class="cust_section">
+    <!-- <div class="custtt"> -->
+    <div class="container-out">
+      <div class="layout_newtitle">
+        <h2 class="layout_nesh2">客製派</h2>
+      </div>
+    </div>
+    <div class="container">
+      <div class="cust_listBox_sticky_no">
+        <!-- 桌基板的清單 -->
+        <div class="list_box">
+          <img src="img/cust/list.png" alt="" class="list" />
+          <ul class="list_text_box cust_w80p">
+            <li class="list_favor_box list_details">
+              基底
+              <ul>
+                <li class="favor_details"></li>
+              </ul>
+            </li>
+            <li class="list_ingred_box list_details">
+              配料
+              <ul>
+                <!-- <li>紅豆</li>
+                                  <li>鳳梨</li> -->
+              </ul>
+            </li>
+            <li class="list_decor_box list_details">
+              裝飾品
+              <ul>
+                <!-- <li>掃把</li>
+                                  <li>手指餅乾</li>
+                                  <li>哈哈哈</li> -->
+              </ul>
+            </li>
+          </ul>
+          <div class="price_box cust_w80p">
+            <p>NTD:<span></span></p>
+          </div>
+        </div>
+        <!-- RWD 的清單 -->
+        <div class="cust_RWD-list_box cust_RWD-list_box_inIndex">
+          <img src="img/cust/RWD-list.png" alt="" class="RWD-list" />
+          <ul class="list_text_box">
+            <li class="list_favor_box list_details">
+              基底
+              <ul>
+                <li class="favor_details"></li>
+              </ul>
+            </li>
+            <li class="list_ingred_box list_details">
+              配料
+              <ul>
+                <!-- <li>紅豆</li>
+                                  <li>鳳梨</li> -->
+              </ul>
+            </li>
+            <li class="list_decor_box list_details">
+              裝飾品
+              <ul>
+                <!-- <li>掃把</li>
+                                  <li>手指餅乾</li>
+                                  <li>哈哈哈</li> -->
+              </ul>
+            </li>
+          </ul>
+          <div class="price_box">
+            <p>NTD:<span></span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cust_steps cust_steps_inIndex">
+        <!-- 第一步驟 -->
+        <div class="cust_steps_in cust_w100p">
+          <!-- <div class="step_desc"> -->
+          <!-- <img src="img/cust/pumpkin.png" alt="step_desc"> -->
+          <!-- <h3>第一步<br><span>選擇一種基底風格</span></h3> -->
+          <!-- </div> -->
+          <div class="all_favor_box">
+            <!-- SQL -->
+            <!-- <div class="favor_box cust_posiR">
+                              <img src="img/cust/style.png" alt="style" class="favor_img cust_Rw100p">
+                              <img src="<?php echo $rowF["base_img"]; ?>" class="pie_img cust_posiA cust_right10p" />
+                              <span class="favor_style cust_posiA cust_top10p cust_right20p"><?php echo $rowF["base_style"]; ?></span>
+                              <h3 class="favor_title cust_posiA cust_bottom20p cust_right40p"><?php echo $rowF["base_name"]; ?></h3>
+                              <img src="<?php echo $rowF["mascot"]; ?>" alt="" class="mascot cust_w60p cust_posiA cust_bottom0p" />
+                              <input class="base_no" type="hidden" value="<?php echo $rowF["base_no"]; ?>">
+                              <input class="cust_base_price" type="hidden" value="<?php echo $rowF["base_price"]; ?>">
+                          </div> -->
+            <div class="favor_jp favor_box cust_posiR">
+              <img src="img/cust/style.png" alt="style" class="favor_img cust_Rw100p">
+              <img src="img/cust/jp_pie.png" alt="japan pie" class="pie_img cust_posiA cust_right10p" />
+              <span class="favor_style cust_posiA cust_top10p cust_right20p">日式風</span>
+              <h3 class="favor_title cust_posiA cust_bottom20p cust_right40p">抹茶派</h3>
+              <img src="img/cust/3.png" alt="" class="mascot cust_w60p cust_posiA cust_bottom0p" />
+              <!-- <input class="base_no" type="hidden" value="1"> -->
+              <input class="cust_base_price" type="hidden" value="120">
+            </div>
+            <div class="favor_china favor_box cust_posiR">
+              <img src="img/cust/style.png" alt="style" class="favor_img cust_Rw100p">
+              <img src="img/cust/west_pie.png" alt="japan pie" class="pie_img cust_posiA cust_right10p1" />
+              <span class="favor_style cust_posiA cust_top10p cust_right20p">西式風</span>
+              <h3 class="favor_title cust_posiA cust_bottom20p cust_right40p">南瓜派</h3>
+              <img src="img/cust/2.png" alt="" class="mascot cust_w60p cust_posiA cust_bottom0p" />
+              <!-- <input class="base_no" type="hidden" value="2"> -->
+              <input class="cust_base_price" type="hidden" value="70">
+            </div>
+            <div class="favor_west favor_box cust_posiR">
+              <img src="img/cust/style.png" alt="style" class="favor_img cust_Rw100p">
+              <img src="img/cust/china_pie.png" alt="japan pie" class="pie_img cust_posiA cust_right10p1" />
+              <span class="favor_style cust_posiA cust_top10p cust_right20p">中式風</span>
+              <h3 class="favor_title cust_posiA cust_bottom20p cust_right40p">竹炭派</h3>
+              <img src="img/cust/1.png" alt="" class="mascot cust_w60p cust_posiA cust_bottom0p" />
+              <!-- <input class="base_no" type="hidden" value="3"> -->
+              <input class="cust_base_price" type="hidden" value="150">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- btn -->
+    <div class="cust_btn_box_inIndex">
+      <a class="linkToCust" href="cust.php">
+        <div class="cust_btn">
+          <img src="img/cust/button.png" alt="button" />
+          <span class="btn_text">下一步</span>
+        </div>
+      </a>
+    </div>
+    <!-- </div> -->
+  </section>
+  <!-- 第二個畫面 -->
+
+
+  <!-- 第三個畫面 團購-->
+  <section class="index_buytoghter">
+    <div class="container-out">
+      <div class="layout_newtitle">
+        <h2 class="layout_nesh2">派對團購</h2>
+      </div>
+    </div>
+    <div class="container">
+      <div class="index_infobuytoghter">
+        <div class="buytoghter_level">
+          <div class="level_img">
+            <img src="img/index/shop_3.png" alt="">
+          </div>
+          <div class="level_txt">
+            <div class="txt_title">
+              <h3>團購人數</h3>
+              <p>達成<span>30</span>人</p>
+            </div>
+            <span class="txt_num">
+              <img src="img/index/RedFive_percent_Dark.png" alt="">
+            </span>
+            <span id='countPrice1'>折</span>
+          </div>
+        </div>
+        <div class="buytoghter_level">
+          <div class="level_img">
+            <img src="img/index/shop_1.png" alt="">
+          </div>
+          <div class="level_txt">
+            <div class="txt_title">
+              <h3>團購人數</h3>
+              <p>達成<span>20</span>人</p>
+            </div>
+            <span class="txt_num">
+              <img src="img/index/GreenEight_percent.png" alt="">
+            </span>
+            <span id='countPrice2'>折</span>
+          </div>
+        </div>
+        <div class="buytoghter_level">
+          <div class="level_img">
+            <img src="img/index/shop_2.png" alt="">
+          </div>
+          <div class="level_txt">
+            <div class="txt_title">
+              <h3>團購人數</h3>
+              <p>達成<span>10</span>人</p>
+            </div>
+            <span class="txt_num">
+              <img src="img/index/BlueNine_percent.png" alt="">
+
+            </span>
+            <span id='countPrice3'>折</span>
+          </div>
+        </div>
+      </div>
+      <div class="buytoghter_cards">
+        <script type="text/html" id="templateTest">
+          <div id="cust_{{c_no}}" class="products_card">
+              <div class="products_offerLevel">
+                  <img src="{{grp_img}}" alt="">
+              </div>
+              <div class="products_detail">
+                  <div class="products_P">
+                      <div class="products_Pname">
+                          <p>{{cust_name}}</p>
+                      </div>
+                      <div class="products_Ptag">
+                          <p>客製</p>
+                      </div>
+                  </div>
+                  <div class="products_content">
+                      <div class="products_img">
+                        <img height='85' width='125' src="img/product/product.png" alt="">
+                      </div>
+                      <div class="products_information">
+                          <p>成分</p>
+                          <p><span>基底:</span><span>{{base_name}}</span></p>
+                          <p><span>配料:</span><span>{{i1}}、{{i2}}</span></p>
+                          <p><span>裝飾品:</span><span>{{d1}}、{{d2}}</span></p>
+                      </div>
+                  </div>
+                  <div class="products_statusbox">
+                      <div class="products_status">
+                          <p>目前人數</p>
+                          <div class="products_statusBar">
+                              <span>{{grp_count}}/{{grp_limit}}</span>
+                              <div class="bar">
+                                  <div class="bar_set" style="width:{{grp_status}}%"></div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="products_level">
+                          <div class="products_levelBar"><span>甜蜜</span>
+                              <div class="bar">
+                                  <div class="bar_set" style="width:{{sweet_lv}}%" ></div>
+                              </div>
+                          </div>
+                          <div class="products_levelBar"><span>養生</span>
+                              <div class="bar">
+                                  <div class="bar_set" style="width:{{health_lv}}%"></div>
+                              </div>
+                          </div>
+                          <div class="products_levelBar"><span>鹹派</span>
+                              <div class="bar">
+                                  <div class="bar_set" style="width:{{salty_lv}}%"></div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="products_actionbox">
+                      <div class="products_action">
+                          <p>單價: ${{grp_price}}</p>
+                          <a href="buy.html" class="grp_addCart" id="{{g_no}}">我要團購</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </script>
+      </div>
+    </div>
+  </section>
+  <!-- 第三個畫面 -->
+
+  <!-- layout鬼的拉票頁面 -->
+  <!-- <section class="layout_ghostvot">
+    <div class="container">
+      <div class="layout_ghostshow">
+        <img src="img/layout/shop_1.png" alt="" class="ghostvot">
+        <img src="img/layout/index_vot.png" alt="">
+        <a class="ghostBtn" href="javascripts:;">投我一票</a>
+      </div>
+      <div class="layout_ghostshow">
+        <img src="img/layout/shop_1.png" alt="" class="ghostvot">
+        <img src="img/layout/index_vot.png" alt="">
+        <a class="ghostBtn" href="javascripts:;">投我一票</a>
+      </div>
+      <div class="layout_ghostshow">
+        <img src="img/layout/shop_1.png" alt="" class="ghostvot">
+        <img src="img/layout/index_vot.png" alt="">
+        <a class="ghostBtn" href="javascripts:;">投我一票</a>
+      </div>
+    </div>
+  </section> -->
+  <!-- layout鬼的拉票頁面 -->
+
+
+  <!-- 第四個畫面 商品-->
+  <section class="index_product">
+    <div class="container-out">
+      <div class="layout_newtitle">
+        <h2 class="layout_nesh2">派對商品</h2>
+      </div>
+    </div>
+    <div class="container">
+      <div class="burn_box">
+        <div class="index_card">
+          <div class="card_titleshow">
+            <h3 class='card_title1'>團購冠軍</h3>
+            <img src="img/index/prd_title.png" alt="">
+          </div>
+          <div class="index_showtitle">
+            <h3>2019/07</h3>
+            <img src="img/index/collect.png" alt="">
+          </div>
+          <img src="img/prod/pie.png" class='card_img1' alt="派">
+          <div class="card_price">價格:200元</div>
+          <div class="card_btnGroup">
+            <a href="buy.html" class='card_group'>我要團購</a>
+            <a href="prod.html" class='card_cart'>看商品詳情</a>
+          </div>
+        </div>
+      </div>
+      <div class="burn_box">
+        <div class="index_card">
+          <div class="card_titleshow">
+            <h3 class='card_title1'>素顏派</h3>
+            <img src="img/index/prd_title.png" alt="">
+          </div>
+          <div class="index_showtitle">
+            <h3>南瓜口味</h3>
+            <img src="img/index/collect.png" alt="">
+          </div>
+          <img src="img/prod/pie.png" class='card_img1' alt="派">
+          <div class="card_price">價格:200元</div>
+          <div class="card_btnGroup">
+            <a href="buy.html" class='card_group'>我要團購</a>
+            <a href="prod.html" class='card_cart'>看商品詳情</a>
+          </div>
+        </div>
+      </div>
+      <div class="burn_box">
+        <div class="index_card">
+          <div class="card_titleshow">
+            <h3 class='card_title1'>最佳絕配</h3>
+            <img src="img/index/prd_title.png" alt="">
+          </div>
+          <div class="index_showtitle">
+            <h3>宇治金時</h3>
+            <img src="img/index/collect.png" alt="">
+          </div>
+          <img src="img/prod/pie.png" class='card_img1' alt="派">
+          <div class="card_price">價格:200元</div>
+          <div class="card_btnGroup">
+            <a href="buy.html" class='card_group'>我要團購</a>
+            <a href="prod.html" class='card_cart'>看商品詳情</a>
+          </div>
+        </div>
+      </div>
+      <div class="burn_box">
+        <div class="index_card">
+          <div class="card_titleshow">
+            <h3 class='card_title1'>團購冠軍</h3>
+            <img src="img/index/prd_title.png" alt="">
+          </div>
+          <div class="index_showtitle">
+            <h3>手指餅乾</h3>
+            <img src="img/index/collect.png" alt="" class='heart'>
+          </div>
+          <img src="img/prod/pie.png" class='card_img1' alt="派">
+          <div class="card_price">價格:200元</div>
+          <div class="card_btnGroup">
+            <a href="buy.html" class='card_group'>我要團購</a>
+            <a href="prod.html" class='card_cart'>看商品詳情</a>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+  <!-- 第四個畫面 -->
+
+
+  <!-- 第五個畫面 胖卡-->
+  <section class="index_car_group">
+    <div class="container-out">
+      <div class="layout_newtitle">
+        <h2 class="layout_nesh2">派對活動</h2>
+      </div>
+    </div>
+    <div class="container">
+      <div class="indexcar_show">
+        <div class="indexcar_info">
+          <h2 class="info_title">暑假活動｜央大駐點體驗</h2>
+          <div class="info_mainshow">
+            <h3>2019.08.12~2019.08.16</h3>
+            <h3>目前來到：中壢市</h3>
+            <p>開派對啦-人來瘋好菜劇組拍攝，
+              這次出動胖卡車車來拍攝，
+              看看蹦出什麼新玩意！
+            </p>
+          </div>
+        </div>
+        <div class="indexcar_map">
+          <img src="img/index-car/small_car.png" alt="" class="map_car">
+          <img src="img/index-car/map_index.png" alt="">
+          <img src="img/index-car/mapPoint.png" alt="" class="map_point">
+        </div>
+      </div>
+
+      <div class="indexcar_img">
+        <div class="indexcar_onecar">
+          <img src="img/index-car/car1.png" alt="">
+          <div class="indexcar_onecar_tire-1">
+            <img src="img/index-car/wheel.png" alt="">
+          </div>
+          <div class="indexcar_onecar_tire-2">
+            <img src="img/index-car/wheel.png" alt="">
+          </div>
+        </div>
+        <div class="indexcar_twocar">
+          <img src="img/index-car/car2.png" alt="">
+          <div class="indexcar_twocar_tire-1">
+            <img src="img/index-car/wheel.png" alt="">
+          </div>
+          <div class="indexcar_twocar_tire-2">
+            <img src="img/index-car/wheel.png" alt="">
+          </div>
+        </div>
+        <div class="indexcar_threecar">
+          <img src="img/index-car/car3.png" alt="">
+          <div class="indexcar_threecar_tire-1">
+            <img src="img/index-car/wheel.png" alt="">
+          </div>
+          <div class="indexcar_threecar_tire-2">
+            <img src="img/index-car/wheel.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <!-- 第五個畫面 -->
+
+  <!-- 鬼魂的羅波頭 -->
+  <!-- <div class="layout_ghost">
+    <div class="ghost">
+      <div class="eyes"></div>
+      <div class="eyes"></div>
+      <div class="mouth"></div>
+      <div class="gooey left">
+        <div class="out"></div>
+      </div>
+      <div class="gooey mleft">
+        <div class="out"></div>
+      </div>
+      <div class="gooey mright">
+        <div class="out"></div>
+      </div>
+      <div class="gooey right">
+        <div class="out"></div>
+      </div>
+      <div class="gooey last">
+        <div class="out"></div>
+      </div>
+    </div> -->
+  <!-- <div class="shadow"></div> -->
+  </div>
+  <!-- 鬼魂的羅波頭 -->
+
+  </div>
+  <footer class="index-footer layout_footer ">
+    <div class="layout_footericons">
+      <i class="fab fa-facebook-square"></i>
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-line"></i>
+    </div>
+    <div class="footer_ghost">
+      <div class="ghost1">
+        <img src="img/index/catghost.png" alt="" class="ghost_img1">
+      </div>
+      <div class="ghost2">
+        <!-- <img src="img/index/catghost.png" alt="" class="ghost_img2"> -->
+      </div>
+    </div>
+    <span class="footercopy">&copy; 2019 G2</span>
+  </footer>
+  <!-- --footer小鬼漂浮效果開始 -->
+  <!-- <section class="footer_ghost">
+    
+        
+    </section> -->
+  <!-- --footer小鬼漂浮效果結束 -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.js'></script>
+  <script src="js/menu.js"></script>
+  <script src="php/login/header_member.js"></script> <!-- 登入系統-->
+  <script src="js/indexDataSelect.js"></script>
+  <script src="js/indexProd.js"></script>
+  <script src="js/indexCust.js"></script> <!-- 給客製化用的 -->
+  <!--團購卡片資料載入-->
+
+</body>
+
+</html>

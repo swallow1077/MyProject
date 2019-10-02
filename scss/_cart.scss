@@ -1,0 +1,197 @@
+.trade {
+   @include media(md) {
+     overflow: hidden;
+   }
+  &_step {
+    display: flex;
+    justify-content: space-around;
+
+     @include media(md) {
+      width: 400%;
+      transition: margin-left 1s;
+      margin-left: 0%;
+     }
+
+    &oint {
+      position: relative;
+
+      
+       @include media(lg) {
+        &:not(.active_step) {
+          filter: grayscale(80%);
+        }
+       }
+    }
+    &_text {
+      position: absolute;
+      top: 52.5%;
+      left: 47.5%;
+      > p {
+        font-size: 20px;
+      }
+    }
+  }
+  &_arrow {
+    display: flex;
+    align-items: center;
+
+     @include media(md) {
+       display: none;
+     }
+  }
+}
+.cart {
+  margin-top: 20px;
+
+  >.container{
+    padding: 30px 0;
+  }
+
+  &_list {
+    width: 100%;
+    text-align: center;
+    background-color: #f77c56;
+    border-radius: 5px;
+    overflow: hidden;
+
+    tr {
+      display: flex;
+      justify-content: space-around;
+      margin: 5px;
+      border-radius: 5px;
+      background-color: #fce6d9;
+      
+      &.item{
+         @include media(md) {
+          flex-wrap: wrap;
+         }
+      }
+
+      td,
+      th {
+        padding: 5px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      >*{
+          &:not(th){
+          padding: 10px;
+          background-color: #f9d9a0;
+        }
+      }
+    }
+  }
+  &_operating {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    padding: 0 250px;
+
+     @include media(md) {
+       padding: 0;
+     }
+  }
+  &_btn {
+    display: inline-block;
+    text-align: center;
+    width: 150px;
+    padding: 20px 0;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fce6d9;
+    background-color: #ff8f43;
+    border-radius: 5px;
+  }
+
+  /*-----清除瀏覽器預設的input上下選擇器-----*/
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0;
+  }
+  /*---------------------------------------*/
+
+  &_recipient,
+  &_confirm,
+  &_hint {
+    width: 100%;
+    text-align: center;
+    background-color: #f77c56;
+    border-radius: 5px;
+    overflow: hidden;
+
+    tr {
+      display: flex;
+      justify-content: space-around;
+      margin: 5px;
+      border-radius: 5px;
+      background-color: #fce6d9;
+
+      td,
+      th {
+        padding: 5px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      &:not(:first-child) {
+        padding: 10px;
+        background-color: #f9d9a0;
+      }
+    }
+  }
+}
+
+.quantity_plus,
+.quantity_minus {
+  color: #fff;
+  background-color: #f77c56;
+  width: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.quantity {
+  border: none;
+  text-align: center;
+
+  &_control {
+    display: flex;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+}
+
+ @include media(md) {
+  .cartFix{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  .cart_operating{
+    padding-bottom: 160px;
+  }
+ }
+.cart{
+  position: relative;
+
+   @include media(lg) {
+     >.container{
+       min-height: 45vh;
+     }
+   }
+}
+.cartFix3{
+  min-height: 100vh;
+}
+
+
+
+ @include media(md) {
+   .cartFix2{
+    margin-top: 25%;
+  }
+ }

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>無標題文件</title>
+<style type="text/css">
+  .memTable th{
+    background-color:pink;
+  }
+  .memTable td{
+    border-bottom:1px dotted deeppink;
+  }  
+</style>
+</head>
+<body>
+<div>首頁>>會員專區</div>
+<center>
+會員帳號<input type="text" name="memId" id="memId"/>
+<input type="button" value="取得會員資料" onclick="getMember()"/>
+<div id="showPanel"></div>
+</center>
+<script>
+function showMember(jsonStr){
+  var member = JSON.parse(jsonStr);
+  var htmlStr = "";
+  if( member.mem_id ){
+    htmlStr += "<table class='memTable'>";
+    htmlStr += `<tr><th>帳號</th><td>${member.memId}</td></tr>`;
+    htmlStr += `<tr><th>姓名</th><td>${member.mem_name}</td></tr>`;
+    htmlStr += `<tr><th>電話</th><td>${member.mem_tel}</td></tr>`;
+    htmlStr += `<tr><th>地址</th><td>${member.mem_addr}</td></tr>`;
+    htmlStr += "</table>";    
+  }else{
+    htmlStr = "<center>查無此會員資料</center>"
+  }
+
+  document.getElementById("showPanel").innerHTML = htmlStr;
+}
+
+function getMember(){
+  var xhr = new XMLHttpRequest();
+  xhr.onload=function (){
+       if( xhr.status == 200 ){
+        // console.log(xhr.responseText)
+        var member = JSON.parse(xhr.responseText);
+        console.log(member)
+       }else{
+          alert( xhr.status );
+       }
+  }
+  var url = "Join.php?dataTable=member&condition=mem_id&keyWord=apple";
+  xhr.open("Get", url, true);
+  xhr.send( null );
+}
+</script>
+</body>
+</html>

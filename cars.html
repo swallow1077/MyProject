@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<i lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+              integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+              crossorigin="anonymous" />
+        <title>胖卡</title>
+        <link rel="stylesheet" href="style/index.css" />
+    </head>
+
+    <body class="layout-bg">
+        <!------------- 登入的燈箱star-------------- -->
+        <section class='lightBox' style='display:none;'>
+            <div class="container">
+              <div id="lightBox">
+                <div class="login_password">
+                  <span class="btnLoginCancel" id="btnLoginCancel">
+                    <img src="img/prod/cancel.png" alt="cancel_icon">
+                  </span>
+                  <h3 class='login_title'>會員登入</h3>
+                  <input type="text" name="memId" id="memId" class="mem_login" placeholder="帳號">
+                  <br>
+                  <input type="password" name="memPsw" id="memPsw" class="mem_login" placeholder="密碼">
+                  <br>
+                  <a href="javascript:void(0)" id="forget_psw">忘記密碼</a>
+                  <br>
+                  <a href="javascript:void(0)" class="btn_focus" id="btnLogin">
+                    <p>登入</p>
+                  </a>
+                  </a>
+                  <br>
+                  <div class="notmem">
+                    <span>不是會員嗎?</span>
+                    <a href="javascript:void(0)" id="register">立即註冊</a>
+                    <br>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!------------- 登入的燈箱end-------------- -->
+          <!------------- 註冊的燈箱star-------------- -->
+          <section id="sign_box" class="sign_box" style='display:none;'>
+        
+            <div class="sign_lightBox">
+              <div class="sign_content">
+                <span class="btnSignCancel" id="btnSignCancel">
+                  <img src="img/prod/cancel.png" alt="cancel_icon">
+                </span>
+                <h3 class="sign_title">註冊會員</h3>
+                <form action="" id="submitForm">
+                  <div class="sign_input_group">
+                    <div class="sign_input_item sign_id">
+                      <span>帳號:</span>
+                      <input type="text" class="sign_inputs" name="memId2" id="memId2" placeholder="帳號">
+                      <br>
+                    </div>
+                    <div class="sign_input_item">
+                      <span>
+                        <input type="button" value="帳號可以使用嗎?" id="btn_sign_check">
+                      </span>
+                      <p id="idMsg">檢查中</p>
+                    </div>
+                    <div class="sign_input_item sign_psw">
+                      <span>密碼:</span>
+                      <input type="password" class="sign_inputs" name="memPsw2" id="memPsw2" placeholder="密碼"> <!-- <br> -->
+                    </div>
+                    <div class="sign_input_item sign_psw">
+                      <span>確認密碼</span>
+                      <input type="password" class="sign_inputs" name="confirmPsw" id="confirmPsw" placeholder="確認密碼">
+                      <!-- <br> -->
+                    </div>
+                    <div class="sign_input_item sign_namd">
+                      <span>姓名:</span>
+                      <input type="text" class="sign_inputs" name="mem_name2" id="mem_name2" placeholder="姓名"> <!-- <br> -->
+        
+                    </div>
+                    <div class="sign_input_item sign_email">
+                      <span>信箱:</span>
+                      <input type="email" class="sign_inputs" name="mem_email2" id="mem_email2" placeholder="信箱">
+                      <!-- <br> -->
+                    </div>
+                  </div>
+                  <a href="javascript:void(0)" class="btn_register" id="btn_register">
+                    <p>送出</p>
+                  </a>
+                </form>
+              </div>
+            </div>
+          </section>
+          <!------------- 註冊的燈箱end-------------- -->
+        
+        <!-- ***********9/25更新******************* -->
+          <!-- navbar_star -->
+          <header class="menu layout_header" id="layout_header">
+            <div class="rwdnavbar">
+              <button class="layout_menubtn">
+                <span class="layout_menubtn-in">menu</span>
+              </button>
+              <a href='index_fron.html' class="rwdlogo">
+                <img src="img/layout/logo_白邊.svg" alt="rwdlogo">
+              </a>
+              <div class="rwdLogin">
+                  <ul class="layout_login">
+                    <span id="btnlogloutRwd">&nbsp</span>
+                    <li>
+                      <a href="javascript:;" id="spanLoginRwd">
+                        <i class="fas fa-user-circle"></i>
+                      </a>
+                      <span id="spanLoginTextRwd" style="display:none">登入</span>
+                    </li>
+                    <li id="goCartShowRwd">
+                      <div class="prodCountRwd"></div>
+                      <a href="cart.html">
+                        <i class="fas fa-shopping-cart" id="shopCartRwd"></i>
+                      </a>
+                    </li>
+                  </ul>
+              </div>
+            </div>
+            <nav class="layout_nav">
+          
+              <ul class="layout_logo">
+                <h1 class="logo">
+                  <a class="logo_link" href="index_fron.html">派對</a>
+                </h1>
+              </ul>
+              <ul class="layout_items">
+                <li class="layout_itemlink">
+                  <a class="layout_link" href="cust.php">客制派</a>
+                </li>
+                <li class="layout_itemlink">
+                  <a class="layout_link" href="prod.html">派對商品</a>
+                </li>
+        
+                <li class="layout_itemlink">
+                  <a class="layout_link" href="buy.html">派對團購</a>
+                </li>
+                <li class="layout_itemlink">
+                  <a class="layout_link" href="vot.html">派對投票</a>
+                </li>
+                <li class="layout_itemlink">
+                  <a class="layout_link" href="cars.html">派對活動</a>
+                </li>
+              </ul>
+              <ul class="layout_login">
+                <span id="btnloglout">&nbsp</span>
+                <li>
+                  <a href="javascript:;" id="spanLogin">
+                    <i class="fas fa-user-circle"></i>
+                  </a>
+                  <span id="spanLoginText" style="display:none">登入</span>
+                </li>
+                <li id="goCartShow">
+                  <div class="prodCount"></div>
+                  <a href="cart.html">
+                    <i class="fas fa-shopping-cart" id="shopCart"></i>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </header>
+          <!-- navbar_end -->
+        <!-- **********9/25更新結束*********** -->
+
+        <!-- 共用layoutheader -->
+        <section class="car_maininfo">
+            <div class="container-out layout-cars">
+                <div class="layout_newtitle">
+                    <h2 class="layout_nesh2">胖卡地點詳情</h2>
+                </div>
+            </div>
+            <div class="container">
+                <div class="product_alert_bg">
+                    <div class="alert_wrap">
+                        <h2 class="alert_title">胖卡車特賣商品</h2>
+                        <div class="alertinfo_wrap">
+                            <div class="product_pic_wrap">
+                                <img class="car_alertpie_img" id="carpd_img" src="img/car/locationPie.png" alt="pie" />
+                                <a href="product_in.php?prod_no=59" class="alert_product_btn">線上購買</a>
+                            </div>
+                            <div class="info_wrap">
+                                <div class="description">
+                                    <h3 class="desc_product_title">商品介紹：</h3>
+                                    <p class="carproduct_desc">
+                                        嚴選南瓜，餡料飽滿扎實，口味不甜膩，超級好吃熱賣。美味到各大媒體爭相報導，您一定不能錯過！
+                                    </p>
+                                </div>
+
+                                <div class="composition">
+                                    <div class="product_item_box">
+                                        <h3 class="desc_product_title">成分：</h3>
+                                    </div>
+                                    <div class="product_item_box">
+                                        <div class="pjdata_item" id="carpd_base">南瓜派</div>
+                                    </div>
+                                    <div class="product_item_box">
+                                        <div class="pjdata_item" id="carpd_ingr">嚴選南瓜</div>
+                                    </div>
+                                </div>
+
+                                <div class="product_data">
+                                    <div class="product_item_box">
+                                        <h3 class="desc_product_title">商品訊息：</h3>
+                                    </div>
+                                    <div class="product_item_box">
+                                        <div class="pjdata_item" id="carpd_praise">red</div>
+                                    </div>
+                                    <div class="product_item_box">
+                                        <div class="pjdata_item" id="carpd_price">green</div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <span class="car_alertclose">X</span>
+                    </div>
+                </div>
+                <div class="carinfo_wrap">
+                    <div class="car_location item">
+                        <div class="car_localmsg">
+                            <h3 class="local_title">胖卡車最新地點</h3>
+                            <input id="carlocal_info_hidden" hidden type="text">
+                            <input id="mapSrc" hidden type="text">
+                            <p class="local_info">全家</p>
+                        </div>
+                        <div class="car_date">
+                            <h3 class="car_daystitle">期間</h3>
+                            <p class="car_days">2019.08.19～2019.08.23</p>
+                        </div>
+                        <div class="car_local">
+                            <h3 class="car_localtitle">活動內容</h3>
+                            <p class="car_locatinfo">666</p>
+                        </div>
+
+                        <div class="pie_picwrap">
+                            <img class="cars_pie_img" id="carpdinfo_img" src="img/car/locationPie.png" alt="pie" />
+                            <p class="pie_checkinfo">活動商品請點我~</p>
+                        </div>
+                    </div>
+                    <div class="calendar item">
+                        <div class="calendar_info">•胖卡車月曆，請點擊日期，查詢胖卡車資訊哦！</div>
+                        <div class="title">
+                            <h1 class="green" id="calendar_title">Month</h1>
+                            <h2 class="green small" id="calendar_year">Year</h2>
+                            <a href="#" id="prev">Prev Month</a>
+                            <a href="#" id="next">Next Month</a>
+                        </div>
+                        <div class="body">
+                            <div class="lightgrey body_list">
+                                <ul>
+                                    <li>MON</li>
+                                    <li>TUE</li>
+                                    <li>WED</li>
+                                    <li>THU</li>
+                                    <li>FRI</li>
+                                    <li>SAT</li>
+                                    <li>SUN</li>
+                                </ul>
+                            </div>
+                            <div class="darkgrey body_list">
+                                <ul id="days"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="car_map">
+                    <p class="mapinfo">•點選胖卡車月曆出現<span class="mapinfo_hightype">〝所在位置〞</span>唷，快來找我們！！</p>
+                    <h3 class="map_info">地圖資訊</h3>
+                    <!-- <img src="img/car/cars_map.jpg" alt="carmap" class="map_img" /> -->
+                    <iframe id="googlemap" src="" width="100%" height="420" frameborder="0" style="border:0;"
+                            allowfullscreen=""></iframe>
+                </div>
+            </div>
+        </section>
+        <section class="car_timeline">
+            <div class="container-out">
+                <div class="layout_newtitle">
+                    <h2 class="layout_nesh2">胖卡車的歷史</h2>
+                </div>
+            </div>
+            <div class="container">
+                <ul class="timeline_item">
+                    <!-- 圖片區域 -->
+                    <li class="timeline_card">
+                        <img class="story_img" src="img/car/story/story_img01.jpg" alt="story_img" />
+                        <!-- <span class="card_point js_fadeInLeft"></span> -->
+                    </li>
+                    <!-- 圖片區域 -->
+                    <!-- 文字區域 -->
+                    <li class="timeline_card js_fadeInRight">
+                        <div class="story_msg">
+                            <h3 class="story_title">enevtName</h3>
+                            <p class="story_date">date</p>
+                            <p class="story_info">
+                                txt
+
+                                <!-- 台北詠恆接待中心賞屋包套活動，賞好屋，吃美食，胖卡美食餐車陪伴您！ -->
+                            </p>
+                        </div>
+                    </li>
+                    <!-- 文字區域 -->
+
+                    <!-- 文字區域 -->
+                    <li class="timeline_card js_fadeInLeft">
+                        <div class="story_msg">
+                            <h3 class="story_title">enevtName</h3>
+                            <p class="story_date">date</p>
+                            <p class="story_info">
+                                txt
+                                <!-- 中原大學接待中心賞屋包套活動，賞好屋，吃美食，胖卡美食餐車陪伴您！ -->
+                            </p>
+                        </div>
+                    </li>
+                    <!-- 文字區域 -->
+
+                    <!-- 圖片區域 -->
+                    <li class="timeline_card">
+                        <img class="story_img" src="img/car/story/story_img02.jpg" alt="story_img" />
+                    </li>
+                    <!-- 圖片區域 -->
+
+                    <!-- 圖片區域 -->
+                    <li class="timeline_card">
+                        <img class="story_img" src="img/car/story/story_img03.jpg" alt="story_img" />
+                        <!-- <span class="card_point js_fadeInLeft"></span> -->
+                    </li>
+                    <!-- 圖片區域 -->
+
+                    <!-- 文字區域 -->
+                    <li class="timeline_card js_fadeInRight">
+                        <div class="story_msg">
+                            <h3 class="story_title">enevtName</h3>
+                            <p class="story_date">date</p>
+                            <p class="story_info">
+                                txt
+                                <!-- 啟動未來鏈動世界-2019區塊鏈嘉年華活動，好吃、好玩都在這裡，胖卡美食餐車陪伴您，緊來唷(快來唷)！ -->
+                            </p>
+                        </div>
+                    </li>
+                    <!-- 文字區域 -->
+
+                    <!-- 文字區域 -->
+                    <li class="timeline_card js_fadeInLeft">
+                        <div class="story_msg">
+                            <h3 class="story_title">enevtName</h3>
+                            <p class="story_date">date</p>
+                            <p class="story_info">
+                                txt
+                                <!-- 新竹市國際風箏節來囉！有小朋友愛的momo家族唱跳表演、泡泡秀，還有知名的藝人演出，精彩不斷！而且來到活動現場打卡還送風箏，讓大朋友小朋友一起同樂唷！ -->
+                            </p>
+                        </div>
+                    </li>
+                    <!-- 文字區域 -->
+
+                    <!-- 圖片區域 -->
+                    <li class="timeline_card">
+                        <img class="story_img" src="img/car/story/story_img04.jpg" alt="story_img" />
+                    </li>
+                    <!-- 圖片區域 -->
+
+                    <!-- 圖片區域 -->
+                    <li class="timeline_card">
+                        <img class="story_img" src="img/car/story/story_img05.jpg" alt="story_img" />
+                        <!-- <span class="card_point js_fadeInLeft"></span> -->
+                    </li>
+                    <!-- 圖片區域 -->
+
+                    <!-- 文字區域 -->
+                    <li class="timeline_card js_fadeInRight">
+                        <div class="story_msg">
+                            <h3 class="story_title">enevtName</h3>
+                            <p class="story_date">date</p>
+                            <p class="story_info">
+                                txt
+
+                                <!-- 開派對啦-人來瘋好菜劇組拍攝，這次出動胖卡車車來拍攝，看看蹦出什麼新玩意！ -->
+                            </p>
+                        </div>
+                    </li>
+                    <!-- 文字區域 -->
+                </ul>
+            </div>
+        </section>
+        <footer class="layout_footer">
+            <div class="layout_footericons">
+                <i class="fab fa-facebook-square"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-line"></i>
+            </div>
+        </footer>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.4/scrollreveal.js"></script>
+        <script src="php/login/header_member.js"></script>
+        <script src="js/menu.js"></script>
+        <script src="js/cars-check-alert.js"></script>
+        <script src="js/calendar.js"></script>
+        <script src="js/timeLine.js"></script>
+        <script src="js/addCart_prod.js"></script>
+        </!-->
+    </body>
+
+</i>

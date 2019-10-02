@@ -1,0 +1,175 @@
+.car_timeline {
+    overflow: hidden;
+    >.container {
+        margin-bottom: 50px;
+        @at-root {
+            .timeline_titleshow {
+                background-image: url('../img/title.png');
+                background-repeat: no-repeat;
+                background-position: center;
+                position: relative;
+                // border: 1px solid #000;
+                @include flex-cen-cen;
+                height: 270px;
+            }
+        }
+        .timeline_item {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            @include media(md) {
+                flex-wrap: wrap;
+                align-items: center;
+            }
+            &:after {
+                content: '';
+                height: 100%;
+                width: 1px;
+                background-color: #090c7b;
+                position: absolute;
+            }
+            >.timeline_card:nth-child(2),
+            >.timeline_card:nth-child(3),
+            >.timeline_card:nth-child(6),
+            >.timeline_card:nth-child(7),
+            >.timeline_card:nth-child(10) {
+                display: flex;
+                width: 40%;
+                @include media(md) {
+                    width: 80%;
+                }
+                @at-root .story_msg {
+                    padding: 20px;
+                    color: #111;
+                    position: relative;
+                    >.story_title {
+                        padding: 20px 15px;
+                        @include media(md) {
+                            padding: 20px 0 0 0;
+                        }
+                    }
+                    .story_date,
+                    .story_info {
+                        padding: 8px 0;
+                        line-height: 1.6;
+                    }
+                }
+            }
+            >.timeline_card:nth-child(2),
+            >.timeline_card:nth-child(6),
+            >.timeline_card:nth-child(10) {
+                >.story_msg {
+                    &:after {
+                        content: '';
+                        height: 20px;
+                        width: 20px;
+                        background-color: #090c7b;
+                        border-radius: 10px;
+                        position: absolute;
+                        top: 40px;
+                        left: -10px;
+                    }
+                }
+            }
+            >.timeline_card:nth-child(3),
+            >.timeline_card:nth-child(7) {
+                >.story_msg {
+                    text-align: right;
+                    &:after {
+                        content: '';
+                        height: 20px;
+                        width: 20px;
+                        background-color: #090c7b;
+                        border-radius: 10px;
+                        position: absolute;
+                        top: 40px;
+                        right: -10px;
+                    }
+                }
+            }
+            >.timeline_card:nth-child(1),
+            >.timeline_card:nth-child(4),
+            >.timeline_card:nth-child(5),
+            >.timeline_card:nth-child(8),
+            >.timeline_card:nth-child(9) {
+                justify-content: center;
+                width: 40%;
+                @include media(md) {
+                    width: 20%;
+                }
+                .story_img {
+                    max-width: 100%;
+                    margin: auto;
+                }
+            }
+            >.timeline_card:nth-child(1),
+            >.timeline_card:nth-child(5),
+            >.timeline_card:nth-child(9) {
+                position: relative;
+                .card_point {
+                    display: none;
+                    height: 20px;
+                    width: 20px;
+                    background-color: #f00;
+                    border-radius: 10px;
+                    position: absolute;
+                }
+            }
+        }
+    }
+}
+
+@include media(md) {
+    .car_timeline {
+        >.container {
+            .timeline_item {
+                &:after {
+                    left: 9.5%;
+                }
+                >.timeline_card:nth-child(2),
+                >.timeline_card:nth-child(6),
+                >.timeline_card:nth-child(10) {
+                    padding: 0 0 0 3.055555%;
+                    >.story_msg {
+                        width: 100%;
+                        padding: 0 0 0 2px;
+                        &:after {
+                            left: -7.848061%;
+                            top: 20px;
+                        }
+                    }
+                }
+                >.timeline_card:nth-child(3),
+                >.timeline_card:nth-child(7) {
+                    >.story_msg {
+                        text-align: left;
+                        padding: 20px 0px 20px 2px;
+                        margin: 0px 0 0 16.304938%;
+                        &:after {
+                            left: -9.108759%;
+                        }
+                    }
+                }
+                >.timeline_card:nth-child(1),
+                >.timeline_card:nth-child(5),
+                >.timeline_card:nth-child(9) {
+                    display: none;
+                    width: 1px;
+                    height: 100%;
+                    background-color: #f00;
+                    .card_point {
+                        display: inline-block;
+                        height: 20px;
+                        width: 20px;
+                        background-color: #090c7b;
+                        border-radius: 10px;
+                        position: absolute;
+                        top: -63px;
+                        left: -12px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,128 @@
+.cust_pop{
+    display: none;
+    position: fixed;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.4);
+
+    @at-root .lot_background{
+        margin: auto;
+        padding: 5% 0;
+        @include media(md){
+            transform: rotate(90deg);
+            width: 100%;
+            z-index: 300;
+            padding: 50% 0;
+        }
+
+        > .lot_mascot{
+            top: 15%;
+            right: 0%;
+            width: 28%;
+            transform: rotate(10deg);
+            @include media(md){
+                transform: rotate(270deg);
+                top:29%;
+                left: 26%;
+                transform: rotate(280deg);
+            }
+        }
+        > .pop_pieshow{
+            width: 50%;
+            top: 45%;
+            right: 3%;
+            @include media(md){
+                transform: rotate(270deg);
+                top: 42%;
+                z-index: 10;
+            }
+        }
+        > .lot_detail{
+            width: 30%;
+            top: 19%;
+            left: 8%;
+            @include media(md){
+                transform: rotate(270deg);
+                top: 43%;
+                left: 20%;
+            }
+            > p{
+                font-size: 40px;
+                top: 7%;
+                left: 15%;
+                writing-mode: vertical-lr;
+                @include media(md){
+                    font-size: 20px;
+                    // transform: rotate(270deg);
+                }
+            }
+        }
+        > .pop_chatBox{
+            width: 30%;
+            top: 18%;
+            left: 40%;
+            transform: rotate(-10deg);
+            @include media(md){
+                transform: rotate(270deg);
+                top: 32%;
+                left: -5%;
+            }
+            > p{
+                top: 25%;
+                width: 110%;
+                text-align: center;
+                transform: rotate(8deg);
+                @include media(md){
+                    font-size: 14px;
+                    top: 15%;
+                    // transform: rotate(270deg);
+                }
+            }
+        }
+    }
+}
+.cust_btn > .pop_btn_text{
+    font-size: 20px;
+}
+
+.cust_btn_box_forRWD{
+    display: none;
+    justify-content: center;
+    @include media(md){
+        display: block;
+        display: flex;
+        margin-top: -35%;
+    }
+
+    @at-root .cust_btn_forRWD{
+        width: 25%;
+        position: relative;
+        cursor: pointer;
+        > img{
+            width: 100%;
+        }
+        > span{
+            position: absolute;
+            top: 33%;
+            display: block;
+            width: 100%;
+            text-align: center;
+            font-size: 30px;
+            @include media (md){
+                font-size: 14px;
+            }
+        }
+        > .out-set5{
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

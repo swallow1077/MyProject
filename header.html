@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- <title>會員專區</title> -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style/index.css">
+</head>
+
+<body>
+  <!------------- 登入的燈箱star-------------- -->
+  <section class='lightBox' style='display:none;'>
+    <div class="container">
+      <div id="lightBox">
+        <div class="login_password">
+          <span class="btnLoginCancel" id="btnLoginCancel">
+            <img src="img/prod/cancel.png" alt="cancel_icon">
+          </span>
+          <h3 class='login_title'>會員登入</h3>
+          <input type="text" name="memId" id="memId" class="mem_login" placeholder="帳號">
+          <br>
+          <input type="password" name="memPsw" id="memPsw" class="mem_login" placeholder="密碼">
+          <br>
+          <a href="javascript:void(0)" id="forget_psw">忘記密碼</a>
+          <br>
+          <a href="javascript:void(0)" class="btn_focus" id="btnLogin">
+            <p>登入</p>
+          </a>
+          </a>
+          <br>
+          <div class="notmem">
+            <span>不是會員嗎?</span>
+            <a href="javascript:void(0)" id="register">立即註冊</a>
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!------------- 登入的燈箱end-------------- -->
+  <!------------- 註冊的燈箱star-------------- -->
+  <section id="sign_box" class="sign_box" style='display:none;'>
+
+    <div class="sign_lightBox">
+      <div class="sign_content">
+        <span class="btnSignCancel" id="btnSignCancel">
+          <img src="img/prod/cancel.png" alt="cancel_icon">
+        </span>
+        <h3 class="sign_title">註冊會員</h3>
+        <form action="" id="submitForm">
+          <div class="sign_input_group">
+            <div class="sign_input_item sign_id">
+              <span>帳號:</span>
+              <input type="text" class="sign_inputs" name="memId2" id="memId2" placeholder="帳號">
+              <br>
+            </div>
+            <div class="sign_input_item">
+              <span>
+                <input type="button" value="帳號可以使用嗎?" id="btn_sign_check">
+              </span>
+              <p id="idMsg">檢查中</p>
+            </div>
+            <div class="sign_input_item sign_psw">
+              <span>密碼:</span>
+              <input type="password" class="sign_inputs" name="memPsw2" id="memPsw2" placeholder="密碼"> <!-- <br> -->
+            </div>
+            <div class="sign_input_item sign_psw">
+              <span>確認密碼</span>
+              <input type="password" class="sign_inputs" name="confirmPsw" id="confirmPsw" placeholder="確認密碼">
+              <!-- <br> -->
+            </div>
+            <div class="sign_input_item sign_namd">
+              <span>姓名:</span>
+              <input type="text" class="sign_inputs" name="mem_name2" id="mem_name2" placeholder="姓名"> <!-- <br> -->
+
+            </div>
+            <div class="sign_input_item sign_email">
+              <span>信箱:</span>
+              <input type="email" class="sign_inputs" name="mem_email2" id="mem_email2" placeholder="信箱">
+              <!-- <br> -->
+            </div>
+          </div>
+          <a href="javascript:void(0)" class="btn_register" id="btn_register">
+            <p>送出</p>
+          </a>
+        </form>
+      </div>
+    </div>
+  </section>
+  <!------------- 註冊的燈箱end-------------- -->
+
+<!-- ***********9/25更新******************* -->
+  <!-- navbar_star -->
+  <header class="menu layout_header" id="layout_header">
+    <div class="rwdnavbar">
+      <button class="layout_menubtn">
+        <span class="layout_menubtn-in">menu</span>
+      </button>
+      <a href='index_fron.html' class="rwdlogo">
+        <img src="img/layout/logo_白邊.svg" alt="rwdlogo">
+      </a>
+      <div class="rwdLogin">
+          <ul class="layout_login">
+            <span id="btnlogloutRwd">&nbsp</span>
+            <li>
+              <a href="javascript:;" id="spanLoginRwd">
+                <i class="fas fa-user-circle"></i>
+              </a>
+              <span id="spanLoginTextRwd" style="display:none">登入</span>
+            </li>
+            <li id="goCartShowRwd">
+              <div class="prodCountRwd"></div>
+              <a href="cart.html">
+                <i class="fas fa-shopping-cart" id="shopCartRwd"></i>
+              </a>
+            </li>
+          </ul>
+      </div>
+    </div>
+    <nav class="layout_nav">
+  
+      <ul class="layout_logo">
+        <h1 class="logo">
+          <a class="logo_link" href="index_fron.html">派對</a>
+        </h1>
+      </ul>
+      <ul class="layout_items">
+        <li class="layout_itemlink">
+          <a class="layout_link" href="cust.php">客制派</a>
+        </li>
+        <li class="layout_itemlink">
+          <a class="layout_link" href="prod.html">派對商品</a>
+        </li>
+
+        <li class="layout_itemlink">
+          <a class="layout_link" href="buy.html">派對團購</a>
+        </li>
+        <li class="layout_itemlink">
+          <a class="layout_link" href="vot.html">派對投票</a>
+        </li>
+        <li class="layout_itemlink">
+          <a class="layout_link" href="cars.html">派對活動</a>
+        </li>
+      </ul>
+      <ul class="layout_login">
+        <span id="btnloglout">&nbsp</span>
+        <li>
+          <a href="javascript:;" id="spanLogin">
+            <i class="fas fa-user-circle"></i>
+          </a>
+          <span id="spanLoginText" style="display:none">登入</span>
+        </li>
+        <li id="goCartShow">
+          <div class="prodCount"></div>
+          <a href="cart.html">
+            <i class="fas fa-shopping-cart" id="shopCart"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <!-- navbar_end -->
+<!-- **********9/25更新結束*********** -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="php/login/header_member.js"></script>
+  <script src="js/addCart_prod.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.min.js"></script>

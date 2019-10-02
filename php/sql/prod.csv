@@ -1,0 +1,16 @@
+prod_no,prod_name,base_no,ingr_no_1,ingr_no_2,deco_no_1,deco_no_2,prod_stat,prod_price,prod_desc,prod_img,prod_eva,prod_eva_count
+1,宇治金時,2,3,0,1,1,上架,230,抹茶與紅豆的完美結合,img/prod/prod_A01.png,0,0
+2,頂瓜瓜,3,1,0,1,1,上架,310,南瓜+杏仁,img/prod/prod_A02.png,0,0
+3,炭燒蛋黃,1,2,0,1,1,上架,120,竹炭+蛋黃,img/prod/prod_A03.png,0,0
+4,竹炭+杏仁+紅豆,1,1,3,1,1,上架,115,竹炭+杏仁+紅豆,img/prod/prod_A04.png,0,0
+5,抹茶+杏仁+火腿,2,1,6,1,1,上架,215,抹茶+杏仁+火腿,img/prod/prod_A05.png,0,0
+6,南瓜+鳳梨+蔥花,3,4,5,1,1,上架,345,南瓜+鳳梨+蔥花,img/prod/prod_A06.png,0,0
+7,竹炭+杏仁+蛋黃,1,1,2,1,1,上架,110,竹炭+杏仁+蛋黃,img/prod/prod_A07.png,0,0
+8,南瓜+火腿,3,6,0,1,1,上架,360,南瓜+火腿,img/prod/prod_A08.png,0,0
+9,抹茶派,2,NULL,NULL,1,1,上架,200,only抹茶,img/prod/prod_A09.png,0,0
+10,南瓜派,3,NULL,NULL,1,1,上架,300,only南瓜,img/prod/prod_A10.png,0,0
+11,竹炭派,1,NULL,NULL,1,1,上架,100,only竹炭,img/prod/prod_A11.png,0,0
+12,竹炭+杏仁+火腿,1,1,6,1,1,上架,115,竹炭+杏仁+火腿,img/prod/prod_A12.png,0,0
+13,抹茶+蛋黃+蔥花,2,2,5,1,1,上架,225,抹茶+蔥花+蛋黃,img/prod/prod_A13.png,0,0
+14,南瓜+蛋黃+鳳梨,3,2,4,1,1,上架,320,南瓜+蛋黃+鳳梨,img/prod/prod_A14.png,0,0
+15,抹茶+杏仁+鳳梨,2,1,4,1,1,上架,210,抹茶+杏仁+鳳梨,img/prod/prod_A15.png,0,0

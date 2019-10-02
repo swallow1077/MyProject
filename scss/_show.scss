@@ -1,0 +1,403 @@
+.prod_prodset {
+    // border:solid 1px red;
+    width: 95%;
+    margin: auto;
+    @include media(lg) {
+        padding-top: 120px;
+        width: 75%;
+    }
+    >.groupshop,
+    >.prodbase,
+    >.match,
+    >.deco {
+        background-color: #f1bf8a;
+        border-radius: 10px;
+        padding-top: 10px;
+        margin-bottom: 20px;
+        .titleshow {
+            text-align: center;
+            // border:solid 1px blue;
+            padding-top: 15px;
+            margin-top: 10px;
+            height: 50px;
+            background-image: url('../img/prod/oven_handle_bg.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+        .slider {
+            padding: 10px 0;
+            position: relative;
+            &_cardset {
+                // border: solid 1px red;
+                // display:flex;
+                justify-content: space-evenly;
+                // margin: 20px auto;
+                flex-wrap: wrap;
+                @at-root .card {
+                    &_slider {
+                        width: 100%;
+                        height: 370px;
+                        background-image: url('../img/prod/card_bg.png');
+                        // background-size: contain 110%;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        position: relative;
+                        margin-bottom: 30px;
+                        margin-top:30px;
+                        background-size:80% 100%;
+                        display:block;
+                        
+                        @include media(lg) {
+                            width: 30%;
+                            // height: 400px;
+                            height:350px;
+                            background-size: 100% 100%;
+                            // margin:30px auto;
+                        }
+                    }
+                    &_titleshow {
+                        width:60%;
+                        margin:auto;
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        height: 60px;
+                        background-image: url('../img/prod/brush.png');
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: bottom;
+                        @include media(lg) {
+                            width:100%;
+                            margin-top: 30px;
+                            height: 50px;
+                            background-position: 50px center;
+                        }
+                        >img {
+                            align-self: center;
+                            width: 35px;
+                            height: 35px;
+                            cursor:pointer;
+                        }
+                    }
+                    &_title {
+                        font-size: 24px;
+                        font-weight: bold;
+                        align-self: center;
+                        flex-grow: 0.25;
+                        width:78%;
+                        text-align: center;
+                        z-index: 1;
+                        padding-left: 8px;
+                        @include media(lg) {
+                            flex-grow: 0.5;
+                            padding-left: 0px;
+                            width: 120px;
+                            padding-left: 8px;
+                        }
+                    }
+                    &_img {
+                        width: 70%;
+                        height: 40%;
+                        margin: 10px auto;
+                        @include media(lg) {
+                            width: 80%;
+                        }
+                    }
+                    &_price {
+                        // border:solid 1px blue;
+                        text-align: center;
+                        margin: auto;
+                        font-weight: 800;
+                        font-size: 20px;
+                        padding: 5px 0;
+                    }
+                    &_btnGroup {
+                        width: 70%;
+                        padding: 10px 0;
+                        margin: 5px auto;
+                        display: flex;
+                        text-align: center;
+                        justify-content: center;
+                        @include media(lg){
+                            width:80%;
+                        }
+                    }
+    // -------------------新增btn hover---------------------------
+                    &_group {
+                        background-color: #0168b7;
+                        padding: 10px;
+                        color: #fff;
+                        font-weight: 800;
+                        border-radius: 10px;
+                        text-align: center;
+                        margin: auto;
+                        box-shadow:1px 3px 0px #004477;
+                        &:hover{
+                            transform:translate(1px,1px);
+                            background-color:#0a2b44;
+                            box-shadow:2px 2px 0px #004477 inset;
+                            transition:.3s;
+                            
+                                       
+                        }
+                    }
+                    &_cart {
+                        background-color: #0168b7;
+                        padding: 10px;
+                        color: #fff;
+                        font-weight: 800;
+                        border-radius: 10px;
+                        text-align: center;
+                        margin: auto;
+                        box-shadow:1px 3px 0px #004477;
+                        &:hover{
+                            transform:translate(1px,1px);
+                            background-color:#0a2b44;
+                            box-shadow:2px 2px 0px #004477 inset;
+                            
+                            transition:.3s;
+                            
+                        }
+                    }
+            }
+            // .slider_circleset {
+            //     width: 100px;
+            //     margin: auto;
+            //     display: flex;
+            //     flex-wrap: wrap;
+            //     justify-content: space-evenly;
+            //     >.circle1,
+            //     >.circle2,
+            //     >.circle3 {
+            //         width: 15px;
+            //         height: 15px;
+            //         background-color: #fff;
+            //         border-radius: 50%;
+            //     }
+            // }
+        }
+    }
+}
+}
+//--------------------------- 新增的部分-----------------------------                    
+.collect{
+width:15%;
+filter:drop-shadow(3px 2px 0px #555);
+&:hover{
+filter:drop-shadow(3px 2px 0px #222);
+transition:.3s;
+
+}
+
+}
+// -----------------------會員登入的燈箱------------------------------
+.lightBox{
+width:100%;
+height:100%;
+position:fixed;
+z-index:2;
+background-color: rgba(0,0,0,.4);
+left:50%;
+top:50%;
+transform: translate(-50%,-50%);
+
+
+}
+
+#lightBox{
+width:80%;
+margin:auto;
+padding:70px 50px;
+// background-image: url('../img/cust/pumpkin.png');
+background-image: linear-gradient(#ee5,#e99);
+border-radius:10px;
+background-repeat: no-repeat;
+background-position:center;
+background-size: 80% 80%;
+height:500px;
+display:flex;
+justify-content: center;
+position:fixed;
+left:50%;
+top:50%;
+transform:translate(-50%,-50%);
+@include media(lg){
+width:50%;
+min-width:40%;
+height:500px;
+background-size:50% 100%;
+padding-top:30px;
+
+}
+
+>.login_password{
+width:90%;
+align-self:flex-end;
+padding-top:0px;
+padding-bottom:20px;
+margin:auto;
+position:relative;
+@include media(lg){
+position:relative;
+width:50%;
+min-width:40%;
+line-height: 30px;
+}
+
+>.btnLoginCancel{
+position:absolute;
+top:-50px;
+right:-10px;
+cursor: pointer;
+@include media(lg){
+position: absolute;
+right:0%;
+top:0px;
+cursor: pointer;
+}
+}
+>.login_title{
+text-align: center;
+margin:20px auto;
+color:#ed690f,;  
+} 
+
+#memId, #memPsw{
+margin:0px auto;
+border-radius:10px;
+display: block;
+padding-left:5px;
+height:30px;
+@include media(lg){
+width:45%;
+}
+}
+>#forget_psw{
+display:flex;
+width:45%;
+justify-content: flex-end;
+text-align: right;
+margin:-5px auto;
+color:#fff;
+font-weight:600;
+text-decoration: underline;
+@include media (lg){
+width:45%;
+text-align:right;
+display:block;
+margin-top:-20px;
+margin-bottom:-20px;
+}
+}
+
+>#btnLogin{
+@include btnCase(100px,40px);
+background-color: #0168b7;
+color: #eff;
+font-weight: 800;
+display:flex;
+width:50%;
+margin:auto;
+@include media(lg){
+display:flex;
+width:45%;
+}
+>p{
+text-align:center;
+margin:auto;
+}
+}
+
+
+>.notmem{
+display:flex;
+justify-content: center;
+margin:-5px 5px 5px 5px;
+>span,a{
+align-self: center;
+height:20px;
+margin:5px;
+color:#eff;
+}
+>#register{
+text-decoration: underline;
+font-weight:800;
+}
+}
+}
+
+}
+.groupshop{
+margin-top:20px;
+}
+// ----------filter動態新增後的排版-----------
+.card_add_wrap{
+width:100%;
+display:flex;
+justify-content: space-evenly;
+flex-wrap: wrap; 
+}
+.card_add_item{
+width:100%;
+@include media(lg){
+    width:30%;
+    float: left;
+}
+}
+.card_skin{
+background-color: #fff;
+}
+.groupshop_title{
+background-color: transparent;
+padding:0;
+}
+.noprod{
+@include media(md){
+padding:100px 30px;
+}
+}
+//------------卡片區塊更正-------------
+.groupshop>.slider_cardset, .prodbase>.slider_cardset{
+display:flex;
+}
+.groupshop, .match, .deco{
+height:480px;
+overflow: hidden;
+}
+.match .slider_cardset, .deco .slider_cardset{
+display:flex;
+}
+.prodbase_title{
+    float:none;
+}
+//------------商品加入session storage後,購物車icon出現數量
+#goCartShow{
+    position:relative;
+}
+.prodCount{
+    background-color: #fa0;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    font-size: 16px;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    border-radius: 50%;
+    display:none;
+
+}
+.prodCountRwd{
+    background-color: #fa0;
+    color: #fff;
+    width: 15px;
+    height: 15px;
+    font-size: 12px;
+    position: absolute;
+    right: 1%;
+    top: 7%;
+    border-radius: 50%;
+    display: none;
+
+}

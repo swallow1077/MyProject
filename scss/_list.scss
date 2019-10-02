@@ -1,0 +1,357 @@
+.filter_group {
+    width: 100%;
+    margin:auto;
+    box-sizing: border-box;
+    box-shadow: 0 0 0 1px #999;
+    overflow-y: scroll;
+ 
+
+    @include media(lg) {
+        background-image: url('../img/prod/filter_bg.png');
+        background-repeat: no-repeat;
+        background-size: 100% 95%;
+        background-position: center top;
+        width: 100%;
+        padding: 50px 15px;
+        margin-left: 10px;
+        margin-top:100px;
+        display:block;
+        position:relative;
+        left:0;
+        top:0;
+        transform: translate(0%,0%);
+        overflow-y:visible;
+        border:none;
+        height:800px;
+        background-color: transparent;
+        box-shadow:none;
+        overflow-y: visible;
+
+    }
+    
+    >.filter_popular {
+        display: inline-block;
+        margin: auto 20px;
+        
+        @include media(lg) {
+            width: 100%;
+            margin: auto;
+            text-align: center;
+            display: block;
+            padding-top: 20px;
+            padding-bottom: 50px;
+        }
+        >#popular_item {
+            appearance: none;
+            width: 110px;
+            color: #fff;
+            font-weight: 700;
+            background-color: map-get($color, main_bg_color);
+            background-image: url('../img/prod/arrow.png');
+            background-repeat: no-repeat;
+            background-position: 83px center;
+            border-radius: 5px;
+            padding: 5px 20px 5px 10px;
+            box-sizing: border-box;
+        }
+    }
+    >.filter_scope {
+        text-align: center;
+        padding: 10px 0;
+        display: inline-block;
+        
+        >label {
+            text-align: left;
+            font-weight: 700;
+            color: map-get($color, footer_bg_color);
+            font-size: 18px;
+            @include media(lg) {
+                width: 100%;
+                margin: auto 0;
+                display: block;
+                padding-top: 20px;
+                padding-bottom: 15px;
+            }
+        }
+        >input {
+            border-radius: 3px;
+        }
+        >.confirm {
+            appearance: none;
+            color: #fff;
+            font-weight: 700;
+            background-color: map-get($color, main_bg_color);
+        }
+    }
+    >.filter_flavor,
+    >.filter_base,
+    >.filter_ingredient,
+    >.filter_deco {
+        
+        border-bottom: solid 1px #fff;
+        min-width: 30%;
+        width:100%;
+        background-color: #fff;
+        @include media(lg) {
+            padding-top: 10px;
+            display: block;
+            border-bottom: none;
+            display: flex;
+            border:none;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            background-color:transparent;
+            
+        }
+        // margin: 5px 20px;
+        >.filter_title {
+            // border:solid 1px red;
+            width: 100%;
+            margin:auto;
+            // height:50px;
+            align-self: center;
+            background-color: #ffc556;
+            padding:20px 5px;
+            position:relative;
+            font-weight: 700;
+            font-size: 18px;
+            color: map-get($color, footer_bg_color);
+         
+            @include media(lg) {
+                width: 100%;
+                text-align: left;
+                padding: 5px 0;
+                background-color:transparent;
+                height:auto;
+            }
+            >.arrow{
+                width:20px;
+                height:20px;
+                position:absolute;
+                right:10px;
+                top:20px;
+                // transform:rotate(-180deg);
+                @include media(lg){
+                    display:none;
+                }
+            }
+        }
+        >.boxes {
+            // height:120px;
+            // overflow-y: scroll;
+            @include media(lg) {
+                display: block;
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                overflow-y: visible;
+                // border:solid 1px red;
+                height:auto;
+                
+            }
+            >.filterbox {
+                border:dashed 1px #aaa;
+                width: 100%;
+                // height:40px;
+                margin:auto;
+                line-height:40px;
+                text-align:center;
+                // font-size:0;
+                // background-color: #eff;
+                // display:none;
+                @include media(lg) {
+                    width: 100%;
+                    background-color: transparent;
+                    text-align:left;
+                    margin:0;
+                    line-height: none;
+                    height:25px;
+                    border:none;
+                    display:block;
+                    overflow-y: visible
+                }
+                input {
+                    width: 20px;
+                    height: 20px;
+                    // border: solid 1px #000;
+                    display:none;
+                    @include media(lg) {
+                        width: 34%;
+                        align-self: center;
+                        display:inline-block;
+                    }
+                }
+                label {
+                    width: 35%;
+                    height: 20px;
+                    align-self: center;
+                    font-size:20px;
+                    width:100%;
+                    display:inline-block;
+                    height:auto;
+                    @include media(lg){
+                        font-size:18px;
+                        width: 35%;
+                        height: 20px;
+                        display:inline;
+                        background-color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
+// --------------------filter RWD新增部分----------------
+.filterBtn{
+    background-color: #0168b7;
+    padding: 10px;
+    color: #fff;
+    font-weight: 800;
+    border-radius: 10px;
+    text-align: center;
+    margin: auto;
+    box-shadow:1px 5px 0px #004477;
+    display:block;
+    width:100px;
+    margin-top:20px;
+    &:hover{
+        transform:translate(1px,1px);
+        background-color:#0a2b44;
+        box-shadow:2px 2px 0px #004477 inset;
+        transition:.3s;
+    }
+    @include media(lg){
+        display:none;
+    }
+
+}
+.show{
+    display:block;
+}
+
+//----------------------- filter RWD版更改部分------------------------------
+
+.filter_group{
+    @include media(md){
+        height:350px;
+        overflow-y: scroll;
+        padding:25px 0px; 
+        background-color:rgba(255,255,255,.8);  
+    }
+}
+.filter_btnGroup{
+    display:flex;
+    justify-content: space-around;
+    padding:20px 0;
+    background-color: #ffc556;
+    width:100%;
+    box-shadow: 0 0 0 1px #999;
+    background-color: #ffc556;
+
+    @include media(lg){
+        display:none;
+    }
+
+    
+}
+.confirmBtn{
+    background-color: #0168b7;
+    padding: 10px;
+    color: #fff;
+    font-weight: 800;
+    border-radius: 10px;
+    text-align: center;
+    margin: auto;
+    box-shadow:1px 3px 0px #004477;
+    @include btnCase(100px, 50px);
+    line-height:30px;
+    &:hover{
+        transform:translate(1px,1px);
+        background-color:#0a2b44;
+        box-shadow:2px 2px 0px #004477 inset;
+        
+        transition:.3s;
+    }
+}
+    .cancelBtn{
+        background-color: #0168b7;
+        padding: 10px;
+        color: #fff;
+        font-weight: 800;
+        border-radius: 10px;
+        text-align: center;
+        margin: auto;
+        box-shadow:1px 3px 0px #004477;
+        @include btnCase(100px, 50px);
+        line-height:30px;
+        background-color:#ccc;
+    }
+    .filterHeader{
+        background-color:#ffc556;
+        width:100%;
+        padding:20px 0;
+        box-shadow: 0 0 0 1px #999;
+        display: flex;
+        justify-content: space-around;
+        >span{
+            text-align: center;
+            font-size:20px;
+            flex-grow: 2;
+
+        }
+        >img{
+            display:inline;
+            padding-right:10px;
+        }
+        @include media(lg){
+            display:none;
+        }
+    }
+.filterForm{
+    display:none;
+    position:fixed;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    z-index:102;
+    height:500px;
+    // overflow-y: scroll;
+    
+    background-color: rgba(0,0,0,.5);
+    @include media(lg){
+        width:19%;
+        margin-top:0;
+        position:relative;
+        left:0;
+        top:0;
+        transform: none;
+        background-color:transparent;
+        height:auto;
+        display:block;
+    }
+}
+// ----------RWD filter選擇的部分-----------
+.show{
+    display:block;
+}
+.hide{
+    display:none;
+    
+}
+.rotate{
+    transform: rotate(180deg);
+}
+@keyframes rotate{
+    0%{transform: rotate(60deg);}
+     50%{transform: rotate(120deg)}
+     100%{}
+ }
+.toggleColor{
+    background-color:#ddd;
+}
+
+.height{
+    height:120px;
+}
+

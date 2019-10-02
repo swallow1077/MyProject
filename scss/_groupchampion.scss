@@ -1,0 +1,100 @@
+.body_bg {
+    // background-image: url('../img/prod/same_bg.png');
+    .prod_champion {
+        width: 100%;
+        margin: auto;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        overflow:hidden;
+        >.container {
+            .champion_titleshow {
+                margin: auto;
+                width: 100%;
+                @include media(lg) {
+                    width: 100%;
+                    background-size: contain;
+                }
+                background-image: url('../img/prod/title.png');
+                background-repeat: no-repeat;
+                background-size: 90%;
+                height: 270px;
+                background-position: center;
+                @include flex-cen-cen;
+                .champion_title {
+                    width: 100%;
+                    text-align: center;
+                    padding-top: 60px;
+                    color: map-get( $color, title_color);
+                    font-size:20px;
+                    padding-top:40px;
+                    @include media(lg){
+                        font-size:36px;
+                        padding-top:60px;
+                    }
+                }
+            }
+            .champion_imgset {
+                position: relative;
+                margin-bottom:-80px;
+                @include media(lg){
+                    margin-bottom:70px;
+                }
+                >img {
+                    width: 100%;
+                    margin: auto;
+                    @include media(lg) {
+                        width: 80%;
+                    }
+                }
+                >.figure {
+                    position: absolute;
+                    top: 40%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 80%;
+                     @include media(lg){
+                         width:40%;
+                         top:50%;
+                     }
+                    figcaption {
+                        // border:solid 1px red;:solid 1px #000;
+                        font-size: 30px;
+                        text-align: center;
+                        padding: 10px 0;
+                        color: #640000;
+                        font-size:36px;
+                        @include media(lg) {
+                            padding: 30px 0;
+                            font-size: 46px;
+                        }
+                    }
+                    img {
+                        margin: auto;
+                        width: 80%;
+                        animation: championRotate .5s 10;
+                        @include media(lg) {
+                            width: 90%;
+                        }
+                    }
+// ----------------------新增的部分-----------------------------
+                    @keyframes championRotate {
+                        0%{transform: rotate(0deg);}
+                        25%{transform: rotate(5deg);}
+                        50%{transform: rotate(0deg);}
+                        75%{transform: rotate(-5deg);}
+                        100%{transform: rotate(0deg);}
+                        
+                    }
+                }
+            }
+        }
+    }
+}
+#prodCanvas{
+    width:100%;
+    height:500px;
+    margin:auto;
+    position:relative;
+    z-index:-1;
+    background-color:rgba(255,255,255,0);
+}

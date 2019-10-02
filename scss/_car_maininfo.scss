@@ -1,0 +1,545 @@
+.car_maininfo {
+    >.container {
+        width: 100%;
+        overflow: hidden;
+        .maininfo_titleshow {
+            background-image: url('../img/title.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            position: relative;
+            @include flex-cen-cen;
+            height: 270px;
+            >.maininfo_title {
+                padding-top: 60px;
+            }
+        }
+        .product_alert_bg {
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            position: fixed;
+            left: 0;
+            top: 0;
+            background-color: rgba(25, 25, 25, 0.75);
+            display: none;
+            @at-root .alert_wrap {
+                position: relative;
+                left: 50%;
+                top: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                width: 54%;
+                padding: 75px;
+                background-color: #e7caab;
+                border-radius: 15px;
+                @include media(md) {
+                    height: 80%;
+                    width: 100%;
+                    min-height: 480px;
+                    padding: 18px;
+                    top: 68px;
+                    left: 0;
+                    right: 0;
+                    transform: none;
+                }
+                &::before {
+                    content: '';
+                    height: 92%;
+                    width: 94%;
+                    border: 15px solid #fff;
+                    border-radius: 15px;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translateX(-50%) translateY(-50%);
+                    z-index: 2;
+                    @include media(md) {
+                        height: 98%;
+                        width: 97%;
+                        border: 2px solid #fff;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translateX(-50%) translateY(-50%);
+                    }
+                }
+                .alert_title {
+                    text-align: center;
+                    width: 100%;
+                }
+                @at-root .alertinfo_wrap {
+                    display: flex;
+                    align-items: center;
+                    height: 100%;
+                    @include media(md) {
+                        flex-wrap: wrap;
+                        align-items: stretch;
+                        height: 95%;
+                    }
+                    .product_pic_wrap {
+                        width: 50%;
+                        text-align: center;
+                        @include media(md) {
+                            width: 100%;
+                            margin: 10px 0 0 0;
+                        }
+                        >.car_alertpie_img {
+                            max-height: 100%;
+                            width: 75%;
+                            margin: 20px auto;
+                            animation: carsPieMove 1.5s ease-out infinite alternate;
+                            @include media(md) {
+                                max-width: 65%;
+                                width: 50%;
+                                margin: auto;
+                            }
+                        }
+                        >.alert_product_btn {
+                            z-index: 3;
+                            background-color: #3c6193;
+                            border-radius: 15px;
+                            width: 35%;
+                            height: 30px;
+                            margin: 50px 0;
+                            display: inline-block;
+                            position: relative;
+                            line-height: 30px;
+                            color: #fff;
+                            @include media(md) {
+                                margin: 0;
+                            }
+                            &:hover {
+                                background-color: #de892b;
+                                color: #000;
+                            }
+                        }
+                    }
+                    .info_wrap {
+                        width: 50%;
+                        @include media(md) {
+                            width: 100%;
+                            height: 55%;
+                            display: flex;
+                            flex-wrap: wrap;
+                            align-content: space-around;
+                        }
+                        .description {
+                            margin: 40px 0 20px 0;
+                            width: 100%;
+                            @include media(md) {
+                                margin: 6% 0 3% 0;
+                            }
+                            .desc_product_title {
+                                margin-bottom: 10px;
+                                color: #de892b;
+                                @include media(md) {
+                                    margin: 0;
+                                }
+                            }
+                            .carproduct_desc {
+                                line-height: 1.4;
+                                margin: 10px 0 0 0;
+                            }
+                        }
+                        .composition,
+                        .product_data {
+                            margin-bottom: 20px;
+                            width: 100%;
+                            @include media(md) {
+                                margin-bottom: 0px;
+                                width: 100%;
+                            }
+                            .pjdata_item {
+                                text-align: center;
+                                width: 30%;
+                                background-color: #fff;
+                                border-radius: 15px;
+                                padding: 8px;
+                                margin: 0 0 0 21%;
+                            }
+                            @include media(md) {
+                                margin: 3% 0;
+                            }
+                            .desc_product_title {
+                                margin: 10px 0 0 0;
+                                color: #de892b;
+                                @include media(md) {
+                                    margin: 0;
+                                }
+                            }
+                            .product_data_title {
+                                color: #8a8187;
+                            }
+                        }
+                        @at-root .composition {
+                            .product_item_box:nth-child(2) {
+                                margin: 10px;
+                                @include media(md) {
+                                    margin: 3% 0;
+                                }
+                                .pjdata_item {
+                                    position: relative;
+                                    @include media(md) {
+                                        left: 50%;
+                                        transform: translateX(-120%);
+                                    }
+                                    &::before {
+                                        content: '嚴選基底：';
+                                        position: absolute;
+                                        left: -70%;
+                                        color: #8a8187;
+                                        @include media(md) {
+                                            left: -100%;
+                                        }
+                                    }
+                                }
+                            }
+                            .product_item_box:nth-child(3) {
+                                margin: 10px;
+                                @include media(md) {
+                                    margin: 3% 0;
+                                }
+                                .pjdata_item {
+                                    position: relative;
+                                    @include media(md) {
+                                        left: 50%;
+                                        transform: translateX(-120%);
+                                    }
+                                    &::before {
+                                        content: '配料：';
+                                        position: absolute;
+                                        left: -70%;
+                                        color: #8a8187;
+                                        @include media(md) {
+                                            left: -100%;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        @at-root .product_data {
+                            .product_item_box:nth-child(2) {
+                                margin: 10px;
+                                @include media(md) {
+                                    margin: 3% 0;
+                                }
+                                .pjdata_item {
+                                    position: relative;
+                                    @include media(md) {
+                                        left: 50%;
+                                        transform: translateX(-120%);
+                                    }
+                                    &::before {
+                                        content: '好評度：';
+                                        position: absolute;
+                                        left: -70%;
+                                        color: #8a8187;
+                                        @include media(md) {
+                                            left: -100%;
+                                        }
+                                    }
+                                }
+                            }
+                            .product_item_box:nth-child(3) {
+                                margin: 10px;
+                                @include media(md) {
+                                    margin: 3% 0;
+                                }
+                                .pjdata_item {
+                                    position: relative;
+                                    @include media(md) {
+                                        left: 50%;
+                                        transform: translateX(-120%);
+                                    }
+                                    &::before {
+                                        content: '價格：';
+                                        position: absolute;
+                                        left: -70%;
+                                        color: #8a8187;
+                                        @include media(md) {
+                                            left: -100%;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .car_alertclose {
+                z-index: 3;
+                cursor: pointer;
+                width: 30px;
+                height: 30px;
+                background-color: #333;
+                display: block;
+                position: absolute;
+                top: 70px;
+                right: 70px;
+                color: #fff;
+                text-align: center;
+                line-height: 30px;
+                border-radius: 15px;
+                @include media(md) {
+                    top: 3%;
+                    right: 3%;
+                }
+                &:hover {
+                    background-color: #de892b;
+                    color: #000;
+                }
+            }
+        }
+        .carinfo_wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+            @include media(md) {
+                flex-wrap: wrap;
+            }
+            >.clearfix {
+                clear: both;
+            }
+            @at-root .car_location {
+                margin-left: 4%;
+                padding: 1%;
+                width: 47.5%;
+                background-color: #eaeae0;
+                border-radius: 10px;
+                margin-right: 4.166666%;
+                @include media(md) {
+                    width: 95%;
+                    margin-bottom: 10px;
+                }
+                .car_localmsg,
+                .car_date,
+                .car_local {
+                    margin: 15px;
+                    h3 {
+                        padding: 10px;
+                        color: #de892b;
+                    }
+                    p {
+                        padding-left: 10px;
+                    }
+                }
+                .car_local {
+                    margin-bottom: 40px;
+                }
+                .pie_picwrap {
+                    display: flex;
+                    justify-content: center;
+                    width: 100%;
+                    animation: carsPieMove 1.5s ease-out infinite alternate;
+                }
+                .cars_pie_img {
+                    cursor: pointer;
+                    max-width: 100%;
+                    display: inline-block;
+                    transform: scale3d(1, 1, 1) rotate(-10deg);
+                    transition: transform 0.3s 0s cubic-bezier(0.46, -0.45, 0.33, 1.95);
+                    @include media(md) {
+                        transition: none;
+                    }
+                    &:hover {
+                        transform: scale3d(1.15, 1.15, 1) rotate(-10deg);
+                        transition: transform 0.3s 0s cubic-bezier(0.46, -0.45, 0.33, 1.95);
+                        @include media(md) {
+                            transition: none;
+                        }
+                    }
+                }
+                .pie_checkinfo {
+                    font-weight: bold;
+                    display: inline-block;
+                    transform: rotate(-15deg);
+                }
+            }
+            @at-root .calendar {
+                width: 29.1666%;
+                margin-right: 4%;
+                height: 100%;
+                width: 29.1666%;
+                margin-right: 4%;
+                height: 350px;
+                // background: #fff;
+                border-top-left-radius: 15px;
+                border-top-right-radius: 15px;
+                position: relative;
+                @include media(md) {
+                    width: 95%;
+                    margin: auto;
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                }
+                &_info {
+                    position: absolute;
+                    top: -15px;
+                    right: 3%;
+                    font-size: 14px;
+                    @include media(md) {
+                        left: 50%;
+                        transform: translateX(-50%);
+                        width: 100%;
+                    }
+                }
+                .lightgrey {
+                    color: #a8a8a8;
+                    padding: 1px;
+                    // border: 1px solid rgba(255, 255, 255, 0);
+                }
+                .darkgrey {
+                    color: #3c6193;
+                    padding: 1px;
+                    // border: 1px solid rgba(255, 255, 255, 0);1
+                }
+                .green {
+                    color: #3c6193;
+                }
+                .todaybox {
+                    border: 1px solid #de892b;
+                    border-radius: 21px;
+                    background: #ffeaec;
+                    display: inline-block;
+                    width: 100%;
+                    text-decoration: none;
+                }
+                .focus {
+                    padding: 0px;
+                    border: 1px solid rgba(60, 97, 147, 0.5);
+                    background: rgba(204, 225, 243, 0.5);
+                }
+                .title {
+                    height: 70px;
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+                    text-align: center;
+                    position: relative;
+                    background-color: #e7b36d;
+                    vertical-align: middle;
+                    font-size: 18px;
+                    border-top-left-radius: 15px;
+                    border-top-right-radius: 15px;
+                    box-shadow: inset 3px 3px 10px 3px rgba(50, 50, 50, 0.2), inset 3px 2px 2px rgba(50, 50, 50, 0.2);
+                    #calendar_title {
+                        font-size: 25px;
+                        font-family: arial;
+                        font-weight: bold;
+                        text-transform: uppercase;
+                        padding: 14px 0 0 0;
+                    }
+                    #calendar_year {
+                        font-size: 15px;
+                        font-family: arial;
+                        font-weight: normal;
+                    }
+                    #prev {
+                        text-indent: -9999px;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 60px;
+                        height: 70px;
+                        background: url(../img/car/prev_white.png) no-repeat 50% 50%;
+                    }
+                    #next {
+                        text-indent: -9999px;
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        width: 60px;
+                        height: 70px;
+                        background: url(../img/car/next_white.png) no-repeat 50% 50%;
+                    }
+                }
+                .body {
+                    padding: 0px 20px 20px 20px;
+                    background: #fff;
+                    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+                }
+                .body_list>ul {
+                    width: 100%;
+                    font-family: arial;
+                    font-weight: bold;
+                    font-size: 16px;
+                    >li {
+                        width: 14.192943%;
+                        height: 40px;
+                        line-height: 40px;
+                        list-style-type: none;
+                        display: block;
+                        box-sizing: border-box;
+                        float: left;
+                        text-align: center;
+                        cursor: pointer;
+                        border-radius: 21px;
+                    }
+                    >.calendar_activity {
+                        &:hover {
+                            border: 1px solid rgba(60, 97, 147, 0.3);
+                            border: 1px solid #3c6193;
+                            background-color: rgba(204, 225, 243, 0.3);
+                            background-color: #cce1f3;
+                            padding: 0px;
+                        }
+                    }
+                    >.clearfix {
+                        @include clearfix;
+                    }
+                }
+            }
+        }
+        @at-root .car_map {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            @include media(md) {
+                margin: 25px 0;
+            }
+            .mapinfo {
+                position: absolute;
+                top: 0px;
+                right: 3%;
+                font-size: 14px;
+                @include media(md) {
+                    top: -15px;
+                    width: 80%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+                &_hightype {
+                    font-size: 18px;
+                    color: #de892b;
+                }
+            }
+            #googlemap {
+                border-radius: 15px;
+            }
+            >img {
+                width: 100%;
+            }
+            .map_info {
+                position: absolute;
+                top: 10%;
+                left: 50%;
+                transform: translateX(-50%);
+                color: #de892b;
+                @include media(md) {
+                    top: 20%;
+                }
+            }
+        }
+    }
+}
+
+@keyframes carsPieMove {
+    0% {
+        transform: translateY(5px);
+    }
+    100% {
+        transform: translateY(-5px);
+    }
+}
+.layout-cars{
+    padding-top: 70px;
+}

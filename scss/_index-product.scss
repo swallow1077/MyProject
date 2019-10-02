@@ -1,0 +1,105 @@
+.index_product {
+  > .container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    @include media(lg) {
+      @include flex-around;
+    }
+    @at-root .burn_box {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: center;
+      // background-color: #ccc;
+      // background-image: url('../img/index/prd_box.png');
+      // background-size: contain;
+      // background-position: center center;
+      // background-repeat: no-repeat;
+      flex: 1;
+      > .index_card {
+        padding-top: 20px;
+        padding-bottom: 10px;
+        width: 90%;
+        background-image: url('../img/index/card_bg.png');
+        background-size:100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        @include media(md) {
+          background-size: 70% 78%;
+          background-position: center 80px;
+        }
+        @include media(lg) {
+          background-size: 100%;
+         
+        }
+        .card_img1{
+          width:60%;
+          height:35%;
+          margin:auto 20%;
+          @include media(md){
+            width:55%;
+            margin:auto 22%;
+
+          }
+        }
+        > img {
+          // border: 1px solid #000;
+        }
+        > .card_titleshow {
+          background-image: none;
+          position: relative;
+          // border: 1px solid #000;
+          background-size: 100%;
+          @include media(md){
+            width:100%;
+            margin-bottom:20px;
+          }
+          .card_title1{
+            margin-bottom:20px;
+            text-align: center;
+          }
+          > h3 {
+            margin: 0 auto;
+            width: 50%;
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%);
+            // border: 1px solid #000;
+            padding-left: 0;
+          }
+          > img {
+            width: 50%;
+            @include media(lg) {
+              width: 80%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.index_showtitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:10px;
+  h3 {
+    background-image: url('../img/index/brush.png');
+     background-size:100%;
+
+    // padding-right: -5px;
+    // padding-left: 30px;
+    // padding-top: 15px;
+    // padding-bottom: 15px;
+    // background-position: center;
+  }
+  @include media(md){
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width:100%;
+    padding:10px;
+  }
+}
+
+

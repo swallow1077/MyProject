@@ -1,0 +1,424 @@
+$barWidth: (
+  datacount: 150px,
+  status: 120px,
+);
+$barColor: (
+  1: #aaf,
+  2: #afa,
+  3: #faa,
+);
+$filterColor: (
+  taste: #ffc556,
+  base: #ed690f,
+  stuff: #7ecef4,
+  decoration: #090c7b,
+);
+$statusBarColor: yellowgreen;
+
+@mixin bar($BWidth) {
+  .bar {
+    width: $BWidth;
+    height: 16px;
+    border-radius: 10px;
+    background-color: #ccc;
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden;
+  }
+}
+@mixin barSet($barColor) {
+  .bar_set {
+    width: 0%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: $barColor;
+  }
+}
+
+.products {
+  &_filter {
+    position: relative;
+    // display: inline-block;
+    float: left;
+    margin-bottom: 20px;
+
+    &Option {
+      @include media(md) {
+        margin-left: 5px;
+      }
+
+      > input {
+        height: 20px;
+        width: 20px;
+      }
+      > * {
+        vertical-align: middle;
+      }
+    }
+    &_row {
+      @include media(md) {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    }
+    &Bg {
+      position: relative;
+    }
+    &Bar {
+      position: absolute;
+      left: 50%;
+      top: 200px;
+      width: 55%;
+      transform: translate(-50%);
+
+      @include media(md) {
+        margin-top: 20px;
+        top: 45px;
+      }
+
+      @each $this, $Fcolor in $filterColor {
+        .#{$this}_title {
+          h3 {
+            color: $Fcolor;
+            &::before {
+              content: '';
+              display: inline-block;
+              width: 25px;
+              height: 25px;
+              background-color: $Fcolor;
+              vertical-align: middle;
+              border-radius: 10px;
+              margin-right: 10px;
+
+               @include media(md) {
+                 width: 15px;
+                 height: 15px;
+                 margin-right: 5px;
+               }
+            }
+          }
+        }
+      }
+
+      > * {
+        margin-top: 50px;
+
+        &:not(:first-of-type) {
+          transform: translateX(-5%);
+          font-size: 24px;
+
+          @include media(md) {
+            transform: translateX(0%);
+            font-size: 16px;
+            margin-top: 15px;
+          }
+
+          > * {
+            * {
+              @include media(lg) {
+                margin-top: 5px;
+              }
+            }
+          }
+        }
+      }
+
+      @include media(md) {
+        margin-left: 30px;
+        width: calc(100% - 60px);
+
+        > * {
+          margin: 0;
+        }
+      }
+    }
+    &List {
+      padding-left: 10px;
+      margin-top: 10px;
+
+      @include media(md) {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 0px;
+        padding-left: 5px;
+      }
+    }
+    &Order {
+      display: flex;
+      justify-content: center;
+
+      @include media(md) {
+        width: 100%;
+        margin-bottom: 25px;
+      }
+    }
+  }
+  &_list {
+    // display: flex;
+    justify-content: center;
+    position: relative;
+    @include clearfix;
+
+    @include media(md) {
+      flex-wrap: wrap;
+    }
+  }
+  &_card {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+
+    &List {
+      width: calc(100% - 258px);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      // justify-content: space-around;
+      align-items: flex-start;
+      float: left;
+      padding: 0 45px;
+
+      @include media(md) {
+        width: 100%;
+        padding: 0;
+      }
+
+      input {
+        width: 50px;
+      }
+    }
+    //商品背景卡顏色
+    &.offerLevel_1 {
+      background-image: url('../img/BlueCard_Level.png');
+    }
+    &.offerLevel_2 {
+      background-image: url('../img/GreenCard_Level.png');
+    }
+    &.offerLevel_3 {
+      background-image: url('../img/RedCard_Level.png');
+    }
+  }
+  &_offerLevel {
+    position: relative;
+
+    > img {
+      width: 100%;
+    }
+  }
+  &_detail {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    /*-----卡片邊界-----*/
+    width: 100%;
+    padding-top: 125px;
+    padding-left: 38px;
+    padding-right: 8px;
+    padding-bottom: 8px;
+    /*-----------------*/
+
+    > * {
+      margin-top: 5px;
+    }
+  }
+  &_P {
+    position: relative;
+    margin-bottom: 20px;
+
+    &name {
+      display: inline-block;
+      width: 175px;
+      height: 40px;
+      color: #fff;
+      background-color: #5a93cc;
+      position: absolute;
+      top: -120%;
+      left: calc(100% - 175px + 8px);
+      @include flex-cen-cen;
+    }
+    &tag {
+      display: inline-block;
+      position: relative;
+      left: 50%;
+      transform: translateY(50%);
+
+      p {
+        font-size: 20px;
+        color: #fff;
+        display: inline-block;
+        padding: 5px 10px;
+        background-color: #eb6877;
+
+         @include media(md) {
+           font-size: 16px;
+         }
+      }
+    }
+  }
+  &_content {
+    @include clearfix;
+
+    > * {
+      margin-left: 10px;
+      float: left;
+    }
+  }
+  &_information {
+    width: 50%;
+    margin-left: 43px;
+    line-height: 20px;
+
+     @include media(md) {
+      margin-left: 19px;
+     }
+
+    p {
+      margin-top: 5px;
+
+       @include media(md) {
+         margin-top: 0px;
+       }
+    }
+  }
+  &_status {
+    > p {
+      position: relative;
+      text-align: center;
+    }
+    &Bar {
+      position: relative;
+      margin-top: 10px;
+
+      @include bar(map-get($barWidth, datacount));
+      @include barSet($statusBarColor);
+
+      > span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+  &_statusbox {
+    display: flex;
+    justify-content: space-around;
+  }
+  &_level {
+    &Bar {
+      margin-top: 2.5px;
+
+      @include bar(map-get($barWidth, status));
+
+      //狀態條顏色(依序代入 3 種顏色)
+      @each $barinit, $BColor in $barColor {
+        &:nth-of-type(#{$barinit}) {
+          @include barSet($BColor);
+        }
+      }
+    }
+    span {
+      vertical-align: middle;
+      font-size: 18px;
+      margin: 0 6px;
+    }
+  }
+  &_action {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+
+     @include media(md) {
+       margin-top: 10px;
+     }
+
+    > a {
+      @include btnCase(90px, 24px);
+      background-color: #0168b7;
+      color: #fff;
+      font-weight: 800;
+    }
+  }
+  &_row {
+    display: flex;
+    justify-content: space-around;
+
+    @include media(md) {
+      flex-wrap: wrap;
+    }
+  }
+}
+.taste,
+.base,
+.stuff,
+.decoration {
+  @include media(md) {
+    @include clearfix;
+
+    &:after {
+      padding-top: 5px;
+      content: '';
+      width: 90%;
+      margin: 0 auto;
+      border-bottom: 1px solid #ccc;
+      transform: translateX(-3%);
+    }
+  }
+
+  &_title {
+    @include media(md) {
+      float: left;
+    }
+  }
+}
+
+#filter_bg_lg,
+#filter_bg_md {
+  display: none;
+}
+
+#filterOrder {
+  appearance: none;
+  width: 110px;
+  color: #fff;
+  font-weight: 700;
+  background-color: map-get($color, main_bg_color);
+  background-image: url('../img/prod/arrow.png');
+  background-repeat: no-repeat;
+  background-position: 83px center;
+  border-radius: 5px;
+  padding: 5px 20px 5px 10px;
+  box-sizing: border-box;
+}
+
+.products_levelBar .bar_set {
+  transition: width 1s;
+}
+
+.products_statusBar .bar_set {
+  transition: width 2.5s;
+}
+.products_levelBar .bar {
+   @include media(md) {
+     width: 100px;
+     height: 12px;
+   }
+}
+.products_statusBar .bar {
+  @include media(md) {
+    width: 125px;
+    height: 12px;
+  }
+}
+.hidden{
+  display: none;
+}
+
+.filt{
+  display: none;
+  // transform: scale(0);
+  // overflow: hidden;
+  // width: 0;
+  // transition: transform .5s linear,width .5s;
+}

@@ -1,0 +1,250 @@
+.layout-bg {
+  background-image: url('../img/vot/same_bg.png');
+  background-position-x: center;
+  // background-size: contain;
+  background-repeat: repeat-y;
+  background-attachment: fixed;
+  background-size: 100%;
+}
+
+.vot_main {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  > .container {
+    @at-root .vot_titleshow {
+      background-image: url('../img/vot/title.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      position: relative;
+      // border: 1px solid #000;
+      @include flex-cen-cen;
+      height: 270px;
+      .vot_title {
+        padding-top: 60px;
+      }
+    }
+    > .vot_group {
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      padding-top: 50px;
+      @include media(md) {
+        justify-content: center;
+      }
+      @at-root .vot {
+        &_card {
+          // background-color: #888;
+          width: 33%;
+          height: 350px;
+          margin-top: 20px;
+          margin-bottom: 20px;
+          // border: 1px solid #000;
+          background-image: url('../img/vot/card-bgc.png');
+          background-repeat: no-repeat;
+          background-position: top;
+          background-size: 90%;
+          display: flex;
+          align-items: flex-end;
+          position: relative;
+
+          @include media(md) {
+            width: 95%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            height: 280px;
+          }
+        }
+        &_imgarea {
+          position: absolute;
+          top: 17%;
+          left: 2%;
+          display: flex;
+          flex-direction: column;
+          animation: votpie1 1s 1s linear infinite;
+          @include media(md) {
+            animation: votpie1Mb 1s 1s linear infinite;
+          }
+          // border: 1px solid #000;
+          margin-bottom: 30px;
+          > .img_title {
+            color: map-get($color, title_color);
+          }
+          > img {
+            // border: 1px solid #000;
+            padding-left: 30px;
+            // padding-right: 30px;
+          }
+        }
+        &_txt {
+          // border: 1px solid #000;
+          position: absolute;
+          height: 0;
+          bottom: 0;
+          left: 40%;
+
+          > .votBtn {
+            @include btnCase(100px, 40px);
+            // position: absolute;
+            // transform: translateY(390%);
+            background-color: #0168b7;
+            @include media(md) {
+              // transform: translateX(-20%) translateY(340%);
+            }
+          }
+        }
+        &_show {
+          width: 40px;
+          height: 75px;
+          // border: 1px solid #000;
+          position: absolute;
+
+          right: 5%;
+          top: 0%;
+          background-image: url('../img/vot/water.png');
+          background-size: 50%;
+          .show_num {
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translateX(-50%) rotate(20deg);
+          }
+        }
+      }
+    }
+  }
+}
+.votShow {
+  width: 100px;
+  height: 150px;
+  font-size: 20px;
+  text-align: center;
+  align-items: center;
+  position: absolute;
+  transform: rotate(10deg) scale(0.7);
+
+  line-height: 180px;
+  top: -5%;
+  right: 5%;
+  background-image: url('../img/vot/water.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  &::after {
+    display: block;
+    content: '目前票數';
+    position: absolute;
+    top: -25%;
+    right: 10%;
+    transform: rotate(-10deg);
+  }
+}
+
+@keyframes votpie1 {
+  0% {
+    left: -10%;
+    top: 7%;
+    transform: scale(0.6);
+  }
+  50% {
+    left: -10%;
+    top: 9%;
+    transform: scale(0.7);
+  }
+  100% {
+    left: -10%;
+    top: 7%;
+    transform: scale(0.6);
+  }
+}
+
+@keyframes votpie1Mb {
+  0% {
+    left: -10%;
+    top: -3%;
+    transform: scale(0.6);
+  }
+  50% {
+    left: -10%;
+    top: 0%;
+    transform: scale(0.7);
+  }
+  100% {
+    left: -10%;
+    top: -3%;
+    transform: scale(0.6);
+  }
+}
+
+.vot_txt {
+  // border: 1px solid #000;
+  position: absolute;
+  right: 5%;
+  bottom: 2%;
+  height: 40px;
+}
+.vol_showlevel {
+  // border: 1px solid #000;
+  width: 300px;
+  .vot_name {
+    color: map-get($color, main_bg_color);
+  }
+}
+.vot_name {
+  font-size: 33px;
+}
+
+.vot_leveltxt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  // border: 1px solid #000;
+  .vol_showlevel {
+    // border: 1px solid #000;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-left: 15px;
+  }
+  .cust_level {
+    display: inline-block;
+    padding-top: 10px;
+    margin-left: 10px;
+    &::before {
+      content: '排名';
+      font-size: 20px;
+    }
+  }
+  .cust_vot {
+    display: inline-block;
+    padding-top: 10px;
+    &::before {
+      content: '目前票數';
+      font-size: 20px;
+    }
+  }
+  .topTitle {
+    position: absolute;
+    transform: rotate(-10deg);
+    top: 7%;
+    left: 35%;
+    @include media(md) {
+      position: absolute;
+      transform: rotate(-10deg);
+      top: 3%;
+      left: 31%;
+    }
+  }
+}
+.vot_tetInfo {
+  // border: 1px solid #000;
+  position: absolute;
+  top: 55%;
+  left: 10%;
+  width: 80%;
+  line-height: 1.4;
+  letter-spacing: 2px;
+  color: map-get($color, title_color);
+}
+.layout-vot{
+  padding-top: 70px
+}

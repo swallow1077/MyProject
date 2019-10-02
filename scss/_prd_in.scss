@@ -1,0 +1,91 @@
+// .wrap_bg {
+//     background-color: rgb(233, 248, 255);
+//     border-radius: 5px;
+//     margin: 0 auto;
+//     padding: 20px 10px;
+// }
+// .prd_in_titleshow {
+//     color: map-get($color, title_color);
+//     margin: 50px 0px;
+//     @include flex-cen-cen;
+//     height: 270px;
+//     .prd_in_title {
+//         padding-top: 60px;
+//     }
+// }
+
+// .prd_in_main{
+//     margin-bottom: 50px;
+//     margin-top: 50px;
+//     >.container{
+//         >.prd_in_titleshow {
+//             background-image: url('../img/prd_in_img/title.png');
+//             background-repeat: no-repeat;
+//             background-position: center;
+//             position: relative;
+//             color: map-get($color, title_color);
+//             // border: 1px solid #000;
+//             margin: 50px 0px;
+//             @include flex-cen-cen;
+//             height: 270px;
+//             .prd_in_title {
+//                 padding-top: 60px;
+//             }
+//         }
+//         >.prd_in_group {
+//             display: flex;
+//             justify-content: space-between;
+//             >.prd_in_imggroup {
+//                 width: 50%;
+//                 >.item_img {
+//                     height: 500px;
+//                     display: flex;
+//                     align-items: center;
+//                     padding: 50px;
+//                     >.main_img {
+//                         width: 100%;
+//                     }
+//                 }
+//                 @at-root .item_price {
+//                     padding: 20px;
+//                     display: flex;
+//                     justify-content: space-around;
+//                     >.price_group {
+//                         >.price {
+//                             font-size: 28px;
+//                             display: inline-block;
+//                             line-height: 28px;
+//                         }
+//                         >.pnum {
+//                             color: map-get($color, footer_bg_color);
+//                             font-size: 30px;
+//                             font-weight: 600;
+//                             display: inline-block;
+//                             line-height: 66px;
+//                         }
+//                     }
+//                     >.btn_cart {
+//                         @include btnCase(160px,
+//                         auto);
+//                         background-color: map-get($color, footer_bg_color);
+//                         color: #fff;
+//                         font-size: 24px;
+//                         margin: 10px 0;
+//                         padding: 10px;
+//                     }
+//                     >.btn_heart {
+//                         margin: 10px 0;
+//                         @include btnCase(60px,
+//                         auto);
+//                         background-color: map-get($color, footer_bg_color);
+//                         color: #fff;
+//                         padding: 10px;
+//                         >.heart {
+//                             text-align: center;
+//                         }
+//                     }
+//                  }
+//             }
+//         }
+//     }
+// }

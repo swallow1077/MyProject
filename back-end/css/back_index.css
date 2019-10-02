@@ -1,0 +1,64 @@
+.login_logo {
+  width: 200px;
+  height: 100px;
+}
+.card {
+  width: 400px;
+  /* height: 300px; */
+  position: relative;
+  background-color: #090c7b;
+}
+.login_base {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+.login_show {
+  height: 100vh;
+  position: relative;
+  background-image: url('../img/frontpage_bg_evening.png');
+  background-position: center;
+  background-size: cover;
+}
+.login_logo {
+  position: absolute;
+  left: 50%;
+  top: -70%;
+  transform: translateX(-50%);
+}
+.show_list {
+  height: 100vh;
+  position: relative;
+  /* background-image: url('../img/same_bg.png'); */
+}
+
+/* ============預覽 */
+
+.file_thumbnail {
+  display: block;
+  width: 50px;
+  height: 50px;
+}
+.info-box_show {
+  width: 100px;
+  height: 100px;
+}
+.info-box_show > img {
+  width: 100%;
+  height: 100%;
+}
+.navbar-expand-lg{
+  background-color: #ccc;
+}
+.info-box{
+  /* border: 1px solid #000; */
+  margin-right: 50px;
+  margin-top: 10px;
+}
+.addInfo{
+  margin-top: 10px;
+}
+.product_img>img{
+  width: 100px;
+}

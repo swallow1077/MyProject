@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+
+<body>
+    <!----------------------- nav bar  start----------------------->
+    <!-- 燈箱：登入 -->
+    <div id="lightBox" style="display:none">
+        <table border="1" align="center" cellspacing="0" id="tableLogin">
+            <tr>
+                <td>帳號</td>
+                <td><input type="text" name="memId" id="memId"></td>
+            </tr>
+            <tr>
+                <td>密碼</td>
+                <td><input type="password" name="memPsw" id="memPsw"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="button" id="btnLogin" value="登入">
+                    <input type="button" id="btnLoginCancel" value="取消">
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- <img src="001.jpg"> -->
+    <div id="bar" style="position: absolute;top:0;right: 20px">
+        <span id="memName">&nbsp;</span> <!-- 使用者姓名 -->
+        <span id="spanLogin">登入</span>
+    </div>
+    <!----------------------- nav bar  end----------------------->
+
+    <!----------------------- content區 ---------------------->
+    <div id="content">
+        <center>
+            <h1>這是講解頁面</h1>
+        </center>
+    </div>
+
+    <div id="footer"></div>
+    <a href="prodList.php"> 商品專區 </a>
+    </div>
+
+    <script type="text/javascript" src="ajaxLogin.js"></script>
+    <script type="text/javascript">
+
+    </script>
+</body>
+
+</html>

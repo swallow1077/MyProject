@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+          integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" />
+    <script src="js/main.js"></script>
+    <title>團購頁面</title>
+    <link rel="stylesheet" href="style/index.css">
+</head>
+
+<body class="layout-bg">
+    <section class='lightBox' style='display:none;'>
+        <div class="container">
+          <div id="lightBox">
+            <div class="login_password">
+              <span class="btnLoginCancel" id="btnLoginCancel">
+                <img src="img/prod/cancel.png" alt="cancel_icon">
+              </span>
+              <h3 class='login_title'>會員登入</h3>
+              <input type="text" name="memId" id="memId" class="mem_login" placeholder="帳號">
+              <br>
+              <input type="password" name="memPsw" id="memPsw" class="mem_login" placeholder="密碼">
+              <br>
+              <a href="javascript:void(0)" id="forget_psw">忘記密碼</a>
+              <br>
+              <a href="javascript:void(0)" class="btn_focus" id="btnLogin">
+                <p>登入</p>
+              </a>
+              </a>
+              <br>
+              <div class="notmem">
+                <span>不是會員嗎?</span>
+                <a href="javascript:void(0)" id="register">立即註冊</a>
+                <br>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!------------- 登入的燈箱end-------------- -->
+      <!------------- 註冊的燈箱star-------------- -->
+      <section id="sign_box" class="sign_box" style='display:none;'>
+    
+        <div class="sign_lightBox">
+          <div class="sign_content">
+            <span class="btnSignCancel" id="btnSignCancel">
+              <img src="img/prod/cancel.png" alt="cancel_icon">
+            </span>
+            <h3 class="sign_title">註冊會員</h3>
+            <form action="" id="submitForm">
+              <div class="sign_input_group">
+                <div class="sign_input_item sign_id">
+                  <span>帳號:</span>
+                  <input type="text" class="sign_inputs" name="memId2" id="memId2" placeholder="帳號">
+                  <br>
+                </div>
+                <div class="sign_input_item">
+                  <span>
+                    <input type="button" value="帳號可以使用嗎?" id="btn_sign_check">
+                  </span>
+                  <p id="idMsg">檢查中</p>
+                </div>
+                <div class="sign_input_item sign_psw">
+                  <span>密碼:</span>
+                  <input type="password" class="sign_inputs" name="memPsw2" id="memPsw2" placeholder="密碼"> <!-- <br> -->
+                </div>
+                <div class="sign_input_item sign_psw">
+                  <span>確認密碼</span>
+                  <input type="password" class="sign_inputs" name="confirmPsw" id="confirmPsw" placeholder="確認密碼">
+                  <!-- <br> -->
+                </div>
+                <div class="sign_input_item sign_namd">
+                  <span>姓名:</span>
+                  <input type="text" class="sign_inputs" name="mem_name2" id="mem_name2" placeholder="姓名"> <!-- <br> -->
+    
+                </div>
+                <div class="sign_input_item sign_email">
+                  <span>信箱:</span>
+                  <input type="email" class="sign_inputs" name="mem_email2" id="mem_email2" placeholder="信箱">
+                  <!-- <br> -->
+                </div>
+              </div>
+              <a href="javascript:void(0)" class="btn_register" id="btn_register">
+                <p>送出</p>
+              </a>
+            </form>
+          </div>
+        </div>
+      </section>
+      <!------------- 註冊的燈箱end-------------- -->
+    
+    <!-- ***********9/25更新******************* -->
+      <!-- navbar_star -->
+      <header class="menu layout_header" id="layout_header">
+        <div class="rwdnavbar">
+          <button class="layout_menubtn">
+            <span class="layout_menubtn-in">menu</span>
+          </button>
+          <a href='index_fron.html' class="rwdlogo">
+            <img src="img/layout/logo_白邊.svg" alt="rwdlogo">
+          </a>
+          <div class="rwdLogin">
+              <ul class="layout_login">
+                <span id="btnlogloutRwd">&nbsp</span>
+                <li>
+                  <a href="javascript:;" id="spanLoginRwd">
+                    <i class="fas fa-user-circle"></i>
+                  </a>
+                  <span id="spanLoginTextRwd" style="display:none">登入</span>
+                </li>
+                <li id="goCartShowRwd">
+                  <div class="prodCountRwd"></div>
+                  <a href="cart.html">
+                    <i class="fas fa-shopping-cart" id="shopCartRwd"></i>
+                  </a>
+                </li>
+              </ul>
+          </div>
+        </div>
+        <nav class="layout_nav">
+      
+          <ul class="layout_logo">
+            <h1 class="logo">
+              <a class="logo_link" href="index_fron.html">派對</a>
+            </h1>
+          </ul>
+          <ul class="layout_items">
+            <li class="layout_itemlink">
+              <a class="layout_link" href="cust.php">客制派</a>
+            </li>
+            <li class="layout_itemlink">
+              <a class="layout_link" href="prod.html">派對商品</a>
+            </li>
+    
+            <li class="layout_itemlink">
+              <a class="layout_link" href="buy.html">派對團購</a>
+            </li>
+            <li class="layout_itemlink">
+              <a class="layout_link" href="vot.html">派對投票</a>
+            </li>
+            <li class="layout_itemlink">
+              <a class="layout_link" href="cars.html">派對活動</a>
+            </li>
+          </ul>
+          <ul class="layout_login">
+            <span id="btnloglout">&nbsp</span>
+            <li>
+              <a href="javascript:;" id="spanLogin">
+                <i class="fas fa-user-circle"></i>
+              </a>
+              <span id="spanLoginText" style="display:none">登入</span>
+            </li>
+            <li id="goCartShow">
+              <div class="prodCount"></div>
+              <a href="cart.html">
+                <i class="fas fa-shopping-cart" id="shopCart"></i>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <!-- navbar_end -->
+    <!-- navbar_end -->
+    <!-- 共用layoutheader -->
+    <section class="directions">
+        <div class="container">
+            <div class="container-out buy-layout">
+                <div class="layout_newtitle">
+                    <h2 class="layout_nesh2">團購說明</h2>
+                </div>
+            </div>
+            <div class="directions_list">
+                <div class="directions_card">
+                    <div class="directions_img">
+                        <img src="img/product/RedCard.png" alt="">
+                    </div>
+                    <div class="directions_textbox">
+                        <div class="directions_title">
+                            <p>團購人數</p>
+                        </div>
+                        <div class="directions_text">
+                            <div class="count">
+                                <img src="img/product/RedThree_count.png" alt="">
+                                <img src="img/product/RedZero_count.png" alt="">
+                            </div>
+                        </div>
+                        <div class="directions_discount">
+                            <img src="img/product/RedFive_percent.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="directions_card">
+                    <div class="directions_img">
+                        <img src="img/product/GreenCard.png" alt="">
+                    </div>
+                    <div class="directions_textbox">
+                        <div class="directions_title">
+                            <p>團購人數</p>
+                        </div>
+                        <div class="directions_text">
+                            <div class="count">
+                                <img src="img/product/GreenTwo_count.png" alt="">
+                                <img src="img/product/GreenZero_count.png" alt="">
+                            </div>
+                        </div>
+                        <div class="directions_discount">
+                            <img src="img/product/GreenEight_percent.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="directions_card">
+                    <div class="directions_img">
+                        <img src="img/product/BlueCard.png" alt="">
+                    </div>
+                    <div class="directions_textbox">
+                        <div class="directions_title">
+                            <p>團購人數</p>
+                        </div>
+                        <div class="directions_text">
+                            <div class="count">
+                                <img src="img/product/BlueOne_count.png" alt="">
+                                <img src="img/product/BlueZero_count.png" alt="">
+                            </div>
+                        </div>
+                        <div class="directions_discount">
+                            <img src="img/product/BlueNine_percent.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="products">
+        <div class="container">
+            <div class="container-out">
+                <div class="layout_newtitle">
+                    <h2 class="layout_nesh2">揪團買商品</h2>
+                </div>
+            </div>
+            <div class="products_list">
+                <div class="products_filter">
+                    <div class="products_filterBg">
+                        <img id="filter_bg_lg" src="img/product/Filter.png" alt="">
+                        <img style="height: 100%;width: 100%;" id="filter_bg_md" src="img/product/Filter_RWD.png"
+                             alt="">
+                    </div>
+                    <div class="products_filterBar">
+                        <div class="products_filterOrder">
+                            <select name="filterOrder" id="filterOrder">
+                                <option selected value="null">-請選擇-</option>
+                                <option value="new">最新上架</option>
+                                <option value="hot">熱門商品</option>
+                            </select>
+                        </div>
+                        <div class="taste">
+                            <div class="taste_title">
+                                <h3>口味</h3>
+                            </div>
+                            <div class="products_filterList">
+                                <div class="products_filter_row">
+                                    <div class="products_filterOption">
+                                        <input type="checkbox" name="sweet_lv" id="sweet_lv">
+                                        <label for="sweet_lv">甜蜜蜜</label>
+                                    </div>
+                                    <div class="products_filterOption">
+                                        <input type="checkbox" name="health_lv" id="health_lv">
+                                        <label for="health_lv">養生</label>
+                                    </div>
+                                    <div class="products_filterOption">
+                                        <input type="checkbox" name="salty_lv" id="salty_lv">
+                                        <label for="salty_lv">鹹派</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="base">
+                            <div class="base_title">
+                                <h3>基底</h3>
+                            </div>
+                            <div class="products_filterList">
+                                <div class="products_filter_row">
+                                    <div class="products_filterOption">
+                                        <input type="checkbox" name="" id="base_3">
+                                        <label for="base_3">竹炭</label>
+                                    </div>
+                                    <div class="products_filterOption">
+                                        <input type="checkbox" name="" id="base_1">
+                                        <label for="base_1">抹茶</label>
+                                    </div>
+                                    <div class="products_filterOption">
+                                        <input type="checkbox" name="" id="base_2">
+                                        <label for="base_2">南瓜</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="stuff">
+                            <div class="stuff_title">
+                                <h3>配料</h3>
+                            </div>
+                            <div class="products_filterList">
+                                <div class="products_filter_row">
+                                    <div class="products_filterOption">
+                                        <input type="checkbox" name="" id="ingr_6">
+                                        <label for="ingr_6">杏仁</label>
+                                    </div>
+                                    <div class="products_filterOption">
+                                        <input type="checkbox" name="" id="ingr_4">
+                                        <label for="ingr_4">蛋黃</label>
+                                    </div>
+                                    <div class="products_filterOption">
+                                        <input type="checkbox" name="" id="ingr_2">
+                                        <label for="ingr_2">紅豆</label>
+                                    </div>
+                                </div>
+                                <div class="products_filter_row">
+                                    <div class="products_filterOption">
+                                        <input type="checkbox" name="" id="ingr_1">
+                                        <label for="ingr_1">鳳梨</label>
+                                    </div>
+                                    <div class="products_filterOption">
+                                        <input type="checkbox" name="" id="ingr_5">
+                                        <label for="ingr_5">蔥花</label>
+                                    </div>
+                                    <div class="products_filterOption">
+                                        <input type="checkbox" name="" id="ingr_3">
+                                        <label for="ingr_3">火腿</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="decoration">
+                            <div class="decoration_title">
+                                <h3>裝飾品</h3>
+                            </div>
+                            <div class="products_filterList">
+                                <div class="products_filter_row">
+                                    <div class="products_filterOption">
+                                        <input type="checkbox" name="" id="deco_4">
+                                        <label for="deco_4">雨傘</label>
+                                    </div>
+                                    <div class="products_filterOption">
+                                        <input type="checkbox" name="" id="deco_5">
+                                        <label for="deco_5">十字架</label>
+                                    </div>
+                                    <div class="products_filterOption">
+                                        <input type="checkbox" name="" id="deco_6">
+                                        <label for="deco_6">眼球</label>
+                                    </div>
+                                </div>
+                                <div class="products_filter_row">
+                                    <div class="products_filterOption">
+                                        <input type="checkbox" name="" id="deco_1">
+                                        <label for="deco_1">手指餅乾</label>
+                                    </div>
+                                    <div class="products_filterOption">
+                                        <input type="checkbox" name="" id="deco_2">
+                                        <label for="deco_2">魔女掃帚</label>
+                                    </div>
+                                    <div class="products_filterOption">
+                                        <input type="checkbox" name="" id="deco_2">
+                                        <label for="deco_2">金紙</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="products_cardList">
+                    <script type="text/html" id="photo-item-template">
+                        <div id="cust_{{c_no}}" class="products_card base_{{b_no}} ingr_{{i1_no}} ingr_{{i2_no}} deco_{{d1_no}} deco_{{d2_no}}">
+                            <div class="products_offerLevel">
+                                <img src="{{grp_img}}" alt="">
+                            </div>
+                            <div class="products_detail">
+                                <div class="products_P">
+                                    <div class="products_Pname">
+                                        <p>{{cust_name}}</p>
+                                    </div>
+                                    <div class="products_Ptag">
+                                        <p>客製</p>
+                                    </div>
+                                </div>
+                                <div class="products_content">
+                                    <div class="products_img">
+                                        <img height='85' width='125' src="img/product/product.png" alt="">
+                                    </div>
+                                    <div class="products_information">
+                                        <p>成分</p>
+                                        <p><span>基底:</span><span>{{base_name}}</span></p>
+                                        <p><span>配料:</span><span>{{i1}}、{{i2}}</span></p>
+                                        <p><span>裝飾品:</span><span>{{d1}}、{{d2}}</span></p>
+                                    </div>
+                                </div>
+                                <div class="products_statusbox">
+                                    <div class="products_status">
+                                        <p>目前人數</p>
+                                        <div class="products_statusBar">
+                                            <span>{{grp_count}}/{{grp_limit}}</span>
+                                            <div class="bar">
+                                                <div class="bar_set" style="width:{{grp_status}}%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="products_level">
+                                        <div class="products_levelBar"><span>甜蜜</span>
+                                            <div class="bar">
+                                                <div class="bar_set" style="width:{{sweet_lv}}%" ></div>
+                                            </div>
+                                        </div>
+                                        <div class="products_levelBar"><span>養生</span>
+                                            <div class="bar">
+                                                <div class="bar_set" style="width:{{health_lv}}%"></div>
+                                            </div>
+                                        </div>
+                                        <div class="products_levelBar"><span>鹹派</span>
+                                            <div class="bar">
+                                                <div class="bar_set" style="width:{{salty_lv}}%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="products_actionbox">
+                                    <div class="products_action">
+                                        <p>單價: ${{grp_price}}</p>
+                                        <p>數量:<input type="number" min="1" value="1"></p>
+                                        <a class="grp_addCart" id="{{g_no}}">我要團購</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </script>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="hidden">
+        <div class="page-load-status">
+            <div class="loader-ellips infinite-scroll-request">
+                <span class="loader-ellips__dot"></span>
+                <span class="loader-ellips__dot"></span>
+                <span class="loader-ellips__dot"></span>
+                <span class="loader-ellips__dot"></span>
+            </div>
+            <p class="infinite-scroll-last">End of content</p>
+            <p class="infinite-scroll-error">No more pages to load</p>
+        </div>
+    </section>
+    <footer class="layout_footer">
+        <div class="layout_footericons">
+            <i class="fab fa-facebook-square"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-line"></i>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script
+            src='https://cdnjs.cloudflare.com/ajax/libs/jquery-infinitescroll/3.0.6/infinite-scroll.pkgd.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.all.min.js'></script>
+    <script src="js/menu.js"></script>
+    <script src="js/infinteScroll.js"></script>
+    <script src="php/login/header_member.js"></script>
+    <script src="js/addCart_prod.js"></script>
+</body>
+
+</html>

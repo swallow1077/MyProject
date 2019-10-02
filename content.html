@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body class="layout-bg">
+<section class="comment_out">
+  <div class="container">
+    <h3 class="post_title">我要留言</h3>
+    <div class="post_content">
+      <div class="post_pic">
+        <img src="img/prd_in_img/Original.jpg" alt="" class="post_img">
+      </div>
+      <form action="" id="post_cmt" class="post_cmt" name="addMes">
+        <div class="form_id">
+          <p class="nick_name">暱稱:</p>
+          <input type="text" name="msg_name" class="msg_name" id="msg_name">
+          <div id="rankStar" class="fivestar">
+            <img src="img/prd_in_img/star_en.png" alt="星" class="star" id="star1">
+            <img src="img/prd_in_img/star_en.png" alt="星" class="star" id="star2">
+            <img src="img/prd_in_img/star_en.png" alt="星" class="star" id="star3">
+            <img src="img/prd_in_img/star_en.png" alt="星" class="star" id="star4">
+            <img src="img/prd_in_img/star_en.png" alt="星" class="star" id="star5">
+          </div>
+        </div>
+        <div class="form_txt">
+          <textarea class="form_area" name="comment_content" id="comment_content" maxlength="200"
+            placeholder="發表留言..."></textarea>
+            <div id="msg_cdate"></div>
+
+        </div>
+        <div class="comment_btn">
+          <button type="button" class="msn_btn" id="msn_btn">送出</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+
+<script>
+function $id(id){
+return document.getElementById(id);
+};
+
+// -----點擊星星亮幾顆星-------------------
+var starIndex = "";
+$(document).ready(function() {
+    $('.star').click(function (e) {
+    console.log($('#rankStar .star').index($(this)));
+    starIndex = $('#rankStar .star').index($(this));
+    $('#rankStar .star').attr("src", "img/prd_in_img/star_en.png");
+    for(let i = 0; i <= $('#rankStar .star').index($(this)) ; i++)
+    {
+        $(`#rankStar .star:eq(${i})`).attr("src", "img/prd_in_img/star_true.png");
+    }
+    });
+});
+// -----點擊星星亮幾顆星-------------------
+
+
+// ---印留言---------------
+function addMes(result){
+  var senstr = "";
+  senstr+= `<div class="msg_pic">`;
+  senstr+= `<img src="img/prd_in_img/Original.jpg" alt="idpic" class="msg_img">`;
+  senstr+= `</div>`;
+  senstr+= `<div class="msg_txt">`;
+  senstr+= `<div class="msg_title">`;
+  senstr+= `<p class="msg_id">${result.msg_name}</p>`;
+  senstr+= `<div class="fivestar">`;
+  for($i=0;$i<=result.mem_eva;$i++)
+  senstr+= `<img src="img/prd_in_img/star_true.png" alt="星" class="star">`;
+  senstr+= `</div>`;
+  senstr+= `</div>`;
+  senstr+= `<div class="msg_info">`;
+  senstr+= `<p class="msg_content">${result.comment_content}</p>`;
+  senstr+= `</div>`;
+  senstr+= `<p class="msg_time"><span>留言時間:</span>${result.msgDate}</p>`;
+  senstr+= `</div>`;
+  senstr+= `<button class="report">...</button>`;
+  // 取得容器
+  var container  = document.getElementById('container');
+
+  // 取得 "<li>Item 02</li>" 的元素
+  var refNode = document.querySelectorAll('.mem')[0];
+
+  // 建立 li 元素節點
+  var newNode = document.createElement('div');
+  newNode.id = "add";
+  newNode.classList = "mem";
+  newNode.innerHTML = senstr;
+
+  // 將新節點 newNode 插入 refNode 的前方
+  container.insertBefore(newNode, refNode);
+
+  $("form[name='addMes']").find(":text,textarea,input").each(function() {
+      $(this).val("");
+  });
+
+}
+// ---印留言end---------------
+
+
+
+// ---ajax----------------------------------------------------------
+window.addEventListener("load", function () {
+    document.getElementById("msn_btn").onclick = function(){
+    
+    var xhr = new XMLHttpRequest();
+    xhr.onload = function(){
+        if(xhr.status == 200){
+            console.log("responseText:"+xhr.responseText);
+            var res = JSON.parse(xhr.responseText); //物件
+            console.log(res);
+            addMes(res);
+
+        }
+        else{
+        alert(xhr.status);
+        }
+    }
+
+    xhr.open("post", "php/prod_in/sendMesBord.php",true);
+    xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+    
+    var dataObj = {};
+    var Today = new Date();
+　  var msgDate = Today.getFullYear()+ "-" + (Today.getMonth()+1) + "-" + Today.getDate() ;
+    
+    // var starIndex = $("#rankStar .star").index($(this));
+    console.log(starIndex);
+
+    dataObj.msg_name = document.getElementById("msg_name").value;
+    dataObj.comment_content = document.getElementById("comment_content").value;
+    dataObj.mem_eva = starIndex;
+
+    // dataObj.thisStar = document.querySelectorAll(".star").index;
+    dataObj.msgDate = msgDate;
+    console.log(dataObj);
+    var data_info = "dataInfo=" + JSON.stringify(dataObj);
+    // var data_info = JSON.stringify(dataObj);
+    // var data_info = "dataInfo=" + `msg_name=${msg_name}&comment_content=${comment_content}`;
+    console.log(data_info);
+    xhr.send(data_info); 
+    };
+}, false);
+
+
+
+</script>
+
+
+
+</body>
+</html>

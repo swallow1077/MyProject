@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/js/all.js"></script> -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.6.1/animate.min.css">
+  <title>產品顯示頁面</title>
+
+</head>
+
+<body class='body_bg layout-bg'>
+  <section class='lightBox' style='display:none;'>
+    <div class="container">
+      <div id="lightBox">
+        <div class="login_password">
+          <span class="btnLoginCancel" id="btnLoginCancel">
+            <img src="img/prod/cancel.png" alt="cancel_icon">
+          </span>
+          <h3 class='login_title'>會員登入</h3>
+          <input type="text" name="memId" id="memId" class="mem_login" placeholder="帳號">
+          <br>
+          <input type="password" name="memPsw" id="memPsw" class="mem_login" placeholder="密碼">
+          <br>
+          <a href="javascript:void(0)" id="forget_psw">忘記密碼</a>
+          <br>
+          <a href="javascript:void(0)" class="btn_focus" id="btnLogin">
+            <p>登入</p>
+          </a>
+          </a>
+          <br>
+          <div class="notmem">
+            <span>不是會員嗎?</span>
+            <a href="javascript:void(0)" id="register">立即註冊</a>
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!------------- 登入的燈箱end-------------- -->
+  <!------------- 註冊的燈箱star-------------- -->
+  <section id="sign_box" class="sign_box" style='display:none;'>
+
+    <div class="sign_lightBox">
+      <div class="sign_content">
+        <span class="btnSignCancel" id="btnSignCancel">
+          <img src="img/prod/cancel.png" alt="cancel_icon">
+        </span>
+        <h3 class="sign_title">註冊會員</h3>
+        <form action="" id="submitForm">
+          <div class="sign_input_group">
+            <div class="sign_input_item sign_id">
+              <span>帳號:</span>
+              <input type="text" class="sign_inputs" name="memId2" id="memId2" placeholder="帳號">
+              <br>
+            </div>
+            <div class="sign_input_item">
+              <span>
+                <input type="button" value="帳號可以使用嗎?" id="btn_sign_check">
+              </span>
+              <p id="idMsg">檢查中</p>
+            </div>
+            <div class="sign_input_item sign_psw">
+              <span>密碼:</span>
+              <input type="password" class="sign_inputs" name="memPsw2" id="memPsw2" placeholder="密碼"> <!-- <br> -->
+            </div>
+            <div class="sign_input_item sign_psw">
+              <span>確認密碼</span>
+              <input type="password" class="sign_inputs" name="confirmPsw" id="confirmPsw" placeholder="確認密碼">
+              <!-- <br> -->
+            </div>
+            <div class="sign_input_item sign_namd">
+              <span>姓名:</span>
+              <input type="text" class="sign_inputs" name="mem_name2" id="mem_name2" placeholder="姓名"> <!-- <br> -->
+
+            </div>
+            <div class="sign_input_item sign_email">
+              <span>信箱:</span>
+              <input type="email" class="sign_inputs" name="mem_email2" id="mem_email2" placeholder="信箱">
+              <!-- <br> -->
+            </div>
+          </div>
+          <a href="javascript:void(0)" class="btn_register" id="btn_register">
+            <p>送出</p>
+          </a>
+        </form>
+      </div>
+    </div>
+  </section>
+  <!------------- 註冊的燈箱end-------------- -->
+
+<!-- ***********9/25更新******************* -->
+  <!-- navbar_star -->
+  <header class="menu layout_header" id="layout_header">
+    <div class="rwdnavbar">
+      <button class="layout_menubtn">
+        <span class="layout_menubtn-in">menu</span>
+      </button>
+      <a href='index_fron.html' class="rwdlogo">
+        <img src="img/layout/logo_白邊.svg" alt="rwdlogo">
+      </a>
+      <div class="rwdLogin">
+          <ul class="layout_login">
+            <span id="btnlogloutRwd">&nbsp</span>
+            <li>
+              <a href="javascript:;" id="spanLoginRwd">
+                <i class="fas fa-user-circle"></i>
+              </a>
+              <span id="spanLoginTextRwd" style="display:none">登入</span>
+            </li>
+            <li id="goCartShowRwd">
+              <div class="prodCountRwd"></div>
+              <a href="cart.html">
+                <i class="fas fa-shopping-cart" id="shopCartRwd"></i>
+              </a>
+            </li>
+          </ul>
+      </div>
+    </div>
+    <nav class="layout_nav">
+  
+      <ul class="layout_logo">
+        <h1 class="logo">
+          <a class="logo_link" href="index_fron.html">派對</a>
+        </h1>
+      </ul>
+      <ul class="layout_items">
+        <li class="layout_itemlink">
+          <a class="layout_link" href="cust.php">客制派</a>
+        </li>
+        <li class="layout_itemlink">
+          <a class="layout_link" href="prod.html">派對商品</a>
+        </li>
+
+        <li class="layout_itemlink">
+          <a class="layout_link" href="buy.html">派對團購</a>
+        </li>
+        <li class="layout_itemlink">
+          <a class="layout_link" href="vot.html">派對投票</a>
+        </li>
+        <li class="layout_itemlink">
+          <a class="layout_link" href="cars.html">派對活動</a>
+        </li>
+      </ul>
+      <ul class="layout_login">
+        <span id="btnloglout">&nbsp</span>
+        <li>
+          <a href="javascript:;" id="spanLogin">
+            <i class="fas fa-user-circle"></i>
+          </a>
+          <span id="spanLoginText" style="display:none">登入</span>
+        </li>
+        <li id="goCartShow">
+          <div class="prodCount"></div>
+          <a href="cart.html">
+            <i class="fas fa-shopping-cart" id="shopCart"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <!-- navbar_end -->
+
+
+  <section class="prod_champion">
+    <div class="container">
+      <div class="champion_titleshow">
+        <h2 class='champion_title'>上個月團購冠軍</h2>
+      </div>
+
+      <div class="champion_imgset">
+        <!------------------------ 加入canvas動畫 --------------------------->
+        <canvas id="prodCanvas"></canvas>
+        <script src="js/pop.js"></script>
+
+        <figure class='figure'>
+          <figcaption>OOXX派</figcaption>
+          <a href="javascript:void(0)"><img src="img/prod/pie_mucha.png"></a>
+        </figure>
+      </div>
+
+    </div>
+  </section>
+  <!------------- 登入的燈箱-------------- -->
+  <section class='lightBox' style="display:none;">
+    <div class="container">
+      <div id="lightBox">
+        <div class="login_password">
+          <span class="btnLoginCancel">
+            <img src="img/prod/cancel.png" alt="cancel_icon">
+          </span>
+          <h3 class='login_title'>會員登入</h3>
+
+          <input type="text" name="memId" id="memId" value="" placeholder="帳號"><br>
+          <input type="password" name="memPsw" id="memPsw" value="" maxlength="12" placeholder="密碼"><br>
+          <a href="javascript:void(0)" id="forget_psw">忘記密碼</a><br>
+          <a href="javascript:void(0)" class="btn_focus" id="btnLogin">
+            <p>登入</p>
+          </a><br>
+
+          <div class="notmem">
+            <span>不是會員嗎?</span>
+            <a href="javascript:void(0)" id="register">立即註冊</a><br>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- ------------------------------------------------ -->
+  <section class="prod_normal">
+    <div class="container">
+      <div class="normal_titleshow">
+        <h2 class='normal_title'>一般商品</h2>
+      </div>
+      <div class="normal_wrap">
+        <a href="javascript:void(0)" class='filterBtn'>篩選器</a>
+        <form action="javascript:void(0)" class='filterForm'>
+          <div class="filterHeader">
+            <span>篩選器</span>
+            <img src="img/prod/cancel.png" alt='cancel_icon' class='cancel'>
+          </div>
+          <div class="filter_group">
+            <div class="filter_popular">
+              <select name="" id="popular_item" class='selectBox'>
+                <option value="popular" selected>熱門商品</option>
+                <option value="latest">最新上市</option>
+                <option value="price">價格</option>
+              </select>
+            </div>
+
+            <ul class="filter_flavor" style='display:none;'>
+              <p class='filter_title'>口味:
+                <img src="img/prod/arrow.png" alt="" class='arrow'>
+              </p>
+              <div class='boxes'>
+                <li class='filterbox'>
+                  <input type="checkbox" name='prod' class='flavor' disabled>
+                  <label for="sweet">甜蜜蜜</label>
+                </li>
+                <li class='filterbox'>
+                  <input type="checkbox" name='prod' class='flavor' disabled>
+                  <label for="health">養生</label>
+                </li>
+                <li class='filterbox'>
+                  <input type="checkbox" name='prod' class='flavor' disabled>
+                  <label for="salty">鹹派</label>
+                </li>
+              </div>
+
+            </ul>
+
+            <ul class="filter_base">
+              <p class=filter_title>基底:(只能選一種)
+                <img src="img/prod/arrow.png" alt="" class='arrow'>
+              </p>
+              <div class='boxes'>
+                <li class='filterbox'>
+                  <input type="checkbox" value='1' name='prod' id="carbon" class='checkboxes'>
+                  <!-- <input type="checkbox"  > -->
+                  <label for="carbon">抹茶</label>
+                </li>
+                <li class='filterbox'>
+                  <input type="checkbox" value='2' name='prod' id="mucha" class='checkboxes'>
+                  <!-- <input type="checkbox"  > -->
+                  <label for="mucha">南瓜</label>
+                </li>
+                <li class='filterbox'>
+                  <input type="checkbox" value='3' name='prod' id="pumpkin" class='checkboxes'>
+                  <!-- <input type="checkbox"  > -->
+                  <label for="pumpkin">竹炭</label>
+                </li>
+
+              </div>
+            </ul>
+            <ul class="filter_ingredient">
+              <p class='filter_title'>配料:
+                <img src="img/prod/arrow.png" alt="" class='arrow'>
+              </p>
+              <div class='boxes'>
+                <li class='filterbox'>
+                  <input type="checkbox" value='1' name='prod' id="almond" class='ingr_no'>
+                  <label for="almond">鳳梨</label>
+                </li>
+                <li class='filterbox'>
+                  <input type="checkbox" value='2' name='prod' id="egg" class='ingr_no'>
+                  <label for="egg">紅豆</label>
+                </li>
+                <li class='filterbox'>
+                  <input type="checkbox" value='3' name='prod' id="redbean" class='ingr_no'>
+                  <label for="redbean">火腿</label>
+                </li>
+                <li class='filterbox'>
+                  <input type="checkbox" value='4' name='prod' id="pineapple" class='ingr_no'>
+                  <label for="pineapple">蛋黃</label>
+                </li>
+                <li class='filterbox'>
+                  <input type="checkbox" value='5' name='prod' id="springonion"" class='ingr_no'>
+                        <label for=" springonion">蔥花</label>
+                </li>
+                <li class='filterbox'>
+                  <input type="checkbox" value='6' name='prod' id="ham" class='ingr_no'>
+                  <label for="ham">杏仁</label>
+                </li>
+
+              </div>
+            </ul>
+
+            <ul class="filter_deco" style='display:none;'>
+              <p class='filter_title'>裝飾品:
+                <img src="img/prod/arrow.png" alt="" class='arrow'>
+              </p>
+              <div class='boxes'>
+                <li class='filterbox'>
+                  <input type="checkbox" value='deco' name='prod' id="finger" class='deco_no'>
+                  <label for="finger">手指餅乾</label>
+                </li>
+
+                <li class='filterbox'>
+                  <input type="checkbox" value='deco' name='prod' id="eyeball" class='deco_no'>
+                  <label for="eyeball">眼珠巧克力</label>
+                </li>
+                <li class='filterbox'>
+                  <input type="checkbox" value='deco' name='prod' id="worm" class='deco_no'>
+                  <label for="worm">蟲蟲軟糖</label>
+                </li>
+              </div>
+            </ul>
+          </div>
+          <div class="filter_btnGroup">
+            <div class="cancelBtn">取消</div>
+            <div class="confirmBtn">套用</div>
+          </div>
+        </form>
+
+        <!-- 產品開始 -->
+        <div class="prod_prodset">
+          <!-- -----------第一層:團購冠軍 ----------------------------------------->
+          <div class="groupshop">
+
+            <div class="titleshow">
+              <h3 class='groupshop_title' style='background-color:transparent;padding:0px;'>團購冠軍</h3>
+            </div>
+            <!-- ----------slider區塊開始 ------------------->
+
+            <div class="slider_cardset">
+
+              <div class="card_slider">
+                <div class="card_titleshow">
+                  <h3 class='card_title'>2019/07</h3>
+                  <img src="img/prod/collect.png" alt="" class='collect'>
+                </div>
+                <img src="img/prod/pie.png" class='card_img' alt="派">
+                <div class="card_price">價格:200元</div>
+                <div class="card_btnGroup">
+                  <a href="product_in.php" class='card_group'>看商品詳情</a>
+                  <a href="javascript:void(0)" class='card_cart'>加入購物車</a>
+                </div>
+              </div>
+
+              <div class="card_slider">
+                <div class="card_titleshow">
+                  <h3 class='card_title'>2019/07</h3>
+                  <img src="img/prod/collect.png" alt="" class='collect'>
+                </div>
+                <img src="img/prod/pie.png" class='card_img' alt="派">
+                <div class="card_price">價格:200元</div>
+                <div class="card_btnGroup">
+                  <a href="product_in.php" class='card_group'>看商品詳情</a>
+                  <a href="javascript:void(0)" class='card_cart'>加入購物車</a>
+                </div>
+              </div>
+
+              <div class="card_slider">
+                <div class="card_titleshow">
+                  <h3 class='card_title'>2019/07</h3>
+                  <img src="img/prod/collect.png" alt="" class='collect'>
+                </div>
+                <img src="img/prod/pie.png" class='card_img' alt="派">
+                <div class="card_price">價格:200元</div>
+                <div class="card_btnGroup">
+                  <a href="product_in.php" class='card_group'>看商品詳情</a>
+                  <a href="javascript:void(0)" class='card_cart'>加入購物車</a>
+                </div>
+              </div>
+
+
+            </div>
+            <!-- ----------slider區塊結束 ------------------->
+
+          </div>
+          <!-- -------------第一層:團購冠軍結束 ----------------------------------->
+          <!-- -------------第二層:素顏派-------------------------------------- -->
+
+          <div class="prodbase">
+            <div class="titleshow">
+              <h3 class="prodbase_title">素顏派</h3>
+            </div>
+            <!-- --------區塊開始----------------------->
+            <div class="slider_cardset" style='display:flex;'>
+              <div class="card_slider">
+                <div class="card_titleshow">
+                  <h3 class='card_title'>南瓜口味</h3>
+                  <img src="img/prod/collect.png" alt="" class='collect'>
+                </div>
+                <img src="img/prod/pie.png" class='card_img' alt="派">
+                <div class="card_price">價格:100元</div>
+                <div class="card_btnGroup">
+                  <a href="product_in.html" class='card_group'>我要團購</a>
+                  <a href="javascript:void(0)" class='card_cart'>加入購物車</a>
+                </div>
+              </div>
+
+              <div class="card_slider">
+                <div class="card_titleshow">
+                  <h3 class='card_title'>南瓜口味</h3>
+                  <img src="img/prod/collect.png" alt="" class='collect'>
+                </div>
+                <img src="img/prod/pie.png" class='card_img' alt="派">
+                <div class="card_price">價格:100元</div>
+                <div class="card_btnGroup">
+                  <a href="product_in.html" class='card_group'>我要團購</a>
+                  <a href="javascript:void(0)" class='card_cart'>加入購物車</a>
+                </div>
+              </div>
+
+              <div class="card_slider">
+                <div class="card_titleshow">
+                  <h3 class='card_title'>南瓜口味</h3>
+                  <img src="img/prod/collect.png" alt="" class='collect'>
+                </div>
+                <img src="img/prod/pie.png" class='card_img' alt="派">
+                <div class="card_price">價格:100元</div>
+                <div class="card_btnGroup">
+                  <a href="product_in.html" class='card_group'>我要團購</a>
+                  <a href="javascript:void(0)" class='card_cart'>加入購物車</a>
+                </div>
+              </div>
+            </div>
+            <!-- --------區塊開始----------------------->
+          </div>
+
+          <!-- -------------第二層:素顏派結束-------------------------------------- -->
+          <!-- -------------第三層:最佳絕配------------------------------------------->
+          <div class="match">
+            <div class="titleshow">
+              <h3 class="match_title">最佳絕配</h3>
+            </div>
+            <!-- ----------區塊開始----------------- -->
+            <div class="slider_cardset">
+              <!-- <div class="content"> -->
+              <div class="card_slider">
+                <div class="card_titleshow">
+                  <h3 class='card_title'>宇治金時</h3>
+                  <img src="img/prod/collect.png" alt="" class='collect'>
+                </div>
+                <img src="img/prod/pie.png" class='card_img' alt="派">
+                <div class="card_price">價格:100元</div>
+                <div class="card_btnGroup">
+                  <a href="product_in.php" class='card_group'>看商品詳情</a>
+                  <a href="javascript:void(0)" class='card_cart'>加入購物車</a>
+                </div>
+              </div>
+
+              <div class="card_slider">
+                <div class="card_titleshow">
+                  <h3 class='card_title'>宇治金時</h3>
+                  <img src="img/prod/collect.png" alt="" class='collect'>
+                </div>
+                <img src="img/prod/pie.png" class='card_img' alt="派">
+                <div class="card_price">價格:100元</div>
+                <div class="card_btnGroup">
+                  <a href="product_in.php" class='card_group'>看商品詳情</a>
+                  <a href="javascript:void(0)" class='card_cart'>加入購物車</a>
+                </div>
+              </div>
+
+              <div class="card_slider">
+                <div class="card_titleshow">
+                  <h3 class='card_title'>宇治金時</h3>
+                  <img src="img/prod/collect.png" alt="" class='collect'>
+                </div>
+                <img src="img/prod/pie.png" class='card_img' alt="派">
+                <div class="card_price">價格:100元</div>
+                <div class="card_btnGroup">
+                  <a href="product_in.html" class='card_group'>看商品詳情</a>
+                  <a href="javascript:void(0)" class='card_cart'>加入購物車</a>
+                </div>
+              </div>
+
+              <div class="card_slider">
+                <div class="card_titleshow">
+                  <h3 class='card_title'>宇治金時</h3>
+                  <img src="img/prod/collect.png" alt="" class='collect'>
+                </div>
+                <img src="img/prod/pie.png" class='card_img' alt="派">
+                <div class="card_price">價格:100元</div>
+                <div class="card_btnGroup">
+                  <a href="product_in.html" class='card_group'>看商品詳情</a>
+                  <a href="javascript:void(0)" class='card_cart'>加入購物車</a>
+                </div>
+              </div>
+
+              <div class="card_slider">
+                <div class="card_titleshow">
+                  <h3 class='card_title'>宇治金時</h3>
+                  <img src="img/prod/collect.png" alt="" class='collect'>
+                </div>
+                <img src="img/prod/pie.png" class='card_img' alt="派">
+                <div class="card_price">價格:100元</div>
+                <div class="card_btnGroup">
+                  <a href="product_in.html" class='card_group'>看商品詳情</a>
+                  <a href="javascript:void(0)" class='card_cart'>加入購物車</a>
+                </div>
+              </div>
+              <!-- </div> -->
+            </div>
+            <!-- --------slider區塊結束----------------------->
+          </div>
+          <!-- -------------第三層:最佳絕配結束-------------------------------------- -->
+
+
+          <!-- -------------第四層:派對小點------------------------------------------->
+          <div class="deco">
+            <div class="titleshow">
+              <h3 class="match_title">派對小點</h3>
+            </div>
+            <!-- ----------slider區塊開始----------------- -->
+            <div class="slider_cardset">
+
+              <div class="card_slider">
+                <div class="card_titleshow">
+                  <h3 class='card_title'>手指餅乾</h3>
+                  <img src="img/prod/collect.png" alt="" class='collect' style='display:none;'>
+                </div>
+                <img src="img/prod/fingercookie.png" class='card_img' alt="手指餅乾">
+                <div class="card_price">價格:100元</div>
+                <div class="card_btnGroup">
+                  <a href="product_in.html" class='card_group'>看商品詳情</a>
+                  <a href="javascript:void(0)" class='card_cart'>加入購物車</a>
+                </div>
+              </div>
+
+              <div class="card_slider">
+                <div class="card_titleshow">
+                  <h3 class='card_title'>手指餅乾</h3>
+                  <img src="img/prod/collect.png" alt="" class='collect' style='display:none;'>
+                </div>
+                <img src="img/prod/fingercookie.png" class='card_img' alt="手指餅乾">
+                <div class="card_price">價格:100元</div>
+                <div class="card_btnGroup">
+                  <a href="product_in.php" class='card_group'>看商品詳情</a>
+                  <a href="javascript:void(0)" class='card_cart'>加入購物車</a>
+                </div>
+              </div>
+
+              <div class="card_slider">
+                <div class="card_titleshow">
+                  <h3 class='card_title'>手指餅乾</h3>
+                  <img src="img/prod/collect.png" alt="" class='collect' style="display:none;">
+                </div>
+                <img src="img/prod/fingercookie.png" class='card_img' alt="手指餅乾">
+                <div class="card_price">價格:100元</div>
+                <div class="card_btnGroup">
+                  <a href="product_in.php" class='card_group'>看商品詳情</a>
+                  <a href="javascript:void(0)" class='card_cart'>加入購物車</a>
+                </div>
+              </div>
+
+            </div>
+            <!-- --------slider區塊結束----------------------->
+          </div>
+          <!-- -------------第四層:派對小點結束-------------------------------------- -->
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="layout_footer">
+    <div class="layout_footericons">
+      <i class="fab fa-facebook-square"></i>
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-line"></i>
+    </div>
+  </footer>
+  <script src="js/menu.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.all.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.min.js"></script>
+
+  <script src="js/alertbox.js"></script>
+  <script src='js/filterRWD.js'></script>
+  <script src="js/filterAdd.js"></script>
+  <!-- <script src="js/collect.js"></script> -->
+  <script src="js/lightbox.js"></script>
+  <script src="js/addCart_prod.js"></script>
+  <script src="php/login/header_member.js"></script>
+  <script src="js/prodOriginAjax.js"></script>
+</body>
+
+
+</html>

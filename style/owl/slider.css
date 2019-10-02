@@ -1,0 +1,48 @@
+@media screen and (min-width:768px){
+  .card_slider{
+    width:50%;
+  }
+
+}
+
+
+.card_slider {
+  width: 95%;
+  margin:auto;
+  background-position: center top;
+}
+@media screen and (max-width:767px) {
+  .card_slider {
+    width: 95%;
+    margin:20px auto;
+    background-position: center top;
+  }
+}
+
+
+.base_title{
+  display:flex;
+  width :100%;
+  text-align: center;
+  justify-content: center;
+}
+
+
+  /* background-color: #ccc;
+} */
+
+.carousel-wrap {
+  position: relative;
+  width: 95%;
+  margin: 0 auto;
+}
+
+
+
+.owl-next {
+  position: absolute;
+  top: 50%;
+  right: -5%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}

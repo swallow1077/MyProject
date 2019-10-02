@@ -1,0 +1,152 @@
+.cust_steps_in:nth-child(2){
+    @include media(md){
+        margin-top: -30%;
+    }
+}
+
+.cust_steps_in_container{
+    display: flex;
+    @include media(md){
+        flex-direction: column;
+    }
+
+    @at-root .cust_scrollbox{
+        width: 70%;
+        @include media(md){
+            width: 100%;
+        }
+    }
+    @at-root .cust_aside{
+        width: 30%;
+        @include media(md){
+            width: 100%;
+        }
+    }
+}
+
+// 主要區域
+.cust_scrollbox{
+    > .prople{
+        width: 40%;
+        transform: translateX(350px) rotate(10deg);
+        @include media(md){
+            width: 50%;
+            transform: translateX(95%) rotate(10deg);
+        }
+    }
+    > .step_desc{
+        margin-top: -250px;
+        transform: translate( 90px, -30px) rotate(-10deg);
+        @include media(md){
+            width: 60%;
+            margin-top: -60%;
+            transform: translate( -30%, -10%) rotate(-10deg);
+        }
+    }
+    > .wood{
+        width: 75%;
+        margin: -10% auto 0;
+    }
+    @at-root .cust_pieshow{
+        width: 100%;
+        position: relative;
+
+        > .pie{
+            width: 80%;
+            margin: auto;
+        }
+
+        // ingredients transparent img.
+        @at-root .selectIngred{
+            width: 60%;
+            position: absolute;
+            top: 0;
+            left: 20%;
+        }
+        @at-root .selectDecor_box{
+            width: 70%;
+            height: 55%;
+            position: absolute;
+            top: 0;
+            left: 15%;
+
+            > .selectDecor{
+                position: absolute;
+                width: 28%;
+            }
+        }
+    }
+}
+.selectDecor_1 {
+    top: 50%;
+    left: 10%;
+}
+.selectDecor_2 {
+    top: 45%;
+    left: 40%;
+}
+.selectDecor_3 {
+    top: 40%;
+    left: 80%;
+}
+.selectDecor img {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+
+
+// 食材選擇 清單 cust_aside
+.cust_aside{
+    position: relative;
+    > img{
+        width: 100%;
+        @include media(md){
+            display: none;
+        }
+    }
+    @at-root .cust_ingred_box{
+        width: 80%;
+        // the position of ingredient items on the img.
+        position: absolute;
+        // top: 180px;
+        bottom: 20px;
+        left: 50%;
+        transform: translate(-50%);
+        // for setting ingredient items.
+        display: flex;
+        flex-wrap: wrap;
+        @include media(md){
+            position: static;
+            width: 100%;
+            transform: translate(0%);
+        }
+
+        > .cust_item{
+            cursor: pointer;
+            width: 50%;
+            min-height: 160px;
+            padding: 5px;
+            // img -> top, title -> bottom.
+            display: flex;
+            flex-direction: column;
+            @include media(md){
+                width: 30%;
+                min-height: 130px;
+                background-color: #fcc;
+                border-radius: 10px;
+                margin: 0.6% 1.66%;
+            }
+            > img{
+                width: 100%;
+                margin: auto;
+            }
+            > span{
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+}

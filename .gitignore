@@ -1,0 +1,16 @@
+/dist/style/*.css
+/dist/style/*.map
+/style/*.css
+/style/*.map
+package.json
+node_modules
+/data/*.json
+prepros-6.config
+package-lock.json
+/css/*.css
+/config.yml
+.vscode
+php/connectDataBase.php
+/back-end/php/connectDataBase.php
+
+

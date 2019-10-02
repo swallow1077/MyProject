@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/back_index.css">
+
+  </head>
+
+  <body class="show_list">
+    <!-- 導覽列 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <a class="nav-link ml-auto" href="#"><span class="sr-only">(current)</span></a>
+        <button class="btn btn-outline-success my-2 my-sm-0 mr-2 " id="loginUser" type="submit">登出</button>
+      </div>
+      <div>
+        <p class="Idshow"></p>
+      </div>
+    </nav>
+    <!-- 導覽列 -->
+
+    <section>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-2">
+            <!-- 選單區域 -->
+            <!-- 選單區域 -->
+            <ul class="list-group">
+              <li class="list-group-item mt-2"><a href="member-List.html">會員管理</a></li>
+              <li class="list-group-item mt-2"><a href="products-List.html">商品管理</a></li>
+              <li class="list-group-item mt-2"><a href="customize-List.html">客製管理</a></li>
+              <li class="list-group-item mt-2"><a href="order-List.html">訂單管理</a></li>
+              <li class="list-group-item mt-2"><a href="group-List.html">團購管理</a></li>
+              <li class="list-group-item mt-2"><a href="carevent-List.html">胖卡活動管理</a></li>
+            </ul>
+            <!-- 選單區域 -->
+          </div>
+          <div class="col-10">
+            <ul class="nav nav-tabs">
+              <li class="nav-item mr-2">
+                <a class="nav-link" href="products-List.html">商品總覽</a>
+              </li>
+              <li class="nav-item mr-2">
+                <a class="nav-link" href="product-Add.html">新品上架</a>
+              </li>
+            </ul>
+            <!-- 新增區域 -->
+            <div class="container">
+
+              <div class="row">
+                <section class="info-box">
+                  <p>縮圖：</p>
+                  <figure class="info-box_show">
+                    <img id="file_thumbnail">
+                  </figure>
+                </section>
+                <form method="post" enctype="multipart/form-data" id="updataForm" class="addInfo">
+                  <table>
+                    <tr>
+                      <th>商品名稱</th>
+                      <td><input type="text" id="proName" class="form-control" name="proName"></td>
+                    </tr>
+                    <tr>
+                      <th>商品價格</th>
+                      <td><input type="text" id="proPrice" class="form-control" name="proPrice"></td>
+                    </tr>
+                    <tr>
+                      <th>商品說明</th>
+                      <td><input type="text" id="proInfo" class="form-control" name="proDesc"></td>
+                    </tr>
+                    <tr>
+                      <th>基底</th>
+                      <td><select name="proBase" id="proBaseno" class="form-control">
+                          　<option value="1">竹炭</option>
+                          　<option value="2">抹茶</option>
+                          　<option value="3">南瓜</option></select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>配料1</th>
+                      <td>
+                        <select name="ingrOne" class="form-control">
+                          　<option value="1">杏仁</option>
+                          　<option value="2">蛋黃</option>
+                          　<option value="3">紅豆</option>
+                          <option value="4">鳳梨</option>
+                          　<option value="5">蔥花</option>
+                          　<option value="6">火腿</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>配料2</th>
+                      <td>
+                        <select name="ingrTwo" class="form-control">
+                          　<option value="1">杏仁</option>
+                          　<option value="2">蛋黃</option>
+                          　<option value="3">紅豆</option>
+                          <option value="4">鳳梨</option>
+                          　<option value="5">蔥花</option>
+                          　<option value="6">火腿</option>
+                        </select>
+                      </td>
+
+                    </tr>
+
+                    <tr>
+                      <th>裝飾品</th>
+                      <td>
+                        <select name="decoOne" class="form-control">
+                          　<option value="1">雨傘</option>
+                          　<option value="2">十字架</option>
+                          　<option value="3">眼球</option>
+                          <option value="4">手指餅乾</option>
+                          <option value="5">魔女掃帚</option>
+                          <option value="6">金紙</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>裝飾品</th>
+                      <td>
+                        <select name="decoTwo" class="form-control">
+                          　　<option value="1">雨傘</option>
+                          　<option value="2">十字架</option>
+                          　<option value="3">眼球</option>
+                          <option value="4">手指餅乾</option>
+                          <option value="5">魔女掃帚</option>
+                          <option value="6">金紙</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>狀態</th>
+                      <td>
+                        <select name="prodStat" class="form-control">
+                          　　<option value="上架">上架</option>
+                          　<option value="下架">下架</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>商品圖</th>
+                      <td>上傳檔案:<input type="file" name="proPic" id="customFileInput"></td>
+                    </tr>
+                    <tr>
+                      <th>評價</th>
+                      <td><input type="text" id="porEva" class="form-control" name="porEva"></td>
+                    </tr>
+                    <tr>
+                      <th>次數</th>
+                      <td><input type=" text" id="porEvacount" class="form-control" name="porEvacount"></td>
+                    </tr>
+                    <tr>
+                      <td colspan="2"><input type="button" name="submit" id="upData" value="新增" class="btn btn-primary">
+                      </td>
+                    </tr>
+                  </table>
+                </form>
+              </div>
+            </div>
+            <!-- 新增區域 -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js'></script>
+    <script src="js/product-add.js"></script>
+    <!-- <script src="js/reportList.js"></script> -->
+  </body>
+
+  </html>

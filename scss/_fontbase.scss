@@ -1,0 +1,91 @@
+@import 'mixin';
+
+//////////////////////// 網頁用的字型//////////////////////////
+//                                                         //
+//                                                         //`
+/////////////////////////////////////////////////////////////
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+//////////////////////// 共用顏色字的大小///////////////////////
+//                                                         //
+//                                                         //`
+/////////////////////////////////////////////////////////////
+//////////////////////// 顏色名字/////////////////////////////
+//                                                         //
+//                                                         //`
+/////////////////////////////////////////////////////////////
+$color: (
+  main_bg_color: #ffc556,
+  sec_bg_color: #ed690f,
+  footer_bg_color: #090c7b,
+  title_color: #921707,
+  font_color: #333,
+);
+
+/////////////////////網頁版共用基本大小含RWD/////////////////////
+//                                                         //
+//                                                         //`
+/////////////////////////////////////////////////////////////
+////////////基本字重量////////////////
+$web_font_weight: (
+  h2_weight: 500,
+);
+////////////行高/////////////////////
+$web_line_height: (
+  base_line: 32.4px,
+);
+////////////桌機版基本字的大小//////////
+$fz_size: (
+  h2: 46px,
+  h3: 24px,
+  base: 18px,
+);
+////////////手機基本字的大小////////////
+$fz_md_size: (
+  h2: 36px,
+  h3: 20px,
+  base: 16px,
+);
+/////////////////////////////////////////////////////////////
+//一般設定(md手機)(lg桌機)                                    //
+/////////////////////////////////////////////////////////////
+body {
+  position: relative;
+  // overflow: hidden;
+  h2 {
+    @include media(md) {
+      font-size: map-get($fz_md_size, h2);
+      font-weight: map-get($web_font_weight, h2_weight);
+      line-height: map-get($web_line_height, base_line);
+      line-height: 1.8rem;
+    }
+    @include media(lg) {
+      font-size: map-get($fz_size, h2);
+      font-weight: map-get($web_font_weight, h2_weight);
+      line-height: map-get($web_line_height, base_line);
+      line-height: 1.8rem;
+    }
+  }
+  h3 {
+    @include media(md) {
+      font-size: map-get($fz_md_size, h3);
+      font-weight: map-get($web_font_weight, h2_weight);
+    }
+    @include media(lg) {
+      font-size: map-get($fz_size, h3);
+      font-weight: map-get($web_font_weight, h2_weight);
+    }
+  }
+  p {
+    @include media(md) {
+      font-size: map-get($fz_md_size, base);
+    }
+    @include media(lg) {
+      font-size: map-get($fz_size, base);
+    }
+  }
+}

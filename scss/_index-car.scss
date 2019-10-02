@@ -1,0 +1,227 @@
+// 0909修改間距====================
+.index_car_group {
+  margin-top: 100px;
+}
+
+// ====================
+.indexcar {
+  &_map {
+    > img {
+      width: 100%;
+    }
+  }
+  &_show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include media(md) {
+      flex-wrap: wrap;
+    }
+  }
+  &_info {
+    background-image: url('../img/index-car/cart_text.png');
+    padding-top: 20px;
+    padding-bottom: 400px;
+    // border: 1px solid #000;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: #fff;
+    flex: 1;
+    @include media(md){
+      background-size: 110% 105%;
+    }
+    > .info_title {
+      position: absolute;
+      right: 27%;
+      top: 30%;
+      font-size: map-get($fz_size, h3);
+      @include  media(md){
+        width:92%;
+        position:absolute;
+        right:0;
+      }
+    }
+    > .info_mainshow {
+      position: absolute;
+      width: 50%;
+      right: 25%;
+      top: 40%;
+      > h3 {
+        line-height: 1.4;
+        text-align: center;
+      }
+      > p {
+        padding-top: 20px;
+        line-height: 1.4;
+      }
+    }
+  }
+  &_map {
+    position: relative;
+    > .map_car {
+      position: absolute;
+      top: 22%;
+      left: 50%;
+      width: 20%;
+    }
+    > .map_point {
+      position: absolute;
+      top: 26%;
+      left: 42%;
+      width: 7%;
+    }
+  }
+  &_img {
+    padding-top: 20px;
+    padding-bottom: 50px;
+    display: flex;
+    align-items: flex-end;
+    // background-color: #ccc;
+    justify-content: center;
+  }
+  &_onecar {
+    padding: 30px;
+    position: relative;
+    flex: 3;
+    &_tire-1 {
+      position: absolute;
+      top: 190px;
+      left: 60px;
+      animation: runone 2s -1s linear infinite reverse;
+      @include media(md) {
+        width: 20%;
+        top: 60%;
+        left: 12%;
+      }
+    }
+    &_tire-2 {
+      position: absolute;
+      top: 190px;
+      left: 380px;
+      @include media(md) {
+        // left: 340px;
+        top: 60%;
+        left: 67%;
+        width: 20%;
+      }
+      animation: runone 2s -1s linear infinite reverse;
+    }
+    img {
+      width: 100%;
+    }
+  }
+  &_twocar {
+    padding: 30px;
+    position: relative;
+    flex: 2;
+    @include media(md) {
+      display: none;
+    }
+
+    &_tire-1 {
+      position: absolute;
+      top: 160px;
+      left: 45px;
+      transform: scale(0.8);
+      animation: runtwo 2s -1s linear infinite;
+    }
+    &_tire-2 {
+      position: absolute;
+      top: 160px;
+      left: 240px;
+      transform: scale(0.8);
+      animation: runtwo 2s -1s linear infinite;
+    }
+    img {
+      width: 100%;
+    }
+  }
+  &_threecar {
+    padding: 30px;
+    position: relative;
+    flex: 1;
+    @include media(md) {
+      display: none;
+    }
+
+    // bottom: -20px;
+    &_tire-1 {
+      position: absolute;
+      top: 70px;
+      left: 10px;
+      transform: scale(0.4);
+      animation: runthree 2s -1s linear infinite;
+    }
+    &_tire-2 {
+      position: absolute;
+      top: 70px;
+      right: 10px;
+      // border: 1px solid #000;
+      transform: scale(0.4);
+      animation: runthree 2s -1s linear infinite;
+    }
+    img {
+      width: 100%;
+    }
+  }
+}
+
+@keyframes runone {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  70% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+
+    // transform: rotate(0deg);
+  }
+}
+
+@keyframes runtwo {
+  0% {
+    transform: scale(0.8) rotate(0deg);
+  }
+  25% {
+    transform: scale(0.8) rotate(90deg);
+  }
+  50% {
+    transform: scale(0.8) rotate(180deg);
+  }
+  70% {
+    transform: scale(0.8) rotate(270deg);
+  }
+  100% {
+    transform: scale(0.8) rotate(360deg);
+
+    // transform: rotate(0deg);
+  }
+}
+
+@keyframes runthree {
+  0% {
+    transform: scale(0.4) rotate(0deg);
+  }
+  25% {
+    transform: scale(0.4) rotate(90deg);
+  }
+  50% {
+    transform: scale(0.4) rotate(180deg);
+  }
+  70% {
+    transform: scale(0.4) rotate(270deg);
+  }
+  100% {
+    transform: scale(0.4) rotate(360deg);
+    // transform: rotate(0deg);
+  }
+}

@@ -1,0 +1,225 @@
+// ========動畫========
+@keyframes movepie {
+  0% {
+    top: 20%;
+  }
+  50% {
+    top: 24%;
+  }
+  100% {
+    top: 20%;
+  }
+}
+
+@keyframes movepie1 {
+  0% {
+    top: 0%;
+  }
+  50% {
+    top: 3%;
+  }
+  100% {
+    top: 0%;
+  }
+}
+
+@keyframes movepie1Mb {
+  0% {
+    top: 5%;
+  }
+  50% {
+    top: 8%;
+  }
+  100% {
+    top: 5%;
+  }
+}
+
+@keyframes movepie2 {
+  0% {
+    top: 38%;
+  }
+  50% {
+    top: 42%;
+  }
+  100% {
+    top: 38%;
+  }
+}
+
+@keyframes movepie2Mb {
+  0% {
+    top: 38%;
+  }
+  50% {
+    top: 42%;
+  }
+  100% {
+    top: 38%;
+  }
+}
+// ========動畫========
+
+.vot_levelwrap {
+  @include media(lg) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  > .container {
+    @include flex-around;
+    flex-wrap: wrap;
+    @include media(md) {
+      justify-content: center;
+    }
+    @at-root .vot_level {
+      padding-top: 140px;
+      position: relative;
+      width: 50%;
+      // border: 1px solid #f00;
+      @include media(md) {
+        width: 95%;
+        margin-bottom: 50px;
+      }
+      .level_one {
+        position: absolute;
+        top: 20%;
+        left: 3%;
+        transform: rotate(-10deg) scale(0.8);
+        animation: movepie 2s 1s linear infinite;
+        @include media(md) {
+          left: -7%;
+          transform: scale(0.45);
+        }
+      }
+      .level_two {
+        position: absolute;
+        top: -3%;
+        left: 50%;
+        transform: translateX(-50%) rotate(-10deg);
+        animation: movepie1 2s 1s linear infinite;
+        @include media(md) {
+          left: 20%;
+          top: 10%;
+          // background-color: #ccc;
+          transform: scale(0.6);
+          animation: movepie1Mb 2s 1s linear infinite;
+        }
+      }
+      .level_three {
+        position: absolute;
+        top: 38%;
+        right: 4%;
+        transform: rotate(-10deg) scale(0.6);
+        animation: movepie2 2s 1s linear infinite;
+        @include media(md) {
+          right: -7%;
+          transform: scale(0.35);
+          animation: movepie2Mb 2s 1s linear infinite;
+        }
+      }
+      .level_img {
+        width: 100%;
+      }
+    }
+    @at-root .vot {
+      &_leveltxt {
+        background-image: url('../img/vot/base-outlin.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+        width: 42%;
+        // border: 1px solid #000;
+        height: 410px;
+        position: relative;
+        @include media(md) {
+          width: 95%;
+          height: 320px;
+        }
+        .vol_levelgroup {
+          width: 80%;
+          // border: 1px solid #000;
+          position: absolute;
+          top: 60%;
+          left: 50%;
+          transform: translateX(-50%) translateY(-55%);
+          @include media(md) {
+            height: 50%;
+          }
+        }
+      }
+      &_levelone {
+        @include flex-around;
+        align-items: center;
+        > .vot_imgGroup {
+          position: relative;
+          display: flex;
+          justify-content: center;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          img {
+            width: 60%;
+          }
+          .kingicon {
+            position: absolute;
+            top: -10%;
+            left: -10%;
+            width: 30%;
+          }
+        }
+        > .txt_btn {
+          @include btnCase(100px, 30px);
+          // border: 1px solid #000;
+          margin-left: 10px;
+        }
+      }
+      &_leveltwo {
+        @include flex-around;
+        align-items: center;
+        > .vot_imgGroup {
+          position: relative;
+          display: flex;
+          justify-content: center;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          img {
+            width: 50%;
+          }
+          .kingicon {
+            position: absolute;
+            top: -5%;
+            left: -5%;
+            width: 25%;
+          }
+        }
+        > .txt_btn {
+          @include btnCase(100px, 30px);
+          border: 1px solid #000;
+        }
+      }
+      &_levelthree {
+        @include flex-around;
+        align-items: center;
+        > .vot_imgGroup {
+          position: relative;
+          display: flex;
+          justify-content: center;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          > img {
+            width: 40%;
+          }
+          .kingicon {
+            position: absolute;
+            top: 5%;
+            left: 5%;
+            width: 20%;
+          }
+        }
+        > .txt_btn {
+          @include btnCase(100px, 30px);
+          // border: 1px solid #000;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.main_body {
+  background-image: url('../img/index/index_bg.png');
+  // background-size: 100%;
+  position: relative;
+  background-position: top center;
+  // background-attachment: fixed;
+}
+
+div[class$='_titlebox'] {
+  background-image: url('../img/product/title.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  border: 1px solid #000;
+  @include flex-cen-cen;
+  height: 270px;
+
+  > [class$='_title'] {
+    padding-top: 60px;
+  }
+}
